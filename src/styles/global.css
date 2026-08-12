@@ -2,17 +2,18 @@
 
 @layer base {
   :root {
-    --brand-navy: #123458;
-    --brand-sand: #D4C9BE;
-    --brand-light: #F1EFEC;
-    --brand-dark: #030303;
-    --brand-charcoal: #2E2E2E;
+    --brand-gold: #D4AF37;
+    --brand-gold-muted: #C5A059;
+    --brand-blue: #3B6998;
+    --brand-black: #0A0A0A;
+    --brand-cream: #F7F5F0;
+    --brand-charcoal: #1A1A1A;
   }
 
   body {
     font-family: 'Lora', serif;
-    background-color: #F1EFEC;
-    color: #2E2E2E;
+    background-color: #0A0A0A;
+    color: #F7F5F0;
     overflow-x: hidden;
   }
 
@@ -24,38 +25,39 @@
 
 /* Glassmorphism & Enterprise UI Classes */
 .glass-panel {
-  background: rgba(18, 52, 88, 0.75);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 201, 190, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .glass-card {
-  background: rgba(3, 3, 3, 0.55);
+  background: rgba(15, 15, 15, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(247, 245, 240, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(18, 52, 88, 0.08);
+  border: 1px solid rgba(59, 105, 152, 0.15);
 }
 
 /* Color Tokens */
-.bg-brand-navy { background-color: #123458; }
-.bg-brand-sand { background-color: #D4C9BE; }
-.bg-brand-light { background-color: #F1EFEC; }
-.bg-brand-dark { background-color: #030303; }
+.bg-brand-gold { background-color: #D4AF37; }
+.bg-brand-blue { background-color: #3B6998; }
+.bg-brand-black { background-color: #0A0A0A; }
+.bg-brand-cream { background-color: #F7F5F0; }
 
-.text-brand-navy { color: #123458; }
-.text-brand-sand { color: #D4C9BE; }
-.text-brand-light { color: #F1EFEC; }
-.text-brand-dark { color: #030303; }
+.text-brand-gold { color: #D4AF37; }
+.text-brand-gold-muted { color: #C5A059; }
+.text-brand-blue { color: #3B6998; }
+.text-brand-black { color: #0A0A0A; }
+.text-brand-cream { color: #F7F5F0; }
 
-.border-brand-navy { border-color: #123458; }
-.border-brand-sand { border-color: #D4C9BE; }
+.border-brand-gold { border-color: #D4AF37; }
+.border-brand-blue { border-color: #3B6998; }
 
 /* Custom Animations */
 @keyframes subtle-zoom {
