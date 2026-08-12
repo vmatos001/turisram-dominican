@@ -1,84 +1,94 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
-import '../styles/global.css';
-
 interface Props {
-  title?: string;
+  title: string;
   description?: string;
+  image?: string;
 }
 
 const {
-  title = "TurisRam Dominican | Transporte Privado & Tours en República Dominicana y Punta Cana",
-  description = "Servicio de transporte privado en aeropuerto de Punta Cana (PUJ), Santo Domingo (SDQ), Santiago, La Romana y tours exclusivos en República Dominicana. Reserva a tarifa fija sin sorpresas."
+  title = "TurisRam Dominicana | Transfers & Experiencias",
+  description = "Servicio de transporte privado VIP en la República Dominicana. Traslados desde aeropuertos de Punta Cana (PUJ), Santo Domingo (SDQ), Santiago (STI) y tours exclusivos.",
+  image = "/images/a-black-luxuru-van-c.webp"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram-dominican.web.app");
-
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "TurisRam Dominican",
-  "image": "https://turisram-dominican.web.app/images/TurisRam%20logo.png",
-  "telephone": "+18497527408",
-  "url": "https://turisram-dominican.web.app",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Punta Cana",
-    "addressCountry": "DO"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 18.6698995,
-    "longitude": -70.130055
-  },
-  "priceRange": "$$",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
-};
 ---
 
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/images/TurisRam favicon-modified.png" />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Transporte privado Punta Cana, Aeropuerto PUJ transfer, Transporte turistico Republica Dominicana, chofer privado Punta Cana, tours Isla Saona, transfer Santo Domingo SDQ" />
-    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/a-black-luxuru-van-c.webp" />
+    <meta property="og:image" content={new URL(image, canonicalURL)} />
 
-    <!-- Google Fonts -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, canonicalURL)} />
+
+    <!-- Tourvex & Brand Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Schema JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "TurisRam Dominicana",
+        "image": "https://turisram-dominican.web.app/images/TurisRam%20logo.png",
+        "@id": "https://turisram-dominican.web.app",
+        "url": "https://turisram-dominican.web.app",
+        "telephone": "+18497527408",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Punta Cana",
+          "addressRegion": "La Altagracia",
+          "addressCountry": "DO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.5959418,
+          "longitude": -75.4170951
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r"
+        ]
+      }
+    </script>
   </head>
-  <body class="bg-[#F1EFEC] text-[#2E2E2E] min-h-screen flex flex-col antialiased">
-    <Navbar />
-    <main class="flex-grow">
-      <slot />
-    </main>
-    <Footer />
-    <WhatsAppButton />
+  <body class="bg-[#0A0A0A] text-[#F7F5F0] antialiased selection:bg-[#D4AF37] selection:text-[#0A0A0A]">
+    <slot />
   </body>
 </html>
