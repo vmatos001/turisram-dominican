@@ -11,7 +11,7 @@
     
     --font-heading: 'Barlow Condensed', 'Montserrat', sans-serif;
     --font-body: 'Barlow Semi Condensed', sans-serif;
-    --font-[#D4AF37]: 'Lora', serif;
+    --font-serif: 'Lora', serif;
   }
 
   body {
@@ -64,22 +64,6 @@
 
 .zoom-image-wrapper:hover img {
   transform: scale(1.06);
-}
-
-/* Tourvex Rolling Text Effect */
-.rolling-link {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.rolling-link span {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.rolling-link:hover span {
-  transform: translateY(-100%);
 }
 
 /* Color Tokens */

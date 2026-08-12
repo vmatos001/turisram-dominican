@@ -1,4 +1,9 @@
 ---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -6,7 +11,7 @@ interface Props {
 }
 
 const {
-  title = "TurisRam Dominicana | Transfers & Experiencias",
+  title = "TurisRam Dominicana | Transfers & Experiencias — Viaja cómodo. Llega seguro.",
   description = "Servicio de transporte privado VIP en la República Dominicana. Traslados desde aeropuertos de Punta Cana (PUJ), Santo Domingo (SDQ), Santiago (STI) y tours exclusivos.",
   image = "/images/a-black-luxuru-van-c.webp"
 } = Astro.props;
@@ -41,7 +46,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 
-    <!-- Tourvex & Brand Google Fonts -->
+    <!-- Google Fonts: Barlow Condensed, Barlow Semi Condensed, Lora, Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -88,7 +93,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
       }
     </script>
   </head>
-  <body class="bg-[#0A0A0A] text-[#F7F5F0] antialiased selection:bg-[#D4AF37] selection:text-[#0A0A0A]">
-    <slot />
+  <body class="bg-[#0A0A0A] text-[#F7F5F0] antialiased selection:bg-[#D4AF37] selection:text-[#0A0A0A] min-h-screen flex flex-col justify-between">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
   </body>
 </html>
