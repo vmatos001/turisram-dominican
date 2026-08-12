@@ -1,0 +1,116 @@
+---
+const currentPath = Astro.url.pathname;
+const phone = "18497527408";
+const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent("¡Hola TurisRam! Deseo cotizar un traslado privado.")}`;
+
+const navLinks = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Sobre Nosotros" },
+  { href: "/servicios", label: "Servicios y Tours" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<header class="sticky top-0 z-40 bg-[#123458] text-white shadow-xl transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img 
+          src="/images/TurisRam logo.png" 
+          alt="TurisRam Dominican Logo" 
+          class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="flex flex-col">
+          <span class="font-bold text-xl tracking-tight text-[#F1EFEC] font-['Montserrat']">
+            TurisRam <span class="text-[#D4C9BE]">Dominican</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-[#D4C9BE]">Transporte & Tours</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => {
+          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`text-sm font-semibold transition-colors duration-200 py-1 font-['Montserrat'] relative ${
+                isActive 
+                  ? 'text-[#D4C9BE] after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#D4C9BE]' 
+                  : 'text-[#F1EFEC] hover:text-[#D4C9BE]'
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- CTA Button Desktop -->
+      <div class="hidden md:flex items-center gap-4">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[#D4C9BE] text-[#123458] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 font-['Montserrat']"
+        >
+          Reservar Ahora
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="text-[#F1EFEC] hover:text-[#D4C9BE] focus:outline-none p-2"
+          aria-label="Abrir menú"
+        >
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#123458] border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+    {navLinks.map(link => {
+      const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+      return (
+        <a
+          href={link.href}
+          class={`block px-3 py-2 rounded-lg text-base font-semibold font-['Montserrat'] ${
+            isActive ? 'bg-[#D4C9BE] text-[#123458]' : 'text-[#F1EFEC] hover:bg-white/10'
+          }`}
+        >
+          {link.label}
+        </a>
+      );
+    })}
+    <div class="pt-2">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center bg-[#D4C9BE] text-[#123458] font-bold py-3 rounded-xl font-['Montserrat']"
+      >
+        Reservar por WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+
+const values = [
+  { title: "Puntualidad Absoluta", desc: "Monitoreamos vuelos y mantenemos tiempos de respuesta inmediatos para que nunca tengas que esperar.", icon: "⏱️" },
+  { title: "Seguridad y Confort", desc: "Vehículos sometidos a riguroso mantenimiento preventivo y equipados con aire acondicionado de alta capacidad.", icon: "🛡️" },
+  { title: "Trato Personalizado VIP", desc: "Atención cordial, choferes uniformados e identificados para brindarte la mejor bienvenida a Quisqueya.", icon: "⭐" },
+  { title: "Transparencia Total", desc: "Sin sorpresas ni cobros extras. Tarifas fijas previamente pactadas por WhatsApp.", icon: "🤝" }
+];
+---
+
+<Layout
+  title="Sobre Nosotros | TurisRam Dominican Transporte Turístico"
+  description="Conoce la historia, misión y equipo de TurisRam Dominican. Especialistas en transporte privado y tours en República Dominicana."
+>
+
+  <!-- HERO SECTION SOBRE NOSOTROS -->
+  <section class="relative min-h-[85vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/create-a-warm-and-professional-header-image-for-th.webp"
+        alt="Chofer profesional TurisRam Dominican"
+        class="w-full h-full object-cover animate-subtle-zoom opacity-45"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/70 to-[#030303]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
+      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat']">
+        Nuestra Identidad & Valores
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Montserrat'] tracking-tight leading-tight mb-6">
+        Bienvenidos a <span class="text-[#D4C9BE]">TurisRam Dominican</span>
+      </h1>
+      <p class="text-base sm:text-xl text-[#F1EFEC]/90 max-w-3xl mx-auto font-normal leading-relaxed">
+        Somos una empresa dominicana dedicada a brindar experiencias de transporte privado de excelencia, conectando a viajeros con los destinos más hermosos de nuestro país.
+      </p>
+    </div>
+  </section>
+
+  <!-- NUESTRA HISTORIA -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Nuestra Historia</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] leading-tight">
+          Pasión por Servir al Turista
+        </h2>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          TurisRam Dominican nació con el propósito de elevar los estándares del transporte turístico en la República Dominicana. Comprendemos perfectamente el cansancio del viajero tras un vuelo largo y la necesidad de contar con un transporte seguro, cómodo y sin contratiempos.
+        </p>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Desde nuestros inicios en Punta Cana, hemos expandido nuestra cobertura a los principales aeropuertos y zonas turísticas del país (Santo Domingo, La Romana, Samaná, Santiago y Puerto Plata), convirtiéndonos en la opción preferida por familias, parejas y grupos ejecutivos.
+        </p>
+      </div>
+
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+        <img
+          src="/images/generate-an-image-of-a-professional-transportation.webp"
+          alt="Flota de vehículos TurisRam Dominican"
+          class="w-full h-[420px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- MISION Y VISION -->
+  <section class="py-20 bg-[#123458] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- Mision -->
+        <div class="bg-[#030303]/40 border border-white/10 p-8 rounded-3xl hover:border-[#D4C9BE] transition-all">
+          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+            🎯
+          </div>
+          <h3 class="text-2xl font-bold text-[#D4C9BE] font-['Montserrat'] mb-4">Nuestra Misión</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Proporcionar un servicio de transporte turístico puntual, seguro y confortable en República Dominicana, garantizando tarifas justas y una atención personalizada que supere las expectativas de cada cliente desde su llegada al país.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-[#030303]/40 border border-white/10 p-8 rounded-3xl hover:border-[#D4C9BE] transition-all">
+          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+            🔭
+          </div>
+          <h3 class="text-2xl font-bold text-[#D4C9BE] font-['Montserrat'] mb-4">Nuestra Visión</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Ser la plataforma de transporte privado y tours más reconocida y recomendada en la República Dominicana, distinguida por nuestra innovación, flota moderna, choferes altamente calificados y compromiso con la satisfacción del turista.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES Y PILARES -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Nuestra Filosofía</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] mt-2">
+        Los Pilares de Nuestro Servicio
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {values.map(v => (
+        <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all">
+          <div class="text-4xl mb-4">{v.icon}</div>
+          <h3 class="text-lg font-bold text-[#123458] font-['Montserrat'] mb-2">{v.title}</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- BANNER CTA RESERVA -->
+  <section class="py-16 bg-gradient-to-r from-[#123458] via-[#030303] to-[#123458] text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold font-['Montserrat'] mb-4">¿Listo para Planificar tu Viaje a Punta Cana?</h2>
+      <p class="text-sm text-gray-300 mb-8">Cotiza tu traslado privado en segundos. Chofer esperándote a tu llegada.</p>
+      <a
+        href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20hacer%20una%20reserva%20de%20transporte%20con%20TurisRam"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-[#D4C9BE] text-[#123458] font-bold px-8 py-4 rounded-full text-sm hover:bg-white transition-all shadow-xl font-['Montserrat']"
+      >
+        Reservar Traslado por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
+  <GoogleReviews />
+
+</Layout>

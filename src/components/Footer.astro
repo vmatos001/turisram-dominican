@@ -1,0 +1,81 @@
+---
+const currentYear = new Date().getFullYear();
+const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r";
+---
+
+<footer class="bg-[#030303] text-[#F1EFEC] pt-16 pb-8 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Column 1: Brand Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="/images/TurisRam logo.png" alt="TurisRam Logo" class="h-12 w-auto object-contain" />
+          <span class="font-bold text-xl text-white font-['Montserrat']">TurisRam <span class="text-[#D4C9BE]">Dominican</span></span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Empresa líder en servicios de transporte privado, traslados desde aeropuertos y tours exclusivos en la República Dominicana y Punta Cana. Seguridad, puntualidad y servicio VIP garantizados.
+        </p>
+        <div class="pt-2">
+          <a
+            href={googleMapsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs text-[#D4C9BE] hover:underline"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Ver Ubicación en Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-lg font-bold text-white mb-4 font-['Montserrat'] border-b border-[#D4C9BE]/30 pb-2 inline-block">Navegación</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="/" class="hover:text-[#D4C9BE] transition-colors">Inicio</a></li>
+          <li><a href="/nosotros" class="hover:text-[#D4C9BE] transition-colors">Sobre Nosotros</a></li>
+          <li><a href="/servicios" class="hover:text-[#D4C9BE] transition-colors">Servicios & Tours</a></li>
+          <li><a href="/contacto" class="hover:text-[#D4C9BE] transition-colors">Contacto & Cotización</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Cobertura Aeropuertos -->
+      <div>
+        <h4 class="text-lg font-bold text-white mb-4 font-['Montserrat'] border-b border-[#D4C9BE]/30 pb-2 inline-block">Cobertura de Aeropuertos</h4>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li>✈️ Aeropuerto Int. Punta Cana (PUJ)</li>
+          <li>✈️ Aeropuerto Las Américas (SDQ)</li>
+          <li>✈️ Aeropuerto La Romana (LRM)</li>
+          <li>✈️ Aeropuerto Cibao Santiago (STI)</li>
+          <li>✈️ Aeropuerto Puerto Plata (POP)</li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contacto Oficial -->
+      <div>
+        <h4 class="text-lg font-bold text-white mb-4 font-['Montserrat'] border-b border-[#D4C9BE]/30 pb-2 inline-block">Contacto Directo</h4>
+        <div class="space-y-3 text-sm text-gray-400">
+          <p class="flex items-center gap-2">
+            <span class="text-[#D4C9BE]">📞 Teléfono / WA:</span>
+            <a href="https://wa.me/18497527408" class="text-white hover:text-[#D4C9BE] font-semibold">+1 (849) 752-7408</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <span class="text-[#D4C9BE]">📍 Ubicación:</span>
+            <span>República Dominicana & Punta Cana</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <span class="text-[#D4C9BE]">🕒 Atención:</span>
+            <span>24 Horas / 7 Días a la semana</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>© {currentYear} TurisRam Dominican. Todos los derechos reservados.</p>
+      <p class="text-gray-400">Transporte Turístico Confiable en República Dominicana & Punta Cana</p>
+    </div>
+  </div>
+</footer>

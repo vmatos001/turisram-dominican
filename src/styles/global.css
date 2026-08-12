@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #123458;
+    --brand-sand: #D4C9BE;
+    --brand-light: #F1EFEC;
+    --brand-dark: #030303;
+    --brand-charcoal: #2E2E2E;
+  }
+
+  body {
+    font-family: 'Lora', serif;
+    background-color: #F1EFEC;
+    color: #2E2E2E;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Custom Utilities & Animations */
+.bg-brand-navy { background-color: #123458; }
+.bg-brand-sand { background-color: #D4C9BE; }
+.bg-brand-light { background-color: #F1EFEC; }
+.bg-brand-dark { background-color: #030303; }
+
+.text-brand-navy { color: #123458; }
+.text-brand-sand { color: #D4C9BE; }
+.text-brand-light { color: #F1EFEC; }
+.text-brand-dark { color: #030303; }
+
+.border-brand-navy { border-color: #123458; }
+.border-brand-sand { border-color: #D4C9BE; }
+
+@keyframes subtle-zoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 20s infinite ease-in-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}

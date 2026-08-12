@@ -1,0 +1,106 @@
+---
+const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r";
+
+const reviews = [
+  {
+    name: "Carlos M. Fernández",
+    rating: 5,
+    date: "Hace 2 semanas",
+    comment: "Excelente servicio desde el aeropuerto de Punta Cana hasta el resort en Bávaro. Chofer super puntual, amable y la van estaba impecable con aire acondicionado helado.",
+    avatar: "C"
+  },
+  {
+    name: "Sarah & David Jenkins",
+    rating: 5,
+    date: "Hace 1 mes",
+    comment: "Booked a private transfer from PUJ to Cap Cana and a day tour to Saona Island. TurisRam exceeded our expectations! Highly recommended, 10/10 service.",
+    avatar: "S"
+  },
+  {
+    name: "Mariana Alarcón",
+    rating: 5,
+    date: "Hace 3 semanas",
+    comment: "La atención por WhatsApp es rápida e inmediata. El precio fue exactamente el pactado, sin cargos ocultos ni sorpresas en el aeropuerto. Definitivamente volveré a contratar con ellos.",
+    avatar: "M"
+  },
+  {
+    name: "Jean-Pierre Laurent",
+    rating: 5,
+    date: "Hace 2 meses",
+    comment: "Service de transport VIP d'une qualité irréprochable. Chauffeur ponctuel et très professionnel à Santo Domingo. Merci TurisRam!",
+    avatar: "J"
+  }
+];
+---
+
+<section class="py-16 bg-[#123458] text-white overflow-hidden relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 font-['Montserrat']">
+        <svg class="w-4 h-4 fill-current text-yellow-600" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        Reseñas Verificadas en Google
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-['Montserrat'] text-white">
+        Lo Que Dicen Nuestros Clientes
+      </h2>
+      <p class="text-gray-300 mt-2 max-w-2xl mx-auto text-sm">
+        Más de 500+ turistas y familias confían en TurisRam Dominican para sus traslados y excursiones.
+      </p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {reviews.map(rev => (
+        <div class="bg-[#030303]/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-[#D4C9BE]/50 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-[#D4C9BE] text-[#123458] font-bold flex items-center justify-center text-base">
+                  {rev.avatar}
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white font-['Montserrat']">{rev.name}</h4>
+                  <span class="text-[11px] text-gray-400">{rev.date}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stars -->
+            <div class="flex items-center gap-1 mb-3">
+              {[...Array(rev.rating)].map(() => (
+                <svg class="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+              ))}
+            </div>
+
+            <p class="text-xs text-gray-300 italic leading-relaxed">
+              "{rev.comment}"
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/10 flex items-center gap-1 text-[11px] text-[#D4C9BE]">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Opinión verificada en Google</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Google Review -->
+    <div class="text-center mt-10">
+      <a
+        href={googleMapsLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] font-bold text-sm px-6 py-3 rounded-full hover:bg-white transition-all duration-300 font-['Montserrat'] shadow-lg"
+      >
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Dejar una Reseña en Google Maps
+      </a>
+    </div>
+
+  </div>
+</section>

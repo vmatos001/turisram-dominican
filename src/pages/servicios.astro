@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+
+const tours = [
+  {
+    name: "Isla Saona VIP",
+    desc: "Navega en catamarán por aguas turquesas, visita la piscina natural y disfruta de un almuerzo buffet típico frente al mar.",
+    image: "/images/Isla Saona.webp",
+    location: "La Romana / Bayahíbe"
+  },
+  {
+    name: "Bávaro & Playas de Punta Cana",
+    desc: "Recorre las mejores playas de arena blanca del Caribe con transporte privado climatizado.",
+    image: "/images/viaja a punta cana.webp",
+    location: "Punta Cana"
+  },
+  {
+    name: "Samaná & Salto del Limón",
+    desc: "Descubre la península de Samaná, caminatas a cascadas vírgenes y paisajes paradisíacos de palmeras.",
+    image: "/images/Samana.webp",
+    location: "Samaná"
+  },
+  {
+    name: "Parque Nacional Los Haitises",
+    desc: "Explora místicas cuevas con arte taíno, manglares vírgenes y mogotes en una aventura ecológica única.",
+    image: "/images/Los Haitises.webp",
+    location: "Sabana de la Mar"
+  },
+  {
+    name: "Jarabacoa — La Ciudad de la Eterna Primavera",
+    desc: "Ríos helados, rafting, senderos de montaña y la majestuosidad de la Cordillera Central.",
+    image: "/images/Jarabacoa.webp",
+    location: "Jarabacoa"
+  },
+  {
+    name: "Constanza & Valle Nuevo",
+    desc: "El punto más alto de las Antillas con clima fresco de montaña, pinares y saltos de agua espectaculares.",
+    image: "/images/Conntanza.webp",
+    location: "Constanza"
+  },
+  {
+    name: "Bahía de las Águilas & Barahona",
+    desc: "Conoce la playa más virgen y cristalina de la República Dominicana en el suroeste profundo.",
+    image: "/images/Bahía de las Águilas.webp",
+    location: "Pedernales / Barahona"
+  },
+  {
+    name: "Teleférico de Puerto Plata & Isabel de Torres",
+    desc: "Ascenso panorámico a la cima de la montaña con vistas sobre toda la Costa del Ámbar.",
+    image: "/images/Teleférico_de_Puerto_Plata.webp",
+    location: "Puerto Plata"
+  },
+  {
+    name: "Isla Catalina Snorkel & Bucaneros",
+    desc: "Un paraíso de buceo y snorkel con arrecifes de coral vivos en una isla desierta caribeña.",
+    image: "/images/Isla Catalina.webp",
+    location: "La Romana"
+  },
+  {
+    name: "Santo Domingo Histórico & Zona Colonial",
+    desc: "Recorrido por la Primada de América: Alcázar de Colón, Catedral y la primera calle del Nuevo Mundo.",
+    image: "/images/Santo domingo.webp",
+    location: "Santo Domingo"
+  },
+  {
+    name: "Atardecer & Marina La Romana",
+    desc: "Paseo exclusivo en la costa este con cena frente a los megayates y puestas de sol memorables.",
+    image: "/images/Atardecer_en_La_Romana.webp",
+    location: "La Romana"
+  },
+  {
+    name: "Cabarete & Deportes Acuáticos",
+    desc: "La capital del kitesurf y windsurf en el Caribe con un ambiente juvenil y vibrante nocturno.",
+    image: "/images/cabarete.webp",
+    location: "Puerto Plata"
+  }
+];
+
+const faqs = [
+  {
+    q: "¿Cómo localizo a mi chofer en el aeropuerto?",
+    a: "Tu chofer te estará esperando justo afuera de la salida de equipaje portando un cartel claramente visible con tu nombre y el logo de TurisRam Dominican."
+  },
+  {
+    q: "¿Qué sucede si mi vuelo sufre un retraso?",
+    a: "No te preocupes. Monitoreamos los vuelos en tiempo real mediante el número de vuelo que nos proporcionas. Tu transporte estará listo sin importar la hora de llegada."
+  },
+  {
+    q: "¿El precio es por persona o por vehículo?",
+    a: "Todos nuestros traslados privados tienen una tarifa fija por vehículo (Van o Minibús), lo que significa que el costo no cambia por pasajero dentro de la capacidad contratada."
+  },
+  {
+    q: "¿Qué métodos de pago aceptan?",
+    a: "Aceptamos pago en efectivo (USD / DOP / EUR) directamente al chofer al momento de abordar, o mediante transferencia bancaria previa."
+  }
+];
+---
+
+<Layout
+  title="Servicios y Tours en República Dominicana | TurisRam Dominican"
+  description="Descubre nuestros servicios de traslados privados desde aeropuertos y catálogo de tours en Punta Cana, Saona, Samaná, Santo Domingo y más."
+>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[80vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/create-a-breathtaking-landscape-image-that-showcas.webp"
+        alt="Paisajes de República Dominicana"
+        class="w-full h-full object-cover animate-subtle-zoom opacity-40"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/70 to-[#030303]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
+      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat']">
+        Traslados & Excursiones VIP
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Montserrat'] tracking-tight leading-tight mb-6">
+        Nuestros Servicios & <span class="text-[#D4C9BE]">Tours Destacados</span>
+      </h1>
+      <p class="text-base sm:text-xl text-[#F1EFEC]/90 max-w-3xl mx-auto font-normal leading-relaxed">
+        Viaja por toda la República Dominicana con total libertad, confort y la garantía de un servicio profesional a precio fijo.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATALOGO DE TOURS -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Catálogo de Destinos</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] mt-2">
+        Explora los Mejores Tours de la Isla
+      </h2>
+      <p class="text-sm text-gray-600 mt-2 max-w-2xl mx-auto">
+        Tours privados adaptados a tu itinerario. Haz clic en "Reservar Tour" para enviarnos un mensaje directo a WhatsApp con tu destino seleccionado.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {tours.map(t => {
+        const msg = encodeURIComponent(`¡Hola! TurisRam Dominican, me gustaría hacer una reserva del tour a: ${t.name}`);
+        const waLink = `https://wa.me/18497527408?text=${msg}`;
+        return (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-44 overflow-hidden">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute bottom-2 left-2 bg-[#123458]/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm font-['Montserrat']">
+                  📍 {t.location}
+                </div>
+              </div>
+
+              <div class="p-5">
+                <h3 class="text-base font-bold text-[#123458] font-['Montserrat'] mb-2">{t.name}</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">{t.desc}</p>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full text-center bg-[#123458] text-[#F1EFEC] font-bold text-xs py-2.5 rounded-xl hover:bg-[#D4C9BE] hover:text-[#123458] transition-all font-['Montserrat'] shadow-md"
+              >
+                Reservar Tour por WhatsApp
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- FAQS SECCION ACCORDEON -->
+  <section class="py-20 bg-[#123458] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="bg-[#D4C9BE] text-[#123458] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider font-['Montserrat']">
+          Resuelve tus Dudas
+        </span>
+        <h2 class="text-3xl font-extrabold font-['Montserrat'] mt-3 text-white">
+          Preguntas Frecuentes (FAQ)
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f, i) => (
+          <details class="bg-[#030303]/40 border border-white/10 rounded-2xl p-5 group transition-all">
+            <summary class="font-bold text-base text-[#D4C9BE] font-['Montserrat'] cursor-pointer flex items-center justify-between list-none">
+              <span>{f.q}</span>
+              <span class="text-xl transition-transform group-open:rotate-180">+</span>
+            </summary>
+            <p class="text-xs text-gray-300 mt-3 leading-relaxed border-t border-white/10 pt-3">
+              {f.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
+  <GoogleReviews />
+
+</Layout>

@@ -1,0 +1,84 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "TurisRam Dominican | Transporte Privado & Tours en República Dominicana y Punta Cana",
+  description = "Servicio de transporte privado en aeropuerto de Punta Cana (PUJ), Santo Domingo (SDQ), Santiago, La Romana y tours exclusivos en República Dominicana. Reserva a tarifa fija sin sorpresas."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram-dominican.web.app");
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "TurisRam Dominican",
+  "image": "https://turisram-dominican.web.app/images/TurisRam%20logo.png",
+  "telephone": "+18497527408",
+  "url": "https://turisram-dominican.web.app",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Punta Cana",
+    "addressCountry": "DO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.6698995,
+    "longitude": -70.130055
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/TurisRam favicon-modified.png" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Transporte privado Punta Cana, Aeropuerto PUJ transfer, Transporte turistico Republica Dominicana, chofer privado Punta Cana, tours Isla Saona, transfer Santo Domingo SDQ" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/a-black-luxuru-van-c.webp" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="bg-[#F1EFEC] text-[#2E2E2E] min-h-screen flex flex-col antialiased">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>
