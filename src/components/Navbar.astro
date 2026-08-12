@@ -6,27 +6,49 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent("¡Hola Tu
 const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Sobre Nosotros" },
-  { href: "/servicios", label: "Servicios y Tours" },
+  { href: "/servicios", label: "Servicios & Tours" },
   { href: "/contacto", label: "Contacto" },
 ];
 ---
 
-<header class="sticky top-0 z-40 bg-[#123458] text-white shadow-xl transition-all duration-300">
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="bg-[#030303] text-[#F1EFEC] text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-6 text-gray-300">
+      <span class="flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Soporte 24/7: <a href="tel:+18497527408" class="text-white hover:text-[#D4C9BE] font-bold">+1 (849) 752-7408</a>
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Punta Cana, Santo Domingo, Santiago, Puerto Plata
+      </span>
+    </div>
+    <div class="flex items-center gap-4 text-gray-400 font-['Montserrat']">
+      <span class="text-[#D4C9BE] font-bold">Tarifa Fija Garantizada</span>
+      <span>|</span>
+      <span>Español / English</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAVBAR -->
+<header class="sticky top-0 z-40 bg-[#123458] text-white shadow-2xl border-b border-white/10 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
+      <a href="/" class="flex items-center gap-3.5 group">
         <img 
           src="/images/TurisRam logo.png" 
           alt="TurisRam Dominican Logo" 
           class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         />
         <div class="flex flex-col">
-          <span class="font-bold text-xl tracking-tight text-[#F1EFEC] font-['Montserrat']">
-            TurisRam <span class="text-[#D4C9BE]">Dominican</span>
+          <span class="font-extrabold text-xl tracking-tight text-[#F1EFEC] font-['Montserrat'] leading-none">
+            TURISRAM <span class="text-[#D4C9BE]">DOMINICAN</span>
           </span>
-          <span class="text-[10px] uppercase tracking-widest text-[#D4C9BE]">Transporte & Tours</span>
+          <span class="text-[10px] uppercase tracking-widest text-[#D4C9BE] font-semibold mt-1">Transporte VIP & Tours</span>
         </div>
       </a>
 
@@ -37,13 +59,14 @@ const navLinks = [
           return (
             <a
               href={link.href}
-              class={`text-sm font-semibold transition-colors duration-200 py-1 font-['Montserrat'] relative ${
+              class={`text-sm font-bold tracking-wide transition-all duration-200 py-1 font-['Montserrat'] relative group ${
                 isActive 
-                  ? 'text-[#D4C9BE] after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#D4C9BE]' 
-                  : 'text-[#F1EFEC] hover:text-[#D4C9BE]'
+                  ? 'text-[#D4C9BE]' 
+                  : 'text-[#F1EFEC]/90 hover:text-[#D4C9BE]'
               }`}
             >
               {link.label}
+              <span class={`absolute bottom-0 left-0 h-0.5 bg-[#D4C9BE] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
           );
         })}
@@ -55,9 +78,10 @@ const navLinks = [
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="bg-[#D4C9BE] text-[#123458] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 font-['Montserrat']"
+          class="bg-[#D4C9BE] text-[#123458] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-white hover:shadow-xl transition-all duration-300 font-['Montserrat'] flex items-center gap-2 border border-white/20"
         >
-          Reservar Ahora
+          <svg class="w-4 h-4 fill-current text-[#123458]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
+          Cotizar Traslado
         </a>
       </div>
 
@@ -66,10 +90,10 @@ const navLinks = [
         <button
           id="mobile-menu-btn"
           type="button"
-          class="text-[#F1EFEC] hover:text-[#D4C9BE] focus:outline-none p-2"
+          class="text-[#F1EFEC] hover:text-[#D4C9BE] focus:outline-none p-2 rounded-lg bg-white/5"
           aria-label="Abrir menú"
         >
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
@@ -79,13 +103,13 @@ const navLinks = [
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#123458] border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+  <div id="mobile-menu" class="hidden md:hidden bg-[#030303] border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
     {navLinks.map(link => {
       const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
       return (
         <a
           href={link.href}
-          class={`block px-3 py-2 rounded-lg text-base font-semibold font-['Montserrat'] ${
+          class={`block px-4 py-3 rounded-xl text-base font-bold font-['Montserrat'] ${
             isActive ? 'bg-[#D4C9BE] text-[#123458]' : 'text-[#F1EFEC] hover:bg-white/10'
           }`}
         >
@@ -98,9 +122,9 @@ const navLinks = [
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="block w-full text-center bg-[#D4C9BE] text-[#123458] font-bold py-3 rounded-xl font-['Montserrat']"
+        class="block w-full text-center bg-[#D4C9BE] text-[#123458] font-bold py-3.5 rounded-xl font-['Montserrat'] uppercase text-xs tracking-wider"
       >
-        Reservar por WhatsApp
+        Cotizar por WhatsApp
       </a>
     </div>
   </div>

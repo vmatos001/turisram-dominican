@@ -4,76 +4,100 @@ import GoogleReviews from '../components/GoogleReviews.astro';
 
 const tours = [
   {
-    name: "Isla Saona VIP",
+    name: "Isla Saona VIP & Catamarán",
     desc: "Navega en catamarán por aguas turquesas, visita la piscina natural y disfruta de un almuerzo buffet típico frente al mar.",
     image: "/images/Isla Saona.webp",
-    location: "La Romana / Bayahíbe"
+    location: "La Romana / Bayahíbe",
+    duration: "Día Completo",
+    badge: "Más Popular"
   },
   {
     name: "Bávaro & Playas de Punta Cana",
     desc: "Recorre las mejores playas de arena blanca del Caribe con transporte privado climatizado.",
     image: "/images/viaja a punta cana.webp",
-    location: "Punta Cana"
+    location: "Punta Cana",
+    duration: "4 - 8 Horas",
+    badge: "Recomendado"
   },
   {
     name: "Samaná & Salto del Limón",
     desc: "Descubre la península de Samaná, caminatas a cascadas vírgenes y paisajes paradisíacos de palmeras.",
     image: "/images/Samana.webp",
-    location: "Samaná"
+    location: "Samaná",
+    duration: "Día Completo",
+    badge: "Aventura Eco"
   },
   {
     name: "Parque Nacional Los Haitises",
     desc: "Explora místicas cuevas con arte taíno, manglares vírgenes y mogotes en una aventura ecológica única.",
     image: "/images/Los Haitises.webp",
-    location: "Sabana de la Mar"
+    location: "Sabana de la Mar",
+    duration: "Full Day Tour",
+    badge: "Cultura & Naturaleza"
   },
   {
-    name: "Jarabacoa — La Ciudad de la Eterna Primavera",
+    name: "Jarabacoa — Primavera de Montaña",
     desc: "Ríos helados, rafting, senderos de montaña y la majestuosidad de la Cordillera Central.",
     image: "/images/Jarabacoa.webp",
-    location: "Jarabacoa"
+    location: "Jarabacoa",
+    duration: "Full Day",
+    badge: "Montaña"
   },
   {
     name: "Constanza & Valle Nuevo",
     desc: "El punto más alto de las Antillas con clima fresco de montaña, pinares y saltos de agua espectaculares.",
     image: "/images/Conntanza.webp",
-    location: "Constanza"
+    location: "Constanza",
+    duration: "Full Day Tour",
+    badge: "Clima Fresco"
   },
   {
     name: "Bahía de las Águilas & Barahona",
     desc: "Conoce la playa más virgen y cristalina de la República Dominicana en el suroeste profundo.",
     image: "/images/Bahía de las Águilas.webp",
-    location: "Pedernales / Barahona"
+    location: "Pedernales / Barahona",
+    duration: "Excursión VIP",
+    badge: "Virgen"
   },
   {
-    name: "Teleférico de Puerto Plata & Isabel de Torres",
-    desc: "Ascenso panorámico a la cima de la montaña con vistas sobre toda la Costa del Ámbar.",
+    name: "Teleférico de Puerto Plata",
+    desc: "Ascenso panorámico a la cima de la montaña Isabel de Torres con vistas sobre toda la Costa del Ámbar.",
     image: "/images/Teleférico_de_Puerto_Plata.webp",
-    location: "Puerto Plata"
+    location: "Puerto Plata",
+    duration: "Medio Día",
+    badge: "Vistas 360"
   },
   {
-    name: "Isla Catalina Snorkel & Bucaneros",
+    name: "Isla Catalina Snorkel & Arrecifes",
     desc: "Un paraíso de buceo y snorkel con arrecifes de coral vivos en una isla desierta caribeña.",
     image: "/images/Isla Catalina.webp",
-    location: "La Romana"
+    location: "La Romana",
+    duration: "Día Completo",
+    badge: "Snorkel VIP"
   },
   {
-    name: "Santo Domingo Histórico & Zona Colonial",
+    name: "Santo Domingo Zona Colonial",
     desc: "Recorrido por la Primada de América: Alcázar de Colón, Catedral y la primera calle del Nuevo Mundo.",
     image: "/images/Santo domingo.webp",
-    location: "Santo Domingo"
+    location: "Santo Domingo",
+    duration: "Full Day",
+    badge: "Histórico"
   },
   {
     name: "Atardecer & Marina La Romana",
     desc: "Paseo exclusivo en la costa este con cena frente a los megayates y puestas de sol memorables.",
     image: "/images/Atardecer_en_La_Romana.webp",
-    location: "La Romana"
+    location: "La Romana",
+    duration: "Tarde / Noche",
+    badge: "Exclusivo"
   },
   {
     name: "Cabarete & Deportes Acuáticos",
     desc: "La capital del kitesurf y windsurf en el Caribe con un ambiente juvenil y vibrante nocturno.",
     image: "/images/cabarete.webp",
-    location: "Puerto Plata"
+    location: "Puerto Plata",
+    duration: "Full Day",
+    badge: "Kitesurf"
   }
 ];
 
@@ -99,22 +123,22 @@ const faqs = [
 
 <Layout
   title="Servicios y Tours en República Dominicana | TurisRam Dominican"
-  description="Descubre nuestros servicios de traslados privados desde aeropuertos y catálogo de tours en Punta Cana, Saona, Samaná, Santo Domingo y más."
+  description="Catálogo de traslados privados desde aeropuertos y tours en Punta Cana, Saona, Samaná, Santo Domingo y más con tarifas fijas."
 >
 
   <!-- HERO SECTION -->
-  <section class="relative min-h-[80vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden">
+  <section class="relative min-h-[80vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-white/10">
     <div class="absolute inset-0 z-0">
       <img
         src="/images/create-a-breathtaking-landscape-image-that-showcas.webp"
         alt="Paisajes de República Dominicana"
         class="w-full h-full object-cover animate-subtle-zoom opacity-40"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/70 to-[#030303]/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/75 to-[#030303]/85"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
-      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat']">
+      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat'] shadow-md">
         Traslados & Excursiones VIP
       </span>
       <h1 class="text-4xl sm:text-6xl font-extrabold font-['Montserrat'] tracking-tight leading-tight mb-6">
@@ -126,15 +150,15 @@ const faqs = [
     </div>
   </section>
 
-  <!-- CATALOGO DE TOURS -->
-  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- CATALOGO DE TOURS BENTO GRID -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Catálogo de Destinos</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] mt-2">
         Explora los Mejores Tours de la Isla
       </h2>
       <p class="text-sm text-gray-600 mt-2 max-w-2xl mx-auto">
-        Tours privados adaptados a tu itinerario. Haz clic en "Reservar Tour" para enviarnos un mensaje directo a WhatsApp con tu destino seleccionado.
+        Tours privados adaptados a tu itinerario. Haz clic en el botón para enviarnos un mensaje directo a WhatsApp con tu destino seleccionado.
       </p>
     </div>
 
@@ -143,31 +167,35 @@ const faqs = [
         const msg = encodeURIComponent(`¡Hola! TurisRam Dominican, me gustaría hacer una reserva del tour a: ${t.name}`);
         const waLink = `https://wa.me/18497527408?text=${msg}`;
         return (
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group">
             <div>
-              <div class="relative h-44 overflow-hidden">
+              <div class="relative h-48 overflow-hidden">
                 <img
                   src={t.image}
                   alt={t.name}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div class="absolute bottom-2 left-2 bg-[#123458]/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm font-['Montserrat']">
-                  📍 {t.location}
+                <div class="absolute top-3 left-3 bg-[#123458]/90 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md uppercase tracking-wider font-['Montserrat'] shadow-md border border-white/20">
+                  {t.badge}
+                </div>
+                <div class="absolute bottom-3 left-3 bg-[#030303]/80 text-[#D4C9BE] text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md font-['Montserrat'] flex items-center gap-1">
+                  <svg class="w-3 h-3 fill-current text-[#D4C9BE]" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  {t.location}
                 </div>
               </div>
 
-              <div class="p-5">
-                <h3 class="text-base font-bold text-[#123458] font-['Montserrat'] mb-2">{t.name}</h3>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-[#123458] font-['Montserrat'] mb-2">{t.name}</h3>
                 <p class="text-xs text-gray-600 leading-relaxed mb-4">{t.desc}</p>
               </div>
             </div>
 
-            <div class="p-5 pt-0">
+            <div class="p-6 pt-0">
               <a
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="block w-full text-center bg-[#123458] text-[#F1EFEC] font-bold text-xs py-2.5 rounded-xl hover:bg-[#D4C9BE] hover:text-[#123458] transition-all font-['Montserrat'] shadow-md"
+                class="block w-full text-center bg-[#123458] text-[#F1EFEC] font-bold text-xs uppercase tracking-wider py-3 rounded-xl hover:bg-[#D4C9BE] hover:text-[#123458] transition-all font-['Montserrat'] shadow-md border border-white/10"
               >
                 Reservar Tour por WhatsApp
               </a>
@@ -179,10 +207,10 @@ const faqs = [
   </section>
 
   <!-- FAQS SECCION ACCORDEON -->
-  <section class="py-20 bg-[#123458] text-white">
+  <section class="py-20 bg-[#123458] text-white border-t border-b border-white/10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
-        <span class="bg-[#D4C9BE] text-[#123458] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider font-['Montserrat']">
+        <span class="bg-[#D4C9BE] text-[#123458] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider font-['Montserrat'] shadow-md">
           Resuelve tus Dudas
         </span>
         <h2 class="text-3xl font-extrabold font-['Montserrat'] mt-3 text-white">
@@ -192,12 +220,12 @@ const faqs = [
 
       <div class="space-y-4">
         {faqs.map((f, i) => (
-          <details class="bg-[#030303]/40 border border-white/10 rounded-2xl p-5 group transition-all">
-            <summary class="font-bold text-base text-[#D4C9BE] font-['Montserrat'] cursor-pointer flex items-center justify-between list-none">
+          <details class="glass-card rounded-2xl p-6 group transition-all">
+            <summary class="font-bold text-sm sm:text-base text-[#D4C9BE] font-['Montserrat'] cursor-pointer flex items-center justify-between list-none">
               <span>{f.q}</span>
-              <span class="text-xl transition-transform group-open:rotate-180">+</span>
+              <span class="text-xl transition-transform group-open:rotate-180 text-[#D4C9BE]">+</span>
             </summary>
-            <p class="text-xs text-gray-300 mt-3 leading-relaxed border-t border-white/10 pt-3">
+            <p class="text-xs sm:text-sm text-gray-300 mt-3 leading-relaxed border-t border-white/10 pt-3">
               {f.a}
             </p>
           </details>

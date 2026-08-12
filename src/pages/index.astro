@@ -3,45 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import QuoteModal from '../components/QuoteModal.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 
-const services = [
-  {
-    title: "Traslado Aeropuerto -> Hotel",
-    desc: "Servicio puntual desde aeropuertos PUJ, SDQ, LRM, STI, POP directamente a tu hotel o resort. Chofer esperándote con cartel personalizado.",
-    icon: "✈️",
-    image: "/images/create-a-high-quality-image-showing-a-airport--gre.webp"
-  },
-  {
-    title: "Transporte Privado VIP",
-    desc: "Vehículos ejecutivos y SUVs climatizados de alta gama para ejecutivos, parejas y familias que buscan máxima comodidad y privacidad.",
-    icon: "🚐",
-    image: "/images/a-black-luxuru-van-c.webp"
-  },
-  {
-    title: "Transporte para Grupos",
-    desc: "Minibuses y buses de gran capacidad para eventos corporativos, bodas de destino, excursiones familiares y grupos turísticos.",
-    icon: "🚌",
-    image: "/images/generate-an-image-of-a-professional-transportation.webp"
-  },
-  {
-    title: "Tours y Excursiones Privadas",
-    desc: "Conoce las maravillas de República Dominicana: Isla Saona, Samaná, Los Haitises, Jarabacoa, Bahía de las Águilas y más a tu propio ritmo.",
-    icon: "🏝️",
-    image: "/images/create-a-stunning-and-vibrant-image-for-the--explo.webp"
-  }
-];
-
 const pillars = [
-  { title: "Sin Esperas en Aeropuerto", desc: "Monitoreamos tu vuelo en tiempo real. Tu chofer estará listo cuando aterrices.", icon: "⚡" },
-  { title: "Tarifa Fija Garantizada", desc: "El precio pactado es el precio final. Sin cargos ocultos ni sorpresas al llegar.", icon: "🏷️" },
-  { title: "Choferes Profesionales", desc: "Conductores certificados, bilingües y con amplio conocimiento de todo el país.", icon: "👨‍✈️" },
-  { title: "Atención 24/7 por WhatsApp", desc: "Soporte personalizado constante antes, durante y después de tu viaje.", icon: "📱" }
+  { 
+    title: "Sin Esperas en Aeropuerto", 
+    desc: "Monitoreamos tu vuelo en tiempo real. Tu chofer estará listo con cartel personalizado cuando aterrices.", 
+    svg: `<svg class="w-6 h-6 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>` 
+  },
+  { 
+    title: "Tarifa Fija Garantizada", 
+    desc: "El precio pactado previamente por WhatsApp es el precio final. Sin cargos ocultos ni sorpresas al llegar.", 
+    svg: `<svg class="w-6 h-6 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>` 
+  },
+  { 
+    title: "Choferes Profesionales", 
+    desc: "Conductores certificados, bilingües y con amplio conocimiento de todo el país y las principales rutas.", 
+    svg: `<svg class="w-6 h-6 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>` 
+  },
+  { 
+    title: "Atención 24/7 por WhatsApp", 
+    desc: "Soporte personalizado constante antes, durante y después de tu viaje a cualquier hora del día.", 
+    svg: `<svg class="w-6 h-6 text-[#D4C9BE] fill-current" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>` 
+  }
 ];
 ---
 
-<Layout title="TurisRam Dominican | Transporte Privado & Tours en Punta Cana">
+<Layout title="TurisRam Dominican | Transporte Privado VIP & Tours en Punta Cana">
   
   <!-- HERO SECTION -->
-  <section class="relative min-h-[90vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden">
+  <section class="relative min-h-[92vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-white/10">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img
@@ -49,97 +38,163 @@ const pillars = [
         alt="Transporte Privado TurisRam Dominican"
         class="w-full h-full object-cover animate-subtle-zoom opacity-40"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/70 to-[#030303]/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/75 to-[#030303]/85"></div>
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
-      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 font-['Montserrat'] shadow-lg">
-        República Dominicana & Punta Cana
-      </span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Montserrat'] tracking-tight leading-tight mb-6">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      
+      <!-- Live Status Pill -->
+      <div class="inline-flex items-center gap-2.5 bg-[#030303]/70 border border-[#D4C9BE]/40 px-4 py-2 rounded-full text-xs font-bold text-[#F1EFEC] mb-8 backdrop-blur-md font-['Montserrat'] shadow-lg">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+        <span class="text-[#D4C9BE]">Choferes VIP Disponibles en Tiempo Real</span>
+        <span class="hidden sm:inline text-gray-400">• PUJ, SDQ, LRM</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-['Montserrat'] tracking-tight leading-[1.1] mb-6">
         Transporte Privado & Tours VIP <br />
         <span class="text-[#D4C9BE]">Viaja Seguro y a Tarifa Fija</span>
       </h1>
+
       <p class="text-base sm:text-xl text-[#F1EFEC]/90 max-w-3xl mx-auto mb-10 font-normal leading-relaxed">
         Olvídate del estrés en el aeropuerto. Chofer profesional con cartel personalizado, vehículos climatizados de lujo y confirmación instantánea por WhatsApp.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
         <a
           href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20un%20traslado%20privado"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto bg-[#D4C9BE] text-[#123458] font-bold px-8 py-4 rounded-full text-base hover:bg-white transition-all duration-300 shadow-xl font-['Montserrat'] flex items-center justify-center gap-2"
+          class="w-full sm:w-auto bg-[#D4C9BE] text-[#123458] font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-2xl font-['Montserrat'] flex items-center justify-center gap-2 border border-white/20"
         >
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
+          <svg class="w-4 h-4 fill-current text-[#123458]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
           Cotizar por WhatsApp
         </a>
         <a
           href="/servicios"
-          class="w-full sm:w-auto bg-white/10 border border-white/30 text-white font-bold px-8 py-4 rounded-full text-base hover:bg-white/20 transition-all duration-300 font-['Montserrat']"
+          class="w-full sm:w-auto bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/20 transition-all duration-300 font-['Montserrat'] backdrop-blur-sm"
         >
           Explorar Servicios & Tours
         </a>
       </div>
+
     </div>
   </section>
 
-  <!-- QUOTE WIDGET -->
-  <section class="max-w-7xl mx-auto px-4 -mt-12 relative z-20">
+  <!-- QUOTE ENGINE WIDGET -->
+  <section class="max-w-7xl mx-auto px-4 -mt-14 relative z-20">
     <QuoteModal />
   </section>
 
-  <!-- NUESTROS SERVICIOS -->
-  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- BENTO GRID ASIMETRICO DE SERVICIOS & TOURS -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Servicios Principales</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] mt-2">
-        Soluciones de Transporte a Tu Medida
+      <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Catálogo Bento Executive</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#123458] font-['Montserrat'] mt-2 tracking-tight">
+        Servicios & Excursiones Destacadas
       </h2>
       <p class="text-gray-600 mt-2 max-w-2xl mx-auto text-sm">
-        Te llevamos a cualquier rincón de la República Dominicana con total confort, privacidad y conductores profesionales.
+        Descubre nuestra oferta de traslados ejecutivos y tours privados con chofer capacitado en República Dominicana.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {services.map(svc => (
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group">
-          <div class="relative h-48 overflow-hidden">
-            <img
-              src={svc.image}
-              alt={svc.title}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div class="absolute top-3 left-3 bg-[#123458] text-white p-2 rounded-xl text-xl shadow-md">
-              {svc.icon}
-            </div>
-          </div>
-          <div class="p-6 flex-grow flex flex-col justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-[#123458] font-['Montserrat'] mb-2">{svc.title}</h3>
-              <p class="text-xs text-gray-600 leading-relaxed mb-4">{svc.desc}</p>
-            </div>
+    <!-- Bento Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Bento Item 1 (Large Featured - Span 2 Cols, 2 Rows) -->
+      <div class="md:col-span-2 md:row-span-2 bg-[#123458] text-white rounded-3xl overflow-hidden shadow-2xl relative flex flex-col justify-between group border border-white/10">
+        <div class="absolute inset-0 z-0">
+          <img
+            src="/images/Isla Saona.webp"
+            alt="Tour Isla Saona VIP"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#123458] via-[#123458]/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 p-8 flex justify-between items-start">
+          <span class="bg-[#D4C9BE] text-[#123458] text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider font-['Montserrat'] shadow-md">
+            Tour Más Popular
+          </span>
+          <span class="glass-card text-white text-xs font-bold px-3 py-1 rounded-lg">
+            Full Day VIP
+          </span>
+        </div>
+
+        <div class="relative z-10 p-8">
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-['Montserrat'] mb-2 text-white">
+            Isla Saona VIP & Piscina Natural
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-200 leading-relaxed mb-6 max-w-lg">
+            Navega en catamarán de lujo por aguas cristalinas, disfruta de almuerzo buffet típico frente al mar y nada con estrellas de mar gigantes.
+          </p>
+
+          <div class="flex items-center gap-4 pt-4 border-t border-white/20">
             <a
-              href="https://wa.me/18497527408?text=¡Hola!%20Me%20interesa%20información%20sobre:%20"
+              href="https://wa.me/18497527408?text=¡Hola!%20Me%20interesa%20reservar%20el%20tour%20Isla%20Saona%20VIP"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs font-bold text-[#123458] hover:text-[#D4C9BE] inline-flex items-center gap-1 font-['Montserrat'] uppercase tracking-wider"
+              class="bg-[#D4C9BE] text-[#123458] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-white transition-all font-['Montserrat'] shadow-lg inline-flex items-center gap-2"
             >
-              Consultar Disponibilidad &rarr;
+              Reservar Tour por WhatsApp &rarr;
             </a>
           </div>
         </div>
-      ))}
+      </div>
+
+      <!-- Bento Item 2 (Standard Item 1) -->
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between group hover:shadow-2xl transition-all duration-300">
+        <div>
+          <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
+            <img src="/images/create-a-high-quality-image-showing-a-airport--gre.webp" alt="Traslado Aeropuerto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h4 class="font-bold text-lg text-[#123458] font-['Montserrat'] mb-1">Traslado Aeropuerto PUJ / SDQ</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Monitoreo de vuelo en vivo y chofer esperándote en la puerta con cartel personalizado.</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-[11px] font-bold text-[#123458] uppercase font-['Montserrat']">Puntualidad 100%</span>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20traslado%20de%20aeropuerto" class="text-xs font-bold text-[#123458] hover:text-[#D4C9BE]">Cotizar &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Bento Item 3 (Standard Item 2) -->
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between group hover:shadow-2xl transition-all duration-300">
+        <div>
+          <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
+            <img src="/images/a-black-luxuru-van-c.webp" alt="Transporte Privado VIP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h4 class="font-bold text-lg text-[#123458] font-['Montserrat'] mb-1">Van Ejecutivo VIP</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Vehículos ejecutivos sanitizados de alta gama con espacio de equipaje y Wi-Fi a bordo.</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-[11px] font-bold text-[#123458] uppercase font-['Montserrat']">Máximo Confort</span>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20van%20ejecutiva" class="text-xs font-bold text-[#123458] hover:text-[#D4C9BE]">Cotizar &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Bento Item 4 (Wide Horizontal Span 2 Cols) -->
+      <div class="md:col-span-2 bg-gradient-to-r from-[#123458] to-[#030303] text-white rounded-3xl p-8 shadow-xl border border-white/10 flex flex-col sm:flex-row items-center gap-6 group">
+        <div class="w-full sm:w-1/2 h-44 rounded-2xl overflow-hidden flex-shrink-0 relative">
+          <img src="/images/Samana.webp" alt="Excursión a Samaná" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="space-y-3">
+          <span class="bg-[#D4C9BE] text-[#123458] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Montserrat']">Naturaleza & Cascadas</span>
+          <h4 class="text-xl font-bold font-['Montserrat'] text-white">Samaná & Salto del Limón</h4>
+          <p class="text-xs text-gray-300 leading-relaxed">Explora bosques vírgenes, cabalgatas hacia el salto de agua y paisajes del Atlántico.</p>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20información%20del%20tour%20Samaná" class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-white transition-all font-['Montserrat']">Reservar Tour por WhatsApp</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- POR QUE ELEGIRNOS -->
-  <section class="py-20 bg-[#123458] text-white">
+  <section class="py-20 bg-[#123458] text-white border-t border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <span class="bg-[#D4C9BE] text-[#123458] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider font-['Montserrat']">
-          Ventajas TurisRam
+        <span class="bg-[#D4C9BE] text-[#123458] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider font-['Montserrat'] shadow-md">
+          Garantía de Servicio
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold font-['Montserrat'] mt-3 text-white">
           ¿Por qué Elegir TurisRam Dominican?
@@ -148,9 +203,11 @@ const pillars = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {pillars.map(pil => (
-          <div class="bg-[#030303]/30 border border-white/10 p-8 rounded-2xl text-center hover:border-[#D4C9BE] transition-all duration-300">
-            <div class="text-4xl mb-4">{pil.icon}</div>
-            <h3 class="text-lg font-bold text-[#D4C9BE] font-['Montserrat'] mb-2">{pil.title}</h3>
+          <div class="glass-card p-8 rounded-3xl text-center hover:border-[#D4C9BE]/50 transition-all duration-300 group">
+            <div class="w-14 h-14 bg-[#D4C9BE]/10 border border-[#D4C9BE]/30 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-[#D4C9BE] transition-colors">
+              <div class="group-hover:brightness-0 transition-all" set:html={pil.svg} />
+            </div>
+            <h3 class="text-base font-bold text-[#D4C9BE] font-['Montserrat'] mb-2">{pil.title}</h3>
             <p class="text-xs text-gray-300 leading-relaxed">{pil.desc}</p>
           </div>
         ))}
@@ -160,53 +217,5 @@ const pillars = [
 
   <!-- GOOGLE REVIEWS SECTION -->
   <GoogleReviews />
-
-  <!-- SECTION CONOCENOS -->
-  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-        <img
-          src="/images/create-a-warm-and-professional-header-image-for-th.webp"
-          alt="Equipo TurisRam Dominican"
-          class="w-full h-[400px] object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#123458]/80 to-transparent"></div>
-        <div class="absolute bottom-6 left-6 right-6 text-white">
-          <span class="font-bold text-xs uppercase tracking-widest text-[#D4C9BE]">TurisRam Dominican</span>
-          <p class="text-lg font-bold font-['Montserrat']">Comprometidos con tu tranquilidad y puntualidad en cada trayecto.</p>
-        </div>
-      </div>
-
-      <div class="space-y-6">
-        <span class="text-[#123458] font-bold text-xs uppercase tracking-widest font-['Montserrat']">Conócenos</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#123458] font-['Montserrat'] leading-tight">
-          Tu Socio de Confianza en Transporte Turístico
-        </h2>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          TurisRam Dominican nace para ofrecer a los visitantes de la República Dominicana una experiencia de transporte de primera categoría. Con choferes capacitados, flota propia moderna y atención constante las 24 horas, transformamos tu traslado en el inicio perfecto de tus vacaciones.
-        </p>
-
-        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
-          <div>
-            <span class="text-3xl font-extrabold text-[#123458] font-['Montserrat']">+500</span>
-            <p class="text-xs text-gray-500">Clientes Satisfechos</p>
-          </div>
-          <div>
-            <span class="text-3xl font-extrabold text-[#123458] font-['Montserrat']">+15</span>
-            <p class="text-xs text-gray-500">Destinos Turísticos</p>
-          </div>
-        </div>
-
-        <div>
-          <a
-            href="/nosotros"
-            class="inline-block bg-[#123458] text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-[#030303] transition-all duration-300 font-['Montserrat'] shadow-md"
-          >
-            Leer Más Sobre Nosotros &rarr;
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </Layout>

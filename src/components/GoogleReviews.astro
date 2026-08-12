@@ -33,14 +33,14 @@ const reviews = [
 ];
 ---
 
-<section class="py-16 bg-[#123458] text-white overflow-hidden relative">
+<section class="py-20 bg-[#123458] text-white overflow-hidden relative border-t border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
-    <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 font-['Montserrat']">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 font-['Montserrat'] shadow-md">
         <svg class="w-4 h-4 fill-current text-yellow-600" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        Reseñas Verificadas en Google
+        Reseñas Verificadas en Google Maps
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold font-['Montserrat'] text-white">
         Lo Que Dicen Nuestros Clientes
@@ -53,11 +53,11 @@ const reviews = [
     <!-- Reviews Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {reviews.map(rev => (
-        <div class="bg-[#030303]/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-[#D4C9BE]/50 transition-all duration-300">
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between hover:border-[#D4C9BE]/50 transition-all duration-300 group">
           <div>
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-[#D4C9BE] text-[#123458] font-bold flex items-center justify-center text-base">
+                <div class="w-10 h-10 rounded-full bg-[#D4C9BE] text-[#123458] font-bold flex items-center justify-center text-sm font-['Montserrat'] shadow-md">
                   {rev.avatar}
                 </div>
                 <div>
@@ -81,24 +81,24 @@ const reviews = [
             </p>
           </div>
 
-          <div class="mt-4 pt-3 border-t border-white/10 flex items-center gap-1 text-[11px] text-[#D4C9BE]">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Opinión verificada en Google</span>
+          <div class="mt-6 pt-3 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-[#D4C9BE]">
+            <svg class="w-3.5 h-3.5 fill-current text-[#D4C9BE]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Verificado en Google Business</span>
           </div>
         </div>
       ))}
     </div>
 
     <!-- CTA Google Review -->
-    <div class="text-center mt-10">
+    <div class="text-center mt-12">
       <a
         href={googleMapsLink}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] font-bold text-sm px-6 py-3 rounded-full hover:bg-white transition-all duration-300 font-['Montserrat'] shadow-lg"
+        class="inline-flex items-center gap-2 bg-[#D4C9BE] text-[#123458] font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-white transition-all duration-300 font-['Montserrat'] shadow-xl border border-white/20"
       >
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Dejar una Reseña en Google Maps
+        <svg class="w-4 h-4 fill-current text-[#123458]" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Ver Ficha Oficial en Google Maps
       </a>
     </div>
 

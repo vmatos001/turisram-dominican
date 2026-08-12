@@ -3,32 +3,48 @@ import Layout from '../layouts/Layout.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 
 const values = [
-  { title: "Puntualidad Absoluta", desc: "Monitoreamos vuelos y mantenemos tiempos de respuesta inmediatos para que nunca tengas que esperar.", icon: "⏱️" },
-  { title: "Seguridad y Confort", desc: "Vehículos sometidos a riguroso mantenimiento preventivo y equipados con aire acondicionado de alta capacidad.", icon: "🛡️" },
-  { title: "Trato Personalizado VIP", desc: "Atención cordial, choferes uniformados e identificados para brindarte la mejor bienvenida a Quisqueya.", icon: "⭐" },
-  { title: "Transparencia Total", desc: "Sin sorpresas ni cobros extras. Tarifas fijas previamente pactadas por WhatsApp.", icon: "🤝" }
+  { 
+    title: "Puntualidad Monitoreada", 
+    desc: "Rastreamos tu vuelo en tiempo real y coordinamos la llegada del chofer para evitar cualquier tiempo de espera.", 
+    svg: `<svg class="w-6 h-6 text-[#123458] fill-current" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>`
+  },
+  { 
+    title: "Seguridad y Mantenimiento", 
+    desc: "Vehículos sometidos a rigurosas inspecciones mecánicas periódicas, totalmente asegurados y climatizados.", 
+    svg: `<svg class="w-6 h-6 text-[#123458] fill-current" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`
+  },
+  { 
+    title: "Atención VIP Personalizada", 
+    desc: "Trato esmerado, conductores bilingües uniformados y comunicación constante antes, durante y después de tu traslado.", 
+    svg: `<svg class="w-6 h-6 text-[#123458] fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`
+  },
+  { 
+    title: "Tarifas Transparentes", 
+    desc: "Precios fijos previamente acordados sin cobros adicionales en aeropuertos ni suplementos sorpresa.", 
+    svg: `<svg class="w-6 h-6 text-[#123458] fill-current" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>`
+  }
 ];
 ---
 
 <Layout
   title="Sobre Nosotros | TurisRam Dominican Transporte Turístico"
-  description="Conoce la historia, misión y equipo de TurisRam Dominican. Especialistas en transporte privado y tours en República Dominicana."
+  description="Conoce la trayectoria, misión y estándares de calidad de TurisRam Dominican. Transporte privado VIP en República Dominicana."
 >
 
   <!-- HERO SECTION SOBRE NOSOTROS -->
-  <section class="relative min-h-[85vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden">
+  <section class="relative min-h-[85vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-white/10">
     <div class="absolute inset-0 z-0">
       <img
         src="/images/create-a-warm-and-professional-header-image-for-th.webp"
         alt="Chofer profesional TurisRam Dominican"
         class="w-full h-full object-cover animate-subtle-zoom opacity-45"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/70 to-[#030303]/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#123458]/75 to-[#030303]/85"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
-      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat']">
-        Nuestra Identidad & Valores
+      <span class="inline-block bg-[#D4C9BE] text-[#123458] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 font-['Montserrat'] shadow-md">
+        Nuestra Identidad & Estándares
       </span>
       <h1 class="text-4xl sm:text-6xl font-extrabold font-['Montserrat'] tracking-tight leading-tight mb-6">
         Bienvenidos a <span class="text-[#D4C9BE]">TurisRam Dominican</span>
@@ -65,29 +81,29 @@ const values = [
     </div>
   </section>
 
-  <!-- MISION Y VISION -->
-  <section class="py-20 bg-[#123458] text-white">
+  <!-- MISION Y VISION (BENTO GLASS CARDS) -->
+  <section class="py-20 bg-[#123458] text-white border-t border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Mision -->
-        <div class="bg-[#030303]/40 border border-white/10 p-8 rounded-3xl hover:border-[#D4C9BE] transition-all">
-          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
-            🎯
+        <div class="glass-card p-10 rounded-3xl hover:border-[#D4C9BE]/50 transition-all">
+          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center mb-6 shadow-md">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
           </div>
           <h3 class="text-2xl font-bold text-[#D4C9BE] font-['Montserrat'] mb-4">Nuestra Misión</h3>
-          <p class="text-sm text-gray-300 leading-relaxed">
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             Proporcionar un servicio de transporte turístico puntual, seguro y confortable en República Dominicana, garantizando tarifas justas y una atención personalizada que supere las expectativas de cada cliente desde su llegada al país.
           </p>
         </div>
 
         <!-- Vision -->
-        <div class="bg-[#030303]/40 border border-white/10 p-8 rounded-3xl hover:border-[#D4C9BE] transition-all">
-          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
-            🔭
+        <div class="glass-card p-10 rounded-3xl hover:border-[#D4C9BE]/50 transition-all">
+          <div class="w-14 h-14 bg-[#D4C9BE] text-[#123458] rounded-2xl flex items-center justify-center mb-6 shadow-md">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
           </div>
           <h3 class="text-2xl font-bold text-[#D4C9BE] font-['Montserrat'] mb-4">Nuestra Visión</h3>
-          <p class="text-sm text-gray-300 leading-relaxed">
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
             Ser la plataforma de transporte privado y tours más reconocida y recomendada en la República Dominicana, distinguida por nuestra innovación, flota moderna, choferes altamente calificados y compromiso con la satisfacción del turista.
           </p>
         </div>
@@ -107,9 +123,11 @@ const values = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {values.map(v => (
-        <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all">
-          <div class="text-4xl mb-4">{v.icon}</div>
-          <h3 class="text-lg font-bold text-[#123458] font-['Montserrat'] mb-2">{v.title}</h3>
+        <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all">
+          <div class="w-12 h-12 bg-[#123458]/10 rounded-2xl flex items-center justify-center mb-4">
+            <div set:html={v.svg} />
+          </div>
+          <h3 class="text-base font-bold text-[#123458] font-['Montserrat'] mb-2">{v.title}</h3>
           <p class="text-xs text-gray-600 leading-relaxed">{v.desc}</p>
         </div>
       ))}
@@ -125,7 +143,7 @@ const values = [
         href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20hacer%20una%20reserva%20de%20transporte%20con%20TurisRam"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block bg-[#D4C9BE] text-[#123458] font-bold px-8 py-4 rounded-full text-sm hover:bg-white transition-all shadow-xl font-['Montserrat']"
+        class="inline-block bg-[#D4C9BE] text-[#123458] font-bold px-8 py-4 rounded-full text-xs uppercase tracking-wider hover:bg-white transition-all shadow-xl font-['Montserrat']"
       >
         Reservar Traslado por WhatsApp
       </a>
