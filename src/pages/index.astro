@@ -338,37 +338,37 @@ const col3Images = [
     </div>
   </section>
 
-  <!-- SECCIÓN BANNER PANORÁMICO ANCHO CON SCROLL SCRUB DIAGONAL & ENCABEZADO EXACTO DE FOTO -->
+  <!-- SECCIÓN BANNER PANORÁMICO NITIDO CON SCROLL SCRUB DIAGONAL Y COPY GARANTÍA DE SERVICIO DENTRO -->
   <section class="py-16 sm:py-24 max-w-[94rem] mx-auto px-2 sm:px-6 relative z-20" id="scrub-road-section">
     
-    <!-- ENCABEZADO OFICIAL SEGÚN REFERENCIA DE FOTO USER: GARANTÍA DE SERVICIO + TÍTULO -->
-    <div class="text-center mb-12 relative z-10">
-      <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-6 py-2 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-xl inline-block mb-4">
-        GARANTÍA DE SERVICIO
-      </span>
-      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-none drop-shadow-2xl">
-        ¿POR QUÉ ELEGIR TURISRAM DOMINICANA?
-      </h2>
-    </div>
-
-    <!-- Contenedor Marco Cápsula Panorámico Ampliado (Radius Mask Tourvex Style) -->
+    <!-- Contenedor Marco Cápsula Panorámico Ampliado con Imagen Nítida HD -->
     <div class="relative rounded-[3.5rem] sm:rounded-[4.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#0A0A0A] p-6 sm:p-14 lg:p-20 text-center text-white">
       
-      <!-- Imagen Parallax de Fondo (Carretera/Paisaje Dominicano) -->
+      <!-- Imagen Parallax de Fondo (HD Nitidez Total con Opacidad / Brillo Realzado) -->
       <div class="absolute inset-0 z-0">
         <img
           src="/images/create-a-high-quality-image-showing-a-airport--gre.webp"
           alt="Carretera TurisRam Dominicana"
-          class="w-full h-full object-cover object-center brightness-75 scale-105"
+          class="w-full h-full object-cover object-center brightness-95 opacity-90 scale-105"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/40 to-[#0A0A0A]/30"></div>
+        <!-- Overlay degradado suave inferior para contraste legibilidad -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/95 via-[#0A0A0A]/30 to-[#0A0A0A]/20"></div>
       </div>
 
-      <!-- Contenido Central del Banner -->
-      <div class="relative z-10 max-w-4xl mx-auto space-y-6 mb-16">
-        <h3 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-tight drop-shadow-xl">
-          Prepárate para explorar y descubrir tu mundo.
-        </h3>
+      <!-- Contenido Central del Banner: CÁPSULA DORADA + TÍTULO H2 IMPONENTE DENTRO -->
+      <div class="relative z-10 max-w-4xl mx-auto space-y-5 mb-16">
+        
+        <!-- Cápsula Dorada Garantía de Servicio -->
+        <div>
+          <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-6 py-2 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-2xl inline-block">
+            GARANTÍA DE SERVICIO
+          </span>
+        </div>
+
+        <!-- Título H2 Imponente -->
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)]">
+          ¿POR QUÉ ELEGIR TURISRAM DOMINICANA?
+        </h2>
 
         <!-- Botón Giratorio SVG Translúcido con EFECTO MAGNÉTICO al Cursor -->
         <div class="flex justify-center pt-4">
@@ -484,7 +484,7 @@ const col3Images = [
   }
 </style>
 
-<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL SCRUB DIAGONAL EN TIEMPO REAL (REVERSIBLE FOTOGRAMA A FOTOGRAMA) -->
+<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL SCRUB DIAGONAL EN TIEMPO REAL -->
 <script is:inline>
   // 1. Botón Magnético que persigue el cursor suavemente
   const roadSection = document.getElementById('scrub-road-section');
