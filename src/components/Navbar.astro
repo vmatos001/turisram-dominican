@@ -12,75 +12,71 @@ const navLinks = [
 ---
 
 <!-- TOP ANNOUNCEMENT BAR -->
-<div class="bg-[#050505] text-[#F7F5F0] text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+<div class="bg-[#030303] text-[#F7F5F0] text-xs py-2.5 px-4 border-b border-white/10 hidden sm:block">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <div class="flex items-center gap-6 text-gray-300">
       <span class="flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-[#D4AF37] fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Soporte 24/7: <a href="tel:+18497527408" class="text-[#D4AF37] hover:underline font-bold">+1 (849) 752-7408</a>
+        Soporte VIP 24/7: <a href="tel:+18497527408" class="text-[#D4AF37] hover:underline font-bold">+1 (849) 752-7408</a>
       </span>
       <span class="flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-[#3B6998] fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Punta Cana, Santo Domingo, Santiago, Puerto Plata
       </span>
     </div>
-    <div class="flex items-center gap-4 text-gray-400 font-['Montserrat'] text-[11px]">
-      <span class="text-[#D4AF37] font-bold italic">"Viaja cómodo. Llega seguro."</span>
+    
+    <!-- Eslogan Oficial -->
+    <div class="flex items-center gap-4 text-gray-400 font-['Barlow_Condensed'] text-xs">
+      <span class="text-[#D4AF37] font-bold italic font-['Lora']">"Viaja cómodo. Llega seguro."</span>
       <span>|</span>
-      <span>Transfers & Experiencias</span>
+      <span class="uppercase tracking-widest text-gray-300">Transfers & Experiencias</span>
     </div>
   </div>
 </div>
 
-<!-- MAIN NAVBAR -->
+<!-- MAIN NAVBAR - MODULO 1 REDISEÑADO -->
 <header class="sticky top-0 z-40 bg-[#0A0A0A]/95 text-white shadow-2xl border-b border-[#D4AF37]/20 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 gap-4">
       
-      <!-- Logo Oficial de Marca -->
-      <a href="/" class="flex items-center gap-3.5 group">
+      <!-- Imagen Oficial del Logo (reemplaza cuadrado blanco y texto suelto) -->
+      <a href="/" class="flex items-center group flex-shrink-0">
         <img 
-          src="/images/TurisRam logo.png" 
-          alt="TurisRam Dominicana Logo" 
-          class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          src="/images/logo-turisram.webp" 
+          alt="TurisRam Dominicana — Transfers & Experiencias" 
+          class="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         />
-        <div class="flex flex-col">
-          <span class="font-extrabold text-xl tracking-tight text-[#D4AF37] font-['Montserrat'] leading-none">
-            TurisRam <span class="text-[#3B6998] font-bold">DOMINICANA</span>
-          </span>
-          <span class="text-[9px] uppercase tracking-widest text-gray-300 font-semibold mt-1">TRANSFERS & EXPERIENCIAS</span>
-        </div>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        {navLinks.map(link => {
-          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
-          return (
-            <a
-              href={link.href}
-              class={`text-xs font-bold uppercase tracking-wider transition-all duration-200 py-1 font-['Montserrat'] relative group ${
-                isActive 
-                  ? 'text-[#D4AF37]' 
-                  : 'text-[#F7F5F0]/80 hover:text-[#D4AF37]'
-              }`}
-            >
-              {link.label}
-              <span class={`absolute bottom-0 left-0 h-0.5 bg-[#D4AF37] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-            </a>
-          );
-        })}
-      </nav>
+      <!-- Navegación Escritorio Organizada en Una Sola Línea Horizontal -->
+      <div class="hidden md:flex items-center gap-6 lg:gap-8 flex-shrink-0">
+        <nav class="flex items-center gap-6 lg:gap-8 whitespace-nowrap">
+          {navLinks.map(link => {
+            const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+            return (
+              <a
+                href={link.href}
+                class={`text-[11px] lg:text-xs font-bold uppercase tracking-wider transition-all duration-200 py-1.5 font-['Barlow_Condensed'] relative group flex items-center leading-none ${
+                  isActive 
+                    ? 'text-[#D4AF37]' 
+                    : 'text-[#F7F5F0]/85 hover:text-[#D4AF37]'
+                }`}
+              >
+                {link.label}
+                <span class={`absolute bottom-0 left-0 h-0.5 bg-[#D4AF37] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </a>
+            );
+          })}
+        </nav>
 
-      <!-- CTA Button Desktop -->
-      <div class="hidden md:flex items-center gap-4">
+        <!-- Botón CTA con Proporción Elegante (sin chocar con Contacto) -->
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="bg-[#D4AF37] text-[#050505] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-white hover:shadow-xl transition-all duration-300 font-['Montserrat'] flex items-center gap-2 border border-[#D4AF37]/50 shadow-md"
+          class="bg-[#D4AF37] text-[#0A0A0A] font-extrabold text-[11px] uppercase tracking-wider px-4.5 py-2.5 rounded-full hover:bg-white transition-all duration-300 font-['Barlow_Condensed'] flex items-center gap-1.5 shadow-md border border-[#D4AF37]/40 flex-shrink-0 whitespace-nowrap hover:scale-105"
         >
-          <svg class="w-4 h-4 fill-current text-[#050505]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
+          <svg class="w-3.5 h-3.5 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
           Cotizar Traslado
         </a>
       </div>
@@ -103,14 +99,14 @@ const navLinks = [
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#050505] border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+  <div id="mobile-menu" class="hidden md:hidden bg-[#0A0A0A] border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
     {navLinks.map(link => {
       const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
       return (
         <a
           href={link.href}
-          class={`block px-4 py-3 rounded-xl text-base font-bold font-['Montserrat'] ${
-            isActive ? 'bg-[#D4AF37] text-[#050505]' : 'text-[#F7F5F0] hover:bg-white/10'
+          class={`block px-4 py-3 rounded-xl text-sm font-bold font-['Barlow_Condensed'] ${
+            isActive ? 'bg-[#D4AF37] text-[#0A0A0A]' : 'text-[#F7F5F0] hover:bg-white/10'
           }`}
         >
           {link.label}
@@ -122,7 +118,7 @@ const navLinks = [
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="block w-full text-center bg-[#D4AF37] text-[#050505] font-bold py-3.5 rounded-xl font-['Montserrat'] uppercase text-xs tracking-wider"
+        class="block w-full text-center bg-[#D4AF37] text-[#0A0A0A] font-bold py-3 rounded-full font-['Barlow_Condensed'] uppercase text-xs tracking-wider"
       >
         Cotizar por WhatsApp
       </a>
