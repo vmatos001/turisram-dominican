@@ -26,6 +26,35 @@ const pillars = [
   }
 ];
 
+const faqs = [
+  {
+    q: "¿Cómo funciona la recepción en el aeropuerto con el cartel personalizado?",
+    a: "Monitoreamos tu vuelo en tiempo real. Al salir de la terminal (PUJ, SDQ, LRM), tu chofer certificado estará esperándote en la puerta de llegadas sosteniendo un cartel claro con tu nombre completo."
+  },
+  {
+    q: "¿La tarifa cotizada por WhatsApp incluye todos los peajes e impuestos?",
+    a: "Sí, 100% garantizado. El precio acordado previamente por WhatsApp es el precio final que pagas. Sin cargos sorpresas por retraso de vuelo, equipaje o peajes."
+  },
+  {
+    q: "¿Qué tipo de vehículos utilizan para los traslados ejecutivos y VIP?",
+    a: "Disponemos de vans ejecutivas y SUVs de lujo sanitizadas, equipadas con aire acondicionado de alta potencia, wifi y asientos reclinables de máximo confort."
+  },
+  {
+    q: "¿Con qué anticipación debo reservar mi traslado o excursión?",
+    a: "Recomendamos reservar con al menos 24 horas de anticipación. Sin embargo, procesamos cotizaciones exprés por WhatsApp en tiempo real para traslados inmediatos."
+  }
+];
+
+const tickerItems = [
+  "Traslados Aeropuerto PUJ / SDQ / LRM",
+  "Tours Privados Isla Saona & Catamarán",
+  "Vehículos Ejecutivos VIP Sanitizados",
+  "Samaná & Salto del Limón",
+  "Monitoreo de Vuelo en Tiempo Real",
+  "Asistencia VIP 24/7 por WhatsApp",
+  "Excursiones en Santo Domingo & Jarabacoa"
+];
+
 // Sets de imagenes para las 3 columnas del carrusel inclinado
 const col1Images = [
   "/images/a-black-luxuru-van-c.webp",
@@ -54,17 +83,16 @@ const col3Images = [
 
 <Layout title="TurisRam Dominicana | Transfers & Experiencias — Viaja cómodo. Llega seguro.">
   
-  <!-- MODULO 2: HERO SECTION CON FONDO SANTO DOMINGO NOCHE ULTRA SUTIL (OPACIDAD 25% + FILTRO NEGRO PROFUNDO #0A0A0A) -->
+  <!-- MODULO 2: HERO SECTION CON ESTRUCTURA TOURVEX -->
   <section class="relative min-h-screen bg-[#0A0A0A] text-white overflow-hidden border-b border-[#D4AF37]/20 flex items-center py-12 lg:py-16">
     
-    <!-- Imagen de fondo Santo Domingo Noche (.webp) con opacidad muy baja (20%-25%) -->
+    <!-- Imagen de fondo Santo Domingo Noche (.webp) con opacidad 25% -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/santo-domingo-noche.webp"
         alt="Santo Domingo Noche — TurisRam Dominicana"
         class="w-full h-full object-cover object-center animate-subtle-zoom scale-105 opacity-25 mix-blend-luminosity"
       />
-      <!-- Filtro negro profundo e intenso para total jerarquía del copy y el carrusel de imágenes -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-[#0A0A0A]/85"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3B6998]/20 via-transparent to-[#0A0A0A]"></div>
     </div>
@@ -72,7 +100,7 @@ const col3Images = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 relative">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- COLUMNA IZQUIERDA: COPY OFICIAL TURISRAM (PROTAGONISTA PRINCIPAL DE JERARQUÍA) -->
+        <!-- COLUMNA IZQUIERDA: COPY OFICIAL TURISRAM -->
         <div class="lg:col-span-6 z-20 space-y-6 text-left">
           
           <!-- Live Status Pill -->
@@ -109,10 +137,10 @@ const col3Images = [
               href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20un%20traslado%20privado"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full sm:w-auto bg-[#D4AF37] text-[#0A0A0A] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-2xl font-['Barlow_Condensed'] flex items-center justify-center gap-2 border border-white/20 hover:scale-105"
+              class="w-full sm:w-auto butn-arrow hover:scale-105"
             >
-              <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
-              Cotizar por WhatsApp &rarr;
+              <span>Cotizar por WhatsApp</span>
+              <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
             </a>
             <a
               href="/servicios"
@@ -124,13 +152,13 @@ const col3Images = [
 
         </div>
 
-        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS (PROTAGONISTA VISUAL SECUNDARIO) -->
+        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS -->
         <div class="lg:col-span-6 relative h-[650px] sm:h-[750px] flex items-center justify-center select-none">
           
           <!-- Contenedor Continuo Inclinado a 6 Grados Exactos -->
           <div class="transform rotate-[6deg] scale-105 flex gap-3 sm:gap-5 justify-center items-start w-full">
             
-            <!-- Columna 1 (Izquierda) - Pausa al Hover -->
+            <!-- Columna 1 (Izquierda) -->
             <div class="animate-scroll-col1 flex flex-col gap-3 sm:gap-4 flex-shrink-0 hover:[animation-play-state:paused]">
               {[...col1Images, ...col1Images, ...col1Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37]/80 cursor-pointer">
@@ -139,7 +167,7 @@ const col3Images = [
               ))}
             </div>
 
-            <!-- Columna 2 (Centro - 50% MAS LENTA) - Pausa al Hover -->
+            <!-- Columna 2 (Centro - 50% MAS LENTA) -->
             <div class="animate-scroll-col2 flex flex-col gap-3 sm:gap-4 flex-shrink-0 -mt-10 hover:[animation-play-state:paused]">
               {[...col2Images, ...col2Images, ...col2Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
@@ -148,7 +176,7 @@ const col3Images = [
               ))}
             </div>
 
-            <!-- Columna 3 (Derecha) - Pausa al Hover -->
+            <!-- Columna 3 (Derecha) -->
             <div class="animate-scroll-col3 flex flex-col gap-3 sm:gap-4 flex-shrink-0 hover:[animation-play-state:paused]">
               {[...col3Images, ...col3Images, ...col3Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37]/80 cursor-pointer">
@@ -165,14 +193,30 @@ const col3Images = [
     </div>
   </section>
 
-  <!-- QUOTE ENGINE WIDGET -->
-  <section class="max-w-7xl mx-auto px-4 -mt-10 relative z-20">
+  <!-- TOURVEX TICKER SCROLLING RIBBON -->
+  <div class="ticker-wrapper z-30">
+    <div class="ticker-content">
+      {[...tickerItems, ...tickerItems, ...tickerItems].map((item) => (
+        <span class="ticker-item">
+          <span class="text-[#D4AF37]">✦</span>
+          <span>{item}</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- MODULO 3: QUOTE ENGINE WIDGET -->
+  <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
     <QuoteModal />
   </section>
 
-  <!-- BENTO GRID ASIMETRICO DE SERVICIOS & TOURS -->
-  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+  <!-- MODULO 4: BENTO GRID DE SERVICIOS & TOURS CON BOTÓN GIRATORIO SVG TOURVEX -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    
+    <!-- Watermark Typographic Background -->
+    <div class="bg-text-style">TurisRam</div>
+
+    <div class="text-center mb-16 relative z-10">
       <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest font-['Barlow_Condensed']">Catálogo Bento Executive</span>
       <h2 class="text-3xl sm:text-5xl font-extrabold text-[#F7F5F0] font-['Barlow_Condensed'] mt-2 tracking-tight uppercase">
         Servicios & Excursiones Destacadas
@@ -180,12 +224,31 @@ const col3Images = [
       <p class="text-gray-400 mt-2 max-w-2xl mx-auto text-sm font-['Barlow_Semi_Condensed']">
         Descubre nuestra oferta de traslados ejecutivos y tours privados en la República Dominicana.
       </p>
+
+      <!-- Botón Giratorio SVG Estilo Tourvex -->
+      <div class="mt-8 flex justify-center">
+        <a href="#quote-form-v2" class="relative inline-flex items-center justify-center w-28 h-28 group">
+          <svg class="w-full h-full rotate-circle-svg text-[#D4AF37] fill-current" viewBox="0 0 500 500">
+            <defs>
+              <path id="textcircle-tourvex" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+            </defs>
+            <text font-size="34" font-weight="bold" letter-spacing="4">
+              <textPath href="#textcircle-tourvex" startOffset="0" fill="#D4AF37">
+                TURISRAM DOMINICANA • COTIZAR AHORA •
+              </textPath>
+            </text>
+          </svg>
+          <div class="absolute w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center text-[#0A0A0A] font-bold shadow-xl group-hover:bg-white transition-colors">
+            &darr;
+          </div>
+        </a>
+      </div>
     </div>
 
     <!-- Bento Grid Layout Tourvex Style -->
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
       
-      <!-- Bento Item 1 (Large Featured - Span 2 Cols, 2 Rows) -->
+      <!-- Bento Item 1 (Large Featured) -->
       <div class="md:col-span-2 md:row-span-2 bg-[#0A0A0A] text-white rounded-3xl overflow-hidden shadow-2xl relative flex flex-col justify-between group border border-[#D4AF37]/30 zoom-image-wrapper">
         <div class="absolute inset-0 z-0">
           <img
@@ -218,15 +281,16 @@ const col3Images = [
               href="https://wa.me/18497527408?text=¡Hola!%20Me%20interesa%20reservar%20el%20tour%20Isla%20Saona%20VIP"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-[#D4AF37] text-[#0A0A0A] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-white transition-all font-['Barlow_Condensed'] shadow-lg inline-flex items-center gap-2"
+              class="butn-arrow"
             >
-              Reservar Tour por WhatsApp &rarr;
+              <span>Reservar Tour por WhatsApp</span>
+              <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Bento Item 2 (Standard Item 1) -->
+      <!-- Bento Item 2 -->
       <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all duration-300 zoom-image-wrapper">
         <div>
           <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
@@ -237,11 +301,11 @@ const col3Images = [
         </div>
         <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
           <span class="text-[11px] font-bold text-[#3B6998] uppercase font-['Barlow_Condensed']">Puntualidad 100%</span>
-          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20traslado%20de%20aeropuerto" class="text-xs font-bold text-[#D4AF37] hover:underline font-[#Barlow_Condensed']">Cotizar &rarr;</a>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20traslado%20de%20aeropuerto" class="text-xs font-bold text-[#D4AF37] hover:underline font-['Barlow_Condensed']">Cotizar &rarr;</a>
         </div>
       </div>
 
-      <!-- Bento Item 3 (Standard Item 2) -->
+      <!-- Bento Item 3 -->
       <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all duration-300 zoom-image-wrapper">
         <div>
           <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
@@ -252,11 +316,11 @@ const col3Images = [
         </div>
         <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
           <span class="text-[11px] font-bold text-[#3B6998] uppercase font-['Barlow_Condensed']">Máximo Confort</span>
-          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20van%20ejecutiva" class="text-xs font-bold text-[#D4AF37] hover:underline font-[#Barlow_Condensed']">Cotizar &rarr;</a>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20van%20ejecutiva" class="text-xs font-bold text-[#D4AF37] hover:underline font-['Barlow_Condensed']">Cotizar &rarr;</a>
         </div>
       </div>
 
-      <!-- Bento Item 4 (Wide Horizontal Span 2 Cols) -->
+      <!-- Bento Item 4 -->
       <div class="md:col-span-2 glass-card text-white rounded-3xl p-8 shadow-xl flex flex-col sm:flex-row items-center gap-6 group hover:border-[#D4AF37]/50 transition-all zoom-image-wrapper">
         <div class="w-full sm:w-1/2 h-44 rounded-2xl overflow-hidden flex-shrink-0 relative">
           <img src="/images/Samana.webp" alt="Excursión a Samaná" class="w-full h-full object-cover" />
@@ -272,8 +336,53 @@ const col3Images = [
     </div>
   </section>
 
+  <!-- ACORDEÓN DE PREGUNTAS FRECUENTES (FAQS TOURVEX STYLE) -->
+  <section class="py-24 bg-[#050505] text-white border-t border-b border-[#D4AF37]/20 relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Imagenes Laterales Tourvex Style -->
+        <div class="lg:col-span-5 hidden lg:flex gap-6 items-center justify-center">
+          <div class="w-48 h-80 rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl">
+            <img src="/images/create-a-high-quality-image-showing-a-airport--gre.webp" alt="FAQ TurisRam" class="w-full h-full object-cover" />
+          </div>
+          <div class="w-48 h-80 rounded-[2.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl mt-16">
+            <img src="/images/a-black-luxuru-van-c.webp" alt="FAQ TurisRam Van" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Preguntas Frecuentes Acordeon -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest font-['Barlow_Condensed']">Preguntas Frecuentes</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-['Barlow_Condensed'] mt-2 text-white uppercase">
+              Resolvemos Tus Dudas Al Instante
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="glass-card rounded-2xl p-6 border border-white/10 group cursor-pointer transition-all">
+                <summary class="font-bold text-base text-[#D4AF37] font-['Barlow_Condensed'] uppercase flex items-center justify-between list-none">
+                  <span>{faq.q}</span>
+                  <span class="text-[#D4AF37] text-xl transition-transform group-open:rotate-180">+</span>
+                </summary>
+                <p class="text-xs text-gray-300 leading-relaxed font-['Barlow_Semi_Condensed'] mt-3 pt-3 border-t border-white/10">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- POR QUE ELEGIRNOS -->
-  <section class="py-20 bg-[#0A0A0A] text-white border-t border-b border-[#D4AF37]/20">
+  <section class="py-20 bg-[#0A0A0A] text-white border-b border-[#D4AF37]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider font-['Barlow_Condensed'] shadow-md">

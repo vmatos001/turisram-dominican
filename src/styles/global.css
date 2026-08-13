@@ -52,6 +52,106 @@
   border: 1px solid rgba(59, 105, 152, 0.15);
 }
 
+/* =========================================================
+   TOURVEX PREMIUM ANIMATIONS & LAYOUT STYLES
+   ========================================================= */
+
+/* 1. Ticker Scrolling Ribbon (Tourvex Ticker) */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: #050505;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 14px 0;
+}
+
+.ticker-content {
+  display: inline-flex;
+  gap: 3rem;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.ticker-item {
+  display: inline-flex;
+  items-center: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #F7F5F0;
+}
+
+/* 2. Watermark Background Typography (Tourvex Big Text Style) */
+.bg-text-style {
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  font-family: var(--font-heading);
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(212, 175, 55, 0.03);
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* 3. Circular Rotating Text Button (Tourvex Floating Wheel) */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-circle-svg {
+  animation: spin-slow 18s linear infinite;
+}
+
+/* 4. Arrow Button Tourvex Style (butn-arrow) */
+.butn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #D4AF37;
+  color: #0A0A0A;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.butn-arrow:hover {
+  background: #ffffff;
+  color: #0A0A0A;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.4);
+}
+
+.arrow-wrap {
+  width: 26 h-26;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.15);
+  display: flex;
+  align-items: center;
+  justify-center: center;
+}
+
 /* Vertical Carousel Keyframe Animations (50% Mas Lentas) */
 @keyframes scroll-up-col1 {
   0% { transform: translateY(0); }
@@ -73,7 +173,7 @@
 }
 
 .animate-scroll-col2 {
-  animation: scroll-up-col2 96s linear infinite; /* 50% mas lenta para la columna del centro */
+  animation: scroll-up-col2 96s linear infinite;
 }
 
 .animate-scroll-col3 {
