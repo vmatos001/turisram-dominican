@@ -210,7 +210,7 @@ const col3Images = [
     <QuoteModal />
   </section>
 
-  <!-- MODULO 4: CATÁLOGO EXECUTIVE VIP — SOMBRA CLARA EN HOVER Y BOTÓN SVG MEJORADO -->
+  <!-- MODULO 4: CATÁLOGO EXECUTIVE VIP -->
   <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     
     <!-- Watermark Typographic Background -->
@@ -247,7 +247,7 @@ const col3Images = [
       </div>
     </div>
 
-    <!-- Grid de Tarjetas Catálogo con Sombra Clara Trasera en Hover -->
+    <!-- Grid de Tarjetas Catálogo -->
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
       
       <!-- Bento Item 1 (Large Featured - Isla Saona) -->
@@ -307,7 +307,7 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- Bento Item 3 (Van Ejecutivo VIP — Imagen Temporal de Alta Calidad) -->
+      <!-- Bento Item 3 (Van Ejecutivo VIP) -->
       <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group border border-white/10 hover:shadow-[0_20px_50px_rgba(212,175,55,0.22)] hover:border-[#D4AF37]/60 transition-all duration-300 zoom-image-wrapper">
         <div>
           <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
@@ -336,6 +336,101 @@ const col3Images = [
       </div>
 
     </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN DEBAJO DEL MÓDULO 4: BANNER MARCO CÁPSULA TOURVEX + 4 TARJETAS BLANCAS FLOTANTES -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    
+    <!-- Contenedor Marco Cápsula Gigante (Radius Mask Tourvex Style) -->
+    <div class="relative rounded-[3.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#0A0A0A] p-8 sm:p-14 lg:p-20 text-center text-white">
+      
+      <!-- Imagen Parallax de Fondo (Carretera/Paisaje Dominicano) -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/images/create-a-high-quality-image-showing-a-airport--gre.webp"
+          alt="Carretera TurisRam Dominicana"
+          class="w-full h-full object-cover object-center brightness-75 scale-105"
+        />
+        <!-- Overlay sutil con brillo cálido -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/40 to-[#0A0A0A]/30"></div>
+      </div>
+
+      <!-- Contenido Central del Banner -->
+      <div class="relative z-10 max-w-3xl mx-auto space-y-6 mb-16">
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-tight drop-shadow-xl">
+          Prepárate para explorar y descubrir tu mundo.
+        </h2>
+
+        <!-- Botón Giratorio SVG Translúcido Central -->
+        <div class="flex justify-center pt-2">
+          <div class="relative inline-flex items-center justify-center w-32 h-32 group">
+            <svg class="w-full h-full rotate-circle-svg text-white/90 fill-current drop-shadow-lg" viewBox="0 0 500 500">
+              <defs>
+                <path id="textcircle-road" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+              </defs>
+              <text font-size="40" font-weight="800" letter-spacing="5" fill="#FFFFFF">
+                <textPath href="#textcircle-road" startOffset="0">
+                  RUTAS CULTURALES • ESCAPADAS NATURALES •
+                </textPath>
+              </text>
+            </svg>
+            <div class="absolute w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 rounded-full flex items-center justify-center text-white font-extrabold text-xl shadow-xl group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-all">
+              &darr;
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de 4 Tarjetas Blancas Flotantes Inferiores -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        
+        <!-- Tarjeta 1: Rincones Ocultos -->
+        <div class="bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-[#3B6998]/10 text-[#3B6998] flex items-center justify-center mb-4 group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-colors">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
+          <h3 class="font-extrabold text-lg font-['Barlow_Condensed'] text-[#0A0A0A] mb-1 uppercase">Lugares Exclusivos</h3>
+          <p class="text-xs text-gray-500 font-['Barlow_Semi_Condensed']">Playas vírgenes y destinos caribeños reservados.</p>
+        </div>
+
+        <!-- Tarjeta 2: Aventuras de Viaje -->
+        <div class="bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-[#3B6998]/10 text-[#3B6998] flex items-center justify-center mb-4 group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-colors">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+          </div>
+          <h3 class="font-extrabold text-lg font-['Barlow_Condensed'] text-[#0A0A0A] mb-1 uppercase">Aventuras de Viaje</h3>
+          <p class="text-xs text-gray-500 font-['Barlow_Semi_Condensed']">Traslados privados exprés con chofer VIP.</p>
+        </div>
+
+        <!-- Tarjeta 3: Naturaleza & Cultura -->
+        <div class="bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-[#3B6998]/10 text-[#3B6998] flex items-center justify-center mb-4 group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-colors">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2L7.5 11 2 18h20L14 6z"/></svg>
+          </div>
+          <h3 class="font-extrabold text-lg font-['Barlow_Condensed'] text-[#0A0A0A] mb-1 uppercase">Naturaleza & Cultura</h3>
+          <p class="text-xs text-gray-500 font-['Barlow_Semi_Condensed']">Cascadas, montañas y cultura dominicana.</p>
+        </div>
+
+        <!-- Tarjeta 4: Historias de Viaje -->
+        <div class="bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+          <div class="w-16 h-16 rounded-full bg-[#3B6998]/10 text-[#3B6998] flex items-center justify-center mb-4 group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-colors">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+          </div>
+          <h3 class="font-extrabold text-lg font-['Barlow_Condensed'] text-[#0A0A0A] mb-1 uppercase">Experiencias Únicas</h3>
+          <p class="text-xs text-gray-500 font-['Barlow_Semi_Condensed']">Recuerdos fotográficos e historias inolvidables.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Ticker Infinito de Marca de Agua Blanca en Parte Inferior -->
+    <div class="mt-8 overflow-hidden whitespace-nowrap opacity-15 pointer-events-none select-none">
+      <div class="inline-flex gap-8 animate-scroll-col1 text-4xl sm:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-widest">
+        <span>AIRPORT TRANSFERS ✦ TRAVEL EXPERIENCES ✦ PRIVATE TOURS ✦ PUNTA CANA ✦ SANTO DOMINGO ✦ SAMANÁ ✦</span>
+      </div>
+    </div>
+
   </section>
 
   <!-- ACORDEÓN DE PREGUNTAS FRECUENTES (FAQS TOURVEX STYLE) -->
