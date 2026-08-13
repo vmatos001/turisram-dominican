@@ -54,17 +54,17 @@ const col3Images = [
 
 <Layout title="TurisRam Dominicana | Transfers & Experiencias — Viaja cómodo. Llega seguro.">
   
-  <!-- MODULO 2: HERO SECTION CON ESTRUCTURA TOURVEX + CARRUSEL VERTICAL INCLINADO (12° - 15°) -->
-  <section class="relative min-h-[90vh] bg-[#0A0A0A] text-white overflow-hidden border-b border-[#D4AF37]/20 flex items-center py-12 lg:py-0">
+  <!-- MODULO 2: HERO SECTION REAJUSTADO CON INCLINACIÓN DE 10° Y TARJETAS CONTINUAS MÁS DELGADAS -->
+  <section class="relative min-h-screen bg-[#0A0A0A] text-white overflow-hidden border-b border-[#D4AF37]/20 flex items-center py-12 lg:py-16">
     
-    <!-- Sutil degradado de fondo -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3B6998]/20 via-[#0A0A0A] to-[#0A0A0A] pointer-events-none"></div>
+    <!-- Degradado sutil de fondo -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3B6998]/15 via-[#0A0A0A] to-[#0A0A0A] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- COLUMNA IZQUIERDA: COPY OFICIAL TURISRAM -->
-        <div class="lg:col-span-6 z-10 space-y-6 text-left">
+        <div class="lg:col-span-6 z-20 space-y-6 text-left">
           
           <!-- Live Status Pill -->
           <div class="inline-flex items-center gap-2.5 bg-[#0A0A0A]/90 border border-[#D4AF37]/40 px-4 py-2 rounded-full text-xs font-bold text-[#F7F5F0] backdrop-blur-md font-['Barlow_Condensed'] uppercase tracking-wider shadow-lg">
@@ -115,34 +115,34 @@ const col3Images = [
 
         </div>
 
-        <!-- COLUMNA DERECHA: CARRUSEL VERTICAL INFINITO INCLINADO (12° - 15° DERECHA) -->
-        <div class="lg:col-span-6 relative h-[500px] sm:h-[650px] overflow-hidden flex items-center justify-center">
+        <!-- COLUMNA DERECHA: CARRUSEL CONTINUO INCLINADO A 10 GRADOS (TARJETAS MAS DELGADAS Y COMPACTAS SIN RECUADRO CORTADO) -->
+        <div class="lg:col-span-6 relative h-[650px] sm:h-[750px] flex items-center justify-center pointer-events-none select-none">
           
-          <!-- Contenedor con Inclinación de 13 Grados hacia la derecha -->
-          <div class="transform rotate-[13deg] scale-110 flex gap-4 sm:gap-6 h-[850px] items-start pointer-events-none select-none">
+          <!-- Contenedor Continuo Inclinado 10 Grados Exactos -->
+          <div class="transform rotate-[10deg] scale-105 flex gap-3 sm:gap-5 justify-center items-start w-full">
             
             <!-- Columna 1 (Izquierda - Velocidad Normal) -->
-            <div class="animate-scroll-col1 flex flex-col gap-4">
-              {[...col1Images, ...col1Images].map((imgUrl, i) => (
-                <div class="w-36 sm:w-44 h-56 sm:h-64 rounded-[2.5rem] overflow-hidden border border-white/15 shadow-2xl flex-shrink-0 bg-[#0A0A0A]">
+            <div class="animate-scroll-col1 flex flex-col gap-3 sm:gap-4 flex-shrink-0">
+              {[...col1Images, ...col1Images, ...col1Images].map((imgUrl, i) => (
+                <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/10 shadow-xl bg-[#0A0A0A] flex-shrink-0">
                   <img src={imgUrl} alt={`TurisRam Destination ${i}`} class="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
 
-            <!-- Columna 2 (Centro - MAS LENTA como solicitó el usuario) -->
-            <div class="animate-scroll-col2 flex flex-col gap-4 -mt-12">
-              {[...col2Images, ...col2Images].map((imgUrl, i) => (
-                <div class="w-36 sm:w-44 h-56 sm:h-64 rounded-[2.5rem] overflow-hidden border border-[#D4AF37]/30 shadow-2xl flex-shrink-0 bg-[#0A0A0A]">
+            <!-- Columna 2 (Centro - MAS LENTA) -->
+            <div class="animate-scroll-col2 flex flex-col gap-3 sm:gap-4 flex-shrink-0 -mt-10">
+              {[...col2Images, ...col2Images, ...col2Images].map((imgUrl, i) => (
+                <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/30 shadow-xl bg-[#0A0A0A] flex-shrink-0">
                   <img src={imgUrl} alt={`TurisRam Tour ${i}`} class="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
 
             <!-- Columna 3 (Derecha - Velocidad Normal) -->
-            <div class="animate-scroll-col3 flex flex-col gap-4">
-              {[...col3Images, ...col3Images].map((imgUrl, i) => (
-                <div class="w-36 sm:w-44 h-56 sm:h-64 rounded-[2.5rem] overflow-hidden border border-white/15 shadow-2xl flex-shrink-0 bg-[#0A0A0A]">
+            <div class="animate-scroll-col3 flex flex-col gap-3 sm:gap-4 flex-shrink-0">
+              {[...col3Images, ...col3Images, ...col3Images].map((imgUrl, i) => (
+                <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/10 shadow-xl bg-[#0A0A0A] flex-shrink-0">
                   <img src={imgUrl} alt={`TurisRam VIP Transfer ${i}`} class="w-full h-full object-cover" />
                 </div>
               ))}
@@ -150,9 +150,9 @@ const col3Images = [
 
           </div>
 
-          <!-- Shadow fade top & bottom -->
-          <div class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent pointer-events-none"></div>
-          <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
+          <!-- Sutil degradado superior e inferior extremadamente suave para fluidez sin corte enmarcado -->
+          <div class="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#0A0A0A] to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
 
         </div>
 
