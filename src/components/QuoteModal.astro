@@ -2,101 +2,202 @@
 const phone = "18497527408";
 ---
 
-<div class="glass-panel text-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl border border-[#D4AF37]/35 max-w-5xl mx-auto my-8 relative overflow-hidden">
+<!-- MODULO 3: COTIZADOR EN TIEMPO REAL — DISTRIBUCIÓN TOURVEX (SECCIONES A, B, C & D EN 3D) -->
+<div class="glass-panel text-white p-8 sm:p-12 lg:p-14 rounded-[3rem] shadow-2xl border border-[#D4AF37]/30 max-w-6xl mx-auto my-12 relative overflow-hidden">
   
-  <!-- Subtle Background Glow -->
-  <div class="absolute -right-20 -top-20 w-60 h-60 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Subtle Background Glows -->
+  <div class="absolute -right-20 -top-20 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-[#3B6998]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-  <!-- Header -->
-  <div class="text-center mb-10">
-    <span class="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest mb-3 font-['Barlow_Condensed'] shadow-lg">
-      <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-      Cotizador en Tiempo Real
-    </span>
-    <h3 class="text-3xl sm:text-4xl font-extrabold text-white font-['Barlow_Condensed'] tracking-wide">
-      Cotiza tu Traslado o Tour Privado
-    </h3>
-    <p class="text-xs sm:text-sm text-[#F7F5F0]/80 mt-1 max-w-xl mx-auto italic font-['Lora']">
-      "Viaja cómodo. Llega seguro." — Recibe tu propuesta personalizada directamente en WhatsApp.
-    </p>
-  </div>
-
-  <!-- Form Tourvex Pill Style -->
-  <form id="quote-form" class="space-y-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+    
+    <!-- COLUMNA D: 2 IMÁGENES CON EFECTO HOVER MOVIMIENTO 3D (5/12 COLS) -->
+    <div class="lg:col-span-5 relative flex items-center justify-center py-6 select-none" id="tilt-container">
       
-      <!-- Origen -->
-      <div class="bg-[#050505]/90 p-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
-        <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-1 px-3 font-['Barlow_Condensed'] flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-          Origen
-        </label>
-        <select id="origin" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer px-3 font-['Barlow_Semi_Condensed']">
-          <option value="Aeropuerto Int. Punta Cana (PUJ)" class="bg-[#050505]">Aeropuerto Punta Cana (PUJ)</option>
-          <option value="Aeropuerto Las Américas Santo Domingo (SDQ)" class="bg-[#050505]">Aeropuerto Santo Domingo (SDQ)</option>
-          <option value="Aeropuerto La Romana (LRM)" class="bg-[#050505]">Aeropuerto La Romana (LRM)</option>
-          <option value="Aeropuerto Cibao Santiago (STI)" class="bg-[#050505]">Aeropuerto Santiago (STI)</option>
-          <option value="Aeropuerto Puerto Plata (POP)" class="bg-[#050505]">Aeropuerto Puerto Plata (POP)</option>
-          <option value="Hotel / Resort / Villa Privada" class="bg-[#050505]">Hotel / Resort / Villa</option>
-        </select>
+      <!-- Imagen 1 (Izquierda / Frente - Turista/Experiencia) -->
+      <div 
+        id="tilt-card-1"
+        class="w-48 sm:w-56 h-72 sm:h-88 rounded-[2.5rem] overflow-hidden border border-white/25 shadow-2xl bg-[#0A0A0A] transform -rotate-6 hover:rotate-0 transition-transform duration-500 ease-out z-20 hover:scale-105 flex-shrink-0 cursor-pointer"
+        style="perspective: 1000px;"
+      >
+        <img 
+          src="/images/viaja a punta cana.webp" 
+          alt="TurisRam Experiencia Turística" 
+          class="w-full h-full object-cover"
+        />
       </div>
 
-      <!-- Destino -->
-      <div class="bg-[#050505]/90 p-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
-        <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-1 px-3 font-['Barlow_Condensed'] flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Destino
-        </label>
-        <select id="destination" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer px-3 font-['Barlow_Semi_Condensed']">
-          <option value="Bávaro / Punta Cana Resorts" class="bg-[#050505]">Bávaro / Punta Cana</option>
-          <option value="Cap Cana VIP" class="bg-[#050505]">Cap Cana VIP</option>
-          <option value="Uvero Alto" class="bg-[#050505]">Uvero Alto</option>
-          <option value="Bayahíbe / La Romana" class="bg-[#050505]">Bayahíbe / La Romana</option>
-          <option value="Santo Domingo Centro" class="bg-[#050505]">Santo Domingo</option>
-          <option value="Samaná / Las Terrenas" class="bg-[#050505]">Samaná / Las Terrenas</option>
-          <option value="Jarabacoa / Constanza" class="bg-[#050505]">Jarabacoa / Constanza</option>
-          <option value="Excursión Isla Saona / Otro" class="bg-[#050505]">Excursión / Otro Destino</option>
-        </select>
-      </div>
-
-      <!-- Pasajeros / Vehiculo -->
-      <div class="bg-[#050505]/90 p-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
-        <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-1 px-3 font-['Barlow_Condensed'] flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-          Pasajeros
-        </label>
-        <select id="passengers" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer px-3 font-['Barlow_Semi_Condensed']">
-          <option value="1-4 Pasajeros (Van Privada Exec)" class="bg-[#050505]">1 a 4 Pax (Van Exec)</option>
-          <option value="5-8 Pasajeros (Van XL SUV)" class="bg-[#050505]">5 a 8 Pax (Van XL)</option>
-          <option value="9-15 Pasajeros (Minibús VIP)" class="bg-[#050505]">9 a 15 Pax (Minibús VIP)</option>
-          <option value="16+ Pasajeros (Autobús Turístico)" class="bg-[#050505]">16+ Pax (Grupo Grande)</option>
-        </select>
-      </div>
-
-      <!-- Boton Submit Tourvex Style -->
-      <div class="flex items-center">
-        <button
-          type="submit"
-          class="w-full bg-[#D4AF37] text-[#0A0A0A] font-extrabold text-xs uppercase tracking-wider py-4 px-6 rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl font-['Barlow_Condensed'] border border-white/20 hover:scale-[1.02]"
-        >
-          <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
-          Solicitar Propuesta
-        </button>
+      <!-- Imagen 2 (Derecha / Fondo - Vehículo VIP / Equipaje) -->
+      <div 
+        id="tilt-card-2"
+        class="w-48 sm:w-56 h-72 sm:h-88 rounded-[2.5rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] transform rotate-6 hover:rotate-0 transition-transform duration-500 ease-out -ml-16 sm:-ml-20 mt-10 z-10 hover:scale-105 flex-shrink-0 cursor-pointer"
+        style="perspective: 1000px;"
+      >
+        <img 
+          src="/images/a-black-luxuru-van-c.webp" 
+          alt="Van Ejecutiva VIP TurisRam" 
+          class="w-full h-full object-cover"
+        />
       </div>
 
     </div>
-  </form>
+
+    <!-- COLUMNA DERECHA: SECCIONES A, B y C (7/12 COLS) -->
+    <div class="lg:col-span-7 space-y-8 text-left">
+      
+      <!-- SECCIÓN A: COPY PRINCIPAL TURISRAM -->
+      <div class="space-y-3">
+        <span class="inline-flex items-center gap-2 text-xs font-extrabold text-[#3B6998] uppercase tracking-[0.2em] font-['Barlow_Condensed']">
+          <svg class="w-3.5 h-3.5 fill-current text-[#D4AF37]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          TurisRam Travel — Cotizador en Tiempo Real
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-['Barlow_Condensed'] uppercase tracking-tight leading-none">
+          Cotiza Tu Traslado <br />
+          <span class="text-[#D4AF37]">En Pocos Segundos</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] max-w-xl leading-relaxed">
+          Selecciona tu itinerario y recibe una propuesta VIP garantizada al instante por WhatsApp sin cargos ocultos.
+        </p>
+      </div>
+
+      <!-- SECCIÓN B: OPCIONES DE SELECCIÓN (ORIGEN, DESTINO, PASAJEROS, EQUIPAJE) -->
+      <form id="quote-form-v2" class="space-y-4">
+        
+        <!-- Grid 2x2 de Selección Estilo Cápsula Pill -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- 1. Origen -->
+          <div class="bg-[#050505]/90 p-3.5 px-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
+            <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-0.5 font-['Barlow_Condensed'] flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              Origen
+            </label>
+            <select id="origin-v2" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer font-['Barlow_Semi_Condensed']">
+              <option value="Aeropuerto Int. Punta Cana (PUJ)" class="bg-[#050505]">Aeropuerto Punta Cana (PUJ)</option>
+              <option value="Aeropuerto Las Américas Santo Domingo (SDQ)" class="bg-[#050505]">Aeropuerto Santo Domingo (SDQ)</option>
+              <option value="Aeropuerto La Romana (LRM)" class="bg-[#050505]">Aeropuerto La Romana (LRM)</option>
+              <option value="Aeropuerto Cibao Santiago (STI)" class="bg-[#050505]">Aeropuerto Santiago (STI)</option>
+              <option value="Aeropuerto Puerto Plata (POP)" class="bg-[#050505]">Aeropuerto Puerto Plata (POP)</option>
+              <option value="Hotel / Resort / Villa Privada" class="bg-[#050505]">Hotel / Resort / Villa</option>
+            </select>
+          </div>
+
+          <!-- 2. Destino -->
+          <div class="bg-[#050505]/90 p-3.5 px-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
+            <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-0.5 font-['Barlow_Condensed'] flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Destino
+            </label>
+            <select id="destination-v2" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer font-['Barlow_Semi_Condensed']">
+              <option value="Bávaro / Punta Cana Resorts" class="bg-[#050505]">Bávaro / Punta Cana</option>
+              <option value="Cap Cana VIP" class="bg-[#050505]">Cap Cana VIP</option>
+              <option value="Uvero Alto" class="bg-[#050505]">Uvero Alto</option>
+              <option value="Bayahíbe / La Romana" class="bg-[#050505]">Bayahíbe / La Romana</option>
+              <option value="Santo Domingo Centro" class="bg-[#050505]">Santo Domingo</option>
+              <option value="Samaná / Las Terrenas" class="bg-[#050505]">Samaná / Las Terrenas</option>
+              <option value="Jarabacoa / Constanza" class="bg-[#050505]">Jarabacoa / Constanza</option>
+              <option value="Excursión Isla Saona / Otro" class="bg-[#050505]">Excursión / Otro Destino</option>
+            </select>
+          </div>
+
+          <!-- 3. Pasajeros -->
+          <div class="bg-[#050505]/90 p-3.5 px-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
+            <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-0.5 font-['Barlow_Condensed'] flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              Pasajeros
+            </label>
+            <select id="passengers-v2" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer font-['Barlow_Semi_Condensed']">
+              <option value="1-4 Pasajeros (Van Privada Exec)" class="bg-[#050505]">1 a 4 Pax (Van Exec)</option>
+              <option value="5-8 Pasajeros (Van XL SUV)" class="bg-[#050505]">5 a 8 Pax (Van XL)</option>
+              <option value="9-15 Pasajeros (Minibús VIP)" class="bg-[#050505]">9 a 15 Pax (Minibús VIP)</option>
+              <option value="16+ Pasajeros (Autobús Turístico)" class="bg-[#050505]">16+ Pax (Grupo Grande)</option>
+            </select>
+          </div>
+
+          <!-- 4. Equipaje -->
+          <div class="bg-[#050505]/90 p-3.5 px-4 rounded-full border border-[#D4AF37]/30 focus-within:border-[#D4AF37] focus-within:ring-2 focus-within:ring-[#D4AF37]/40 transition-all shadow-md">
+            <label class="block text-[11px] font-extrabold text-[#D4AF37] uppercase tracking-wider mb-0.5 font-['Barlow_Condensed'] flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current text-[#3B6998]" viewBox="0 0 24 24"><path d="M17 6h-2V3c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2h2v2h-2V4zm6 15H7V8h10v11z"/></svg>
+              Equipaje
+            </label>
+            <select id="luggage-v2" required class="w-full bg-transparent text-xs text-white focus:outline-none cursor-pointer font-['Barlow_Semi_Condensed']">
+              <option value="1 a 3 Maletas Específicas" class="bg-[#050505]">1 a 3 Maletas Standard</option>
+              <option value="4 a 6 Maletas Grandes" class="bg-[#050505]">4 a 6 Maletas Grandes</option>
+              <option value="7+ Equipaje Especial / Cajas" class="bg-[#050505]">7+ Maletas / Especial</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- SECCIÓN C: PRUEBA SOCIAL & BOTÓN CTA DE ACCIÓN DE COTIZACIÓN -->
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          
+          <!-- Prueba Social (Avatares Reseñas) -->
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-2 overflow-hidden">
+              <span class="inline-block w-8 h-8 rounded-full ring-2 ring-[#D4AF37] bg-cover bg-center" style="background-image: url('/images/create-a-high-quality-image-showing-a-airport--gre.webp');"></span>
+              <span class="inline-block w-8 h-8 rounded-full ring-2 ring-[#D4AF37] bg-cover bg-center" style="background-image: url('/images/viaja a punta cana.webp');"></span>
+              <span class="inline-block w-8 h-8 rounded-full ring-2 ring-[#D4AF37] bg-cover bg-center" style="background-image: url('/images/a-black-luxuru-van-c.webp');"></span>
+            </div>
+            <div class="text-left font-['Barlow_Condensed']">
+              <p class="text-xs font-bold text-[#F7F5F0]">9,500+ <span class="text-[#D4AF37]">Reseñas 5★</span></p>
+              <p class="text-[10px] text-gray-400 uppercase tracking-wider">Clientes Satisfechos 2026</p>
+            </div>
+          </div>
+
+          <!-- Botón CTA Grande estilo Tourvex (Read More / Cotizar) -->
+          <button
+            type="submit"
+            class="w-full sm:w-auto bg-[#D4AF37] text-[#0A0A0A] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl font-['Barlow_Condensed'] border border-white/20 hover:scale-105"
+          >
+            <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
+            Cotizar por WhatsApp &rarr;
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
 
 </div>
 
+<!-- SCRIPT DE INTERACCIÓN 3D EN LAS IMÁGENES DE LA COLUMNA D -->
 <script is:inline>
-  document.getElementById('quote-form')?.addEventListener('submit', function(e) {
+  const tiltContainer = document.getElementById('tilt-container');
+  const card1 = document.getElementById('tilt-card-1');
+  const card2 = document.getElementById('tilt-card-2');
+
+  if (tiltContainer && card1 && card2) {
+    tiltContainer.addEventListener('mousemove', (e) => {
+      const rect = tiltContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotateX = (-y / rect.height) * 18;
+      const rotateY = (x / rect.width) * 18;
+
+      card1.style.transform = `rotate(-6deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      card2.style.transform = `rotate(6deg) rotateX(${-rotateX}deg) rotateY(${-rotateY}deg) scale(1.05)`;
+    });
+
+    tiltContainer.addEventListener('mouseleave', () => {
+      card1.style.transform = 'rotate(-6deg) rotateX(0deg) rotateY(0deg) scale(1)';
+      card2.style.transform = 'rotate(6deg) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  }
+
+  // Manejador del Formulario
+  document.getElementById('quote-form-v2')?.addEventListener('submit', function(e) {
     e.preventDefault();
-    const origin = document.getElementById('origin').value;
-    const dest = document.getElementById('destination').value;
-    const pax = document.getElementById('passengers').value;
+    const origin = document.getElementById('origin-v2').value;
+    const dest = document.getElementById('destination-v2').value;
+    const pax = document.getElementById('passengers-v2').value;
+    const lug = document.getElementById('luggage-v2').value;
     
-    const text = `¡Hola TurisRam Dominicana! Deseo cotizar un servicio de transporte privado:%0A• Origen: ${origin}%0A• Destino: ${dest}%0A• Personas: ${pax}`;
+    const text = `¡Hola TurisRam Dominicana! Deseo cotizar un traslado privado:%0A• Origen: ${origin}%0A• Destino: ${dest}%0A• Pasajeros: ${pax}%0A• Equipaje: ${lug}`;
     window.open(`https://wa.me/18497527408?text=${text}`, '_blank');
   });
 </script>
