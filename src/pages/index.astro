@@ -338,11 +338,21 @@ const col3Images = [
     </div>
   </section>
 
-  <!-- SECCIÓN BANNER PANORÁMICO ANCHO CON EFECTO MAGNÉTICO AL CURSOR & TARJETAS DIAGONALES CON SCROLL -->
-  <section class="py-16 sm:py-24 max-w-[94rem] mx-auto px-2 sm:px-6 relative z-20" id="magnet-road-section">
+  <!-- SECCIÓN BANNER PANORÁMICO ANCHO CON SCROLL SCRUB DIAGONAL & ENCABEZADO EXACTO DE FOTO -->
+  <section class="py-16 sm:py-24 max-w-[94rem] mx-auto px-2 sm:px-6 relative z-20" id="scrub-road-section">
     
+    <!-- ENCABEZADO OFICIAL SEGÚN REFERENCIA DE FOTO USER: GARANTÍA DE SERVICIO + TÍTULO -->
+    <div class="text-center mb-12 relative z-10">
+      <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-6 py-2 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-xl inline-block mb-4">
+        GARANTÍA DE SERVICIO
+      </span>
+      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-none drop-shadow-2xl">
+        ¿POR QUÉ ELEGIR TURISRAM DOMINICANA?
+      </h2>
+    </div>
+
     <!-- Contenedor Marco Cápsula Panorámico Ampliado (Radius Mask Tourvex Style) -->
-    <div class="relative rounded-[3.5rem] sm:rounded-[4rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#0A0A0A] p-6 sm:p-14 lg:p-20 text-center text-white">
+    <div class="relative rounded-[3.5rem] sm:rounded-[4.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#0A0A0A] p-6 sm:p-14 lg:p-20 text-center text-white">
       
       <!-- Imagen Parallax de Fondo (Carretera/Paisaje Dominicano) -->
       <div class="absolute inset-0 z-0">
@@ -356,11 +366,11 @@ const col3Images = [
 
       <!-- Contenido Central del Banner -->
       <div class="relative z-10 max-w-4xl mx-auto space-y-6 mb-16">
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-tight drop-shadow-xl">
+        <h3 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-tight drop-shadow-xl">
           Prepárate para explorar y descubrir tu mundo.
-        </h2>
+        </h3>
 
-        <!-- 2. Botón Giratorio SVG Translúcido con EFECTO MAGNÉTICO al Cursor & Texto 100% Legible -->
+        <!-- Botón Giratorio SVG Translúcido con EFECTO MAGNÉTICO al Cursor -->
         <div class="flex justify-center pt-4">
           <div 
             id="magnet-btn"
@@ -383,14 +393,13 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- 3. Grid de 4 Tarjetas Blancas con Animación Diagonal al Scroll & Copy "Garantía de Servicio" -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10" id="diagonal-cards-grid">
+      <!-- Grid de 4 Tarjetas Blancas con SCROLL-LINKED PROGRESS (SCRUB FOTOGRAMA A FOTOGRAMA) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10" id="scrub-cards-grid">
         
         {pillars.map((pil, idx) => (
           <div 
-            class={`diagonal-card bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-3 transition-all duration-500 border border-gray-100 transform opacity-0 translate-y-16 ${
-              idx % 2 === 0 ? '-translate-x-6' : 'translate-x-6'
-            }`}
+            data-index={idx}
+            class="scrub-card bg-white text-[#0A0A0A] p-8 rounded-3xl shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-3 transition-all duration-300 border border-gray-100 will-change-transform"
           >
             <div class="w-16 h-16 rounded-full bg-[#3B6998]/10 text-[#3B6998] flex items-center justify-center mb-4 group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-colors shadow-inner">
               <div class="group-hover:brightness-0 transition-all" set:html={pil.svg} />
@@ -404,44 +413,18 @@ const col3Images = [
 
     </div>
 
-    <!-- 4. Espacio Inferior Ampliado + Ticker de Marquesina Infinito Delgado & Alto (Derecha a Izquierda) -->
-    <div class="mt-16 sm:mt-24 overflow-hidden whitespace-nowrap opacity-25 pointer-events-none select-none py-6">
-      <div class="inline-flex gap-12 animate-scroll-col1 text-6xl sm:text-8xl font-light font-['Barlow_Condensed'] text-[#F7F5F0] uppercase tracking-[0.25em]">
+    <!-- TICKER INFALIBLE ULTRA-LENTO DE DERECHA A IZQUIERDA DEBAJO DE LA IMAGEN -->
+    <div class="mt-20 overflow-hidden whitespace-nowrap opacity-25 pointer-events-none select-none py-8">
+      <div class="inline-flex gap-16 animate-marquee-ultra-slow text-6xl sm:text-8xl lg:text-9xl font-light font-['Barlow_Condensed'] text-[#F7F5F0] uppercase tracking-[0.25em]">
         <span>AIRPORT TRANSFERS ✦ TRAVEL EXPERIENCES ✦ PRIVATE TOURS ✦ PUNTA CANA ✦ SANTO DOMINGO ✦ SAMANÁ ✦</span>
         <span>AIRPORT TRANSFERS ✦ TRAVEL EXPERIENCES ✦ PRIVATE TOURS ✦ PUNTA CANA ✦ SANTO DOMINGO ✦ SAMANÁ ✦</span>
       </div>
     </div>
 
-  </section>
-
-  <!-- 5. SECCIÓN GARANTÍA DE SERVICIO TURISRAM — ¿POR QUÉ ELEGIR TURISRAM DOMINICANA? -->
-  <section class="py-20 bg-[#0A0A0A] text-white border-t border-b border-[#D4AF37]/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-5 py-2 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-lg">
-          Garantía de Servicio
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] mt-4 text-white uppercase tracking-tight">
-          ¿Por qué Elegir TurisRam Dominicana?
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {pillars.map(pil => (
-          <div class="glass-card p-8 rounded-3xl text-center hover:border-[#D4AF37]/60 hover:shadow-[0_15px_35px_rgba(212,175,55,0.2)] transition-all duration-300 group">
-            <div class="w-14 h-14 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-[#D4AF37] transition-colors">
-              <div class="group-hover:brightness-0 transition-all" set:html={pil.svg} />
-            </div>
-            <h3 class="text-base font-extrabold text-[#D4AF37] font-['Barlow_Condensed'] mb-2 uppercase">{pil.title}</h3>
-            <p class="text-xs text-gray-300 leading-relaxed font-['Barlow_Semi_Condensed']">{pil.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   </section>
 
   <!-- ACORDEÓN DE PREGUNTAS FRECUENTES (FAQS TOURVEX STYLE) -->
-  <section class="py-24 bg-[#050505] text-white border-b border-[#D4AF37]/20 relative overflow-hidden">
+  <section class="py-24 bg-[#050505] text-white border-t border-b border-[#D4AF37]/20 relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -490,10 +473,21 @@ const col3Images = [
 
 </Layout>
 
-<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) ANIMACIÓN DIAGONAL DE TARJETAS AL SCROLL -->
+<style>
+  @keyframes marquee-ultra-slow {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee-ultra-slow {
+    animation: marquee-ultra-slow 90s linear infinite;
+  }
+</style>
+
+<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL SCRUB DIAGONAL EN TIEMPO REAL (REVERSIBLE FOTOGRAMA A FOTOGRAMA) -->
 <script is:inline>
   // 1. Botón Magnético que persigue el cursor suavemente
-  const roadSection = document.getElementById('magnet-road-section');
+  const roadSection = document.getElementById('scrub-road-section');
   const magnetBtn = document.getElementById('magnet-btn');
 
   if (roadSection && magnetBtn) {
@@ -513,16 +507,34 @@ const col3Images = [
     });
   }
 
-  // 2. Animación diagonal de las 4 tarjetas al hacer scroll hacia abajo
-  const cards = document.querySelectorAll('.diagonal-card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-16', '-translate-x-6', 'translate-x-6');
-        entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0');
-      }
-    });
-  }, { threshold: 0.2 });
+  // 2. SCROLL SCRUB DIAGONAL EN TIEMPO REAL: avance y retroceso continuo en función del avance del scroll
+  const scrubCards = document.querySelectorAll('.scrub-card');
+  const gridContainer = document.getElementById('scrub-cards-grid');
 
-  cards.forEach(card => observer.observe(card));
+  function updateScrubCards() {
+    if (!gridContainer) return;
+
+    const rect = gridContainer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Calcular progreso del scroll de 0 a 1 conforme el contenedor entra en la pantalla
+    const startY = windowHeight * 0.9;
+    const endY = windowHeight * 0.2;
+    let progress = (startY - rect.top) / (startY - endY);
+    progress = Math.max(0, Math.min(1, progress));
+
+    scrubCards.forEach((card, idx) => {
+      const dir = (idx % 2 === 0) ? -1 : 1;
+      const moveX = (1 - progress) * 120 * dir; // Movimiento horizontal diagonal
+      const moveY = (1 - progress) * 160;        // Movimiento vertical
+      const opacity = Math.max(0.1, progress);
+
+      card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+      card.style.opacity = `${opacity}`;
+    });
+  }
+
+  window.addEventListener('scroll', updateScrubCards, { passive: true });
+  window.addEventListener('resize', updateScrubCards, { passive: true });
+  updateScrubCards();
 </script>
