@@ -52,7 +52,7 @@
   border: 1px solid rgba(59, 105, 152, 0.15);
 }
 
-/* Vertical Carousel Keyframe Animations */
+/* Vertical Carousel Keyframe Animations (50% Mas Lentas) */
 @keyframes scroll-up-col1 {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
@@ -69,15 +69,15 @@
 }
 
 .animate-scroll-col1 {
-  animation: scroll-up-col1 30s linear infinite;
+  animation: scroll-up-col1 60s linear infinite;
 }
 
 .animate-scroll-col2 {
-  animation: scroll-up-col2 48s linear infinite; /* Mas lento como indico el usuario */
+  animation: scroll-up-col2 96s linear infinite; /* 50% mas lenta para la columna del centro */
 }
 
 .animate-scroll-col3 {
-  animation: scroll-up-col3 34s linear infinite;
+  animation: scroll-up-col3 68s linear infinite;
 }
 
 /* Micro-Interaction Zoom Card Image */
