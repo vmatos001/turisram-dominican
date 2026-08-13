@@ -54,25 +54,25 @@ const col3Images = [
 
 <Layout title="TurisRam Dominicana | Transfers & Experiencias — Viaja cómodo. Llega seguro.">
   
-  <!-- MODULO 2: HERO SECTION CON FONDO SANTO DOMINGO NOCHE EN FORMATO WEBP Y FILTRO NEGRO -->
+  <!-- MODULO 2: HERO SECTION CON FONDO SANTO DOMINGO NOCHE ULTRA SUTIL (OPACIDAD 25% + FILTRO NEGRO PROFUNDO #0A0A0A) -->
   <section class="relative min-h-screen bg-[#0A0A0A] text-white overflow-hidden border-b border-[#D4AF37]/20 flex items-center py-12 lg:py-16">
     
-    <!-- Imagen de fondo Santo Domingo Noche (.webp) -->
+    <!-- Imagen de fondo Santo Domingo Noche (.webp) con opacidad muy baja (20%-25%) -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/santo-domingo-noche.webp"
         alt="Santo Domingo Noche — TurisRam Dominicana"
-        class="w-full h-full object-cover object-center animate-subtle-zoom scale-105"
+        class="w-full h-full object-cover object-center animate-subtle-zoom scale-105 opacity-25 mix-blend-luminosity"
       />
-      <!-- Filtro negro elegante con degradado radial para legibilidad absoluta del texto -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/95 via-[#0A0A0A]/85 to-[#0A0A0A]/75 backdrop-brightness-75"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3B6998]/20 via-transparent to-[#0A0A0A]/90"></div>
+      <!-- Filtro negro profundo e intenso para total jerarquía del copy y el carrusel de imágenes -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-[#0A0A0A]/85"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3B6998]/20 via-transparent to-[#0A0A0A]"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 relative">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- COLUMNA IZQUIERDA: COPY OFICIAL TURISRAM -->
+        <!-- COLUMNA IZQUIERDA: COPY OFICIAL TURISRAM (PROTAGONISTA PRINCIPAL DE JERARQUÍA) -->
         <div class="lg:col-span-6 z-20 space-y-6 text-left">
           
           <!-- Live Status Pill -->
@@ -88,7 +88,7 @@ const col3Images = [
           </span>
 
           <!-- Título H1 Estilo Tourvex -->
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-[1] text-white uppercase drop-shadow-md">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-[1] text-white uppercase drop-shadow-lg">
             Descubre República Dominicana <br />
             <span class="text-[#D4AF37]">Con Tu Guía VIP</span>
           </h1>
@@ -111,7 +111,7 @@ const col3Images = [
               rel="noopener noreferrer"
               class="w-full sm:w-auto bg-[#D4AF37] text-[#0A0A0A] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-2xl font-['Barlow_Condensed'] flex items-center justify-center gap-2 border border-white/20 hover:scale-105"
             >
-              <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
+              <svg class="w-4 h-4 fill-current text-[#0A0A0A]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.758zm6.657-4.148l.38.225c1.47.872 3.176 1.332 4.92 1.333 5.385 0 9.768-4.383 9.771-9.768.002-2.607-1.013-5.059-2.86-6.907-1.847-1.847-4.298-2.862-6.906-2.863-5.386 0-9.77 4.384-9.773 9.77-.001 1.794.49 3.541 1.42 5.061l.247.4-.954 3.484 3.575-.935z"/></svg>
               Cotizar por WhatsApp &rarr;
             </a>
             <a
@@ -124,7 +124,7 @@ const col3Images = [
 
         </div>
 
-        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS -->
+        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS (PROTAGONISTA VISUAL SECUNDARIO) -->
         <div class="lg:col-span-6 relative h-[650px] sm:h-[750px] flex items-center justify-center select-none">
           
           <!-- Contenedor Continuo Inclinado a 6 Grados Exactos -->
@@ -237,7 +237,7 @@ const col3Images = [
         </div>
         <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
           <span class="text-[11px] font-bold text-[#3B6998] uppercase font-['Barlow_Condensed']">Puntualidad 100%</span>
-          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20traslado%20de%20aeropuerto" class="text-xs font-bold text-[#D4AF37] hover:underline font-['Barlow_Condensed']">Cotizar &rarr;</a>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20traslado%20de%20aeropuerto" class="text-xs font-bold text-[#D4AF37] hover:underline font-[#Barlow_Condensed']">Cotizar &rarr;</a>
         </div>
       </div>
 
@@ -252,7 +252,7 @@ const col3Images = [
         </div>
         <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
           <span class="text-[11px] font-bold text-[#3B6998] uppercase font-['Barlow_Condensed']">Máximo Confort</span>
-          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20van%20ejecutiva" class="text-xs font-bold text-[#D4AF37] hover:underline font-['Barlow_Condensed']">Cotizar &rarr;</a>
+          <a href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20van%20ejecutiva" class="text-xs font-bold text-[#D4AF37] hover:underline font-[#Barlow_Condensed']">Cotizar &rarr;</a>
         </div>
       </div>
 
