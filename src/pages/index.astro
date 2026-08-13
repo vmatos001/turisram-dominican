@@ -210,46 +210,48 @@ const col3Images = [
     <QuoteModal />
   </section>
 
-  <!-- MODULO 4: BENTO GRID DE SERVICIOS & TOURS CON BOTÓN GIRATORIO SVG TOURVEX -->
+  <!-- MODULO 4: CATÁLOGO EXECUTIVE VIP — SOMBRA CLARA EN HOVER Y BOTÓN SVG MEJORADO -->
   <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     
     <!-- Watermark Typographic Background -->
     <div class="bg-text-style">TurisRam</div>
 
     <div class="text-center mb-16 relative z-10">
-      <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest font-['Barlow_Condensed']">Catálogo Bento Executive</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#F7F5F0] font-['Barlow_Condensed'] mt-2 tracking-tight uppercase">
+      <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider font-['Barlow_Condensed'] shadow-md">
+        Catálogo Executive VIP
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#F7F5F0] font-['Barlow_Condensed'] mt-3 tracking-tight uppercase">
         Servicios & Excursiones Destacadas
       </h2>
       <p class="text-gray-400 mt-2 max-w-2xl mx-auto text-sm font-['Barlow_Semi_Condensed']">
         Descubre nuestra oferta de traslados ejecutivos y tours privados en la República Dominicana.
       </p>
 
-      <!-- Botón Giratorio SVG Estilo Tourvex -->
+      <!-- Botón Giratorio SVG Nítido y Legible Estilo Tourvex -->
       <div class="mt-8 flex justify-center">
-        <a href="#quote-form-v2" class="relative inline-flex items-center justify-center w-28 h-28 group">
-          <svg class="w-full h-full rotate-circle-svg text-[#D4AF37] fill-current" viewBox="0 0 500 500">
+        <a href="#quote-form-v2" class="relative inline-flex items-center justify-center w-36 h-36 sm:w-40 sm:h-40 group">
+          <svg class="w-full h-full rotate-circle-svg text-[#D4AF37] fill-current drop-shadow-md" viewBox="0 0 500 500">
             <defs>
-              <path id="textcircle-tourvex" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+              <path id="textcircle-tourvex-v2" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
             </defs>
-            <text font-size="34" font-weight="bold" letter-spacing="4">
-              <textPath href="#textcircle-tourvex" startOffset="0" fill="#D4AF37">
+            <text font-size="42" font-weight="900" letter-spacing="6" fill="#D4AF37">
+              <textPath href="#textcircle-tourvex-v2" startOffset="0">
                 TURISRAM DOMINICANA • COTIZAR AHORA •
               </textPath>
             </text>
           </svg>
-          <div class="absolute w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center text-[#0A0A0A] font-bold shadow-xl group-hover:bg-white transition-colors">
+          <div class="absolute w-14 h-14 bg-[#D4AF37] border-2 border-white rounded-full flex items-center justify-center text-[#0A0A0A] font-extrabold text-lg shadow-2xl group-hover:bg-white transition-all group-hover:scale-110">
             &darr;
           </div>
         </a>
       </div>
     </div>
 
-    <!-- Bento Grid Layout Tourvex Style -->
+    <!-- Grid de Tarjetas Catálogo con Sombra Clara Trasera en Hover -->
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
       
-      <!-- Bento Item 1 (Large Featured) -->
-      <div class="md:col-span-2 md:row-span-2 bg-[#0A0A0A] text-white rounded-3xl overflow-hidden shadow-2xl relative flex flex-col justify-between group border border-[#D4AF37]/30 zoom-image-wrapper">
+      <!-- Bento Item 1 (Large Featured - Isla Saona) -->
+      <div class="md:col-span-2 md:row-span-2 bg-[#0A0A0A] text-white rounded-3xl overflow-hidden shadow-2xl relative flex flex-col justify-between group border border-[#D4AF37]/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.28)] hover:border-[#D4AF37]/70 transition-all duration-300 zoom-image-wrapper">
         <div class="absolute inset-0 z-0">
           <img
             src="/images/Isla Saona.webp"
@@ -290,8 +292,8 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- Bento Item 2 -->
-      <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all duration-300 zoom-image-wrapper">
+      <!-- Bento Item 2 (Traslado Aeropuerto) -->
+      <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group border border-white/10 hover:shadow-[0_20px_50px_rgba(255,255,255,0.18)] hover:border-[#D4AF37]/60 transition-all duration-300 zoom-image-wrapper">
         <div>
           <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
             <img src="/images/create-a-high-quality-image-showing-a-airport--gre.webp" alt="Traslado Aeropuerto" class="w-full h-full object-cover" />
@@ -305,11 +307,11 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- Bento Item 3 -->
-      <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group hover:border-[#D4AF37]/50 transition-all duration-300 zoom-image-wrapper">
+      <!-- Bento Item 3 (Van Ejecutivo VIP — Imagen Temporal de Alta Calidad) -->
+      <div class="glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between group border border-white/10 hover:shadow-[0_20px_50px_rgba(212,175,55,0.22)] hover:border-[#D4AF37]/60 transition-all duration-300 zoom-image-wrapper">
         <div>
           <div class="h-40 rounded-2xl overflow-hidden mb-4 relative">
-            <img src="/images/a-black-luxuru-van-c.webp" alt="Transporte Privado VIP" class="w-full h-full object-cover" />
+            <img src="/images/generate-an-image-of-a-professional-transportation.webp" alt="Van Ejecutivo VIP TurisRam" class="w-full h-full object-cover" />
           </div>
           <h4 class="font-bold text-lg text-[#D4AF37] font-['Barlow_Condensed'] mb-1 uppercase">Van Ejecutivo VIP</h4>
           <p class="text-xs text-gray-400 leading-relaxed font-['Barlow_Semi_Condensed']">Vehículos ejecutivos sanitizados de alta gama con espacio de equipaje y aire acondicionado.</p>
@@ -320,8 +322,8 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- Bento Item 4 -->
-      <div class="md:col-span-2 glass-card text-white rounded-3xl p-8 shadow-xl flex flex-col sm:flex-row items-center gap-6 group hover:border-[#D4AF37]/50 transition-all zoom-image-wrapper">
+      <!-- Bento Item 4 (Samaná) -->
+      <div class="md:col-span-2 glass-card text-white rounded-3xl p-8 shadow-xl flex flex-col sm:flex-row items-center gap-6 group border border-white/10 hover:shadow-[0_20px_50px_rgba(59,105,152,0.3)] hover:border-[#D4AF37]/60 transition-all duration-300 zoom-image-wrapper">
         <div class="w-full sm:w-1/2 h-44 rounded-2xl overflow-hidden flex-shrink-0 relative">
           <img src="/images/Samana.webp" alt="Excursión a Samaná" class="w-full h-full object-cover" />
         </div>
@@ -348,7 +350,7 @@ const col3Images = [
             <img src="/images/create-a-high-quality-image-showing-a-airport--gre.webp" alt="FAQ TurisRam" class="w-full h-full object-cover" />
           </div>
           <div class="w-48 h-80 rounded-[2.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl mt-16">
-            <img src="/images/a-black-luxuru-van-c.webp" alt="FAQ TurisRam Van" class="w-full h-full object-cover" />
+            <img src="/images/generate-an-image-of-a-professional-transportation.webp" alt="FAQ TurisRam Van" class="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -362,7 +364,7 @@ const col3Images = [
           </div>
 
           <div class="space-y-4">
-            {faqs.map((faq, index) => (
+            {faqs.map((faq) => (
               <details class="glass-card rounded-2xl p-6 border border-white/10 group cursor-pointer transition-all">
                 <summary class="font-bold text-base text-[#D4AF37] font-['Barlow_Condensed'] uppercase flex items-center justify-between list-none">
                   <span>{faq.q}</span>
