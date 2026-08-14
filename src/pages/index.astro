@@ -338,7 +338,7 @@ const col3Images = [
     </div>
   </section>
 
-  <!-- SECCIÓN BANNER PANORÁMICO NITIDO CON SCROLL SCRUB DIAGONAL Y COPY GARANTÍA DE SERVICIO DENTRO -->
+  <!-- SECCIÓN BANNER PANORÁMICO NITIDO CON SCROLL SCRUB DIAGONAL EN PARALELO SIN CRUCES -->
   <section class="py-16 sm:py-24 max-w-[94rem] mx-auto px-2 sm:px-6 relative z-20" id="scrub-road-section">
     
     <!-- Contenedor Marco Cápsula Panorámico Ampliado con Imagen Nítida HD -->
@@ -393,7 +393,7 @@ const col3Images = [
         </div>
       </div>
 
-      <!-- Grid de 4 Tarjetas Blancas con SCROLL-LINKED PROGRESS (SCRUB FOTOGRAMA A FOTOGRAMA) -->
+      <!-- Grid de 4 Tarjetas Blancas con SCROLL PARALELO SIN CRUCES -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10" id="scrub-cards-grid">
         
         {pillars.map((pil, idx) => (
@@ -484,7 +484,7 @@ const col3Images = [
   }
 </style>
 
-<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL SCRUB DIAGONAL EN TIEMPO REAL -->
+<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS (1 y 2 desde izquierda, 3 y 4 desde derecha) -->
 <script is:inline>
   // 1. Botón Magnético que persigue el cursor suavemente
   const roadSection = document.getElementById('scrub-road-section');
@@ -507,7 +507,7 @@ const col3Images = [
     });
   }
 
-  // 2. SCROLL SCRUB DIAGONAL EN TIEMPO REAL: avance y retroceso continuo en función del avance del scroll
+  // 2. SCROLL PARALELO SIN CRUCES: Tarjetas 1 y 2 suben desde la izquierda (dir = -1), Tarjetas 3 y 4 suben desde la derecha (dir = 1)
   const scrubCards = document.querySelectorAll('.scrub-card');
   const gridContainer = document.getElementById('scrub-cards-grid');
 
@@ -524,8 +524,10 @@ const col3Images = [
     progress = Math.max(0, Math.min(1, progress));
 
     scrubCards.forEach((card, idx) => {
-      const dir = (idx % 2 === 0) ? -1 : 1;
-      const moveX = (1 - progress) * 120 * dir; // Movimiento horizontal diagonal
+      // Tarjeta 0 y 1 (Tarjetas 1 y 2): entran desde la izquierda en paralelo (dir = -1)
+      // Tarjeta 2 y 3 (Tarjetas 3 y 4): entran desde la derecha en paralelo (dir = 1)
+      const dir = (idx < 2) ? -1 : 1;
+      const moveX = (1 - progress) * 120 * dir; // Movimiento horizontal sin cruce
       const moveY = (1 - progress) * 160;        // Movimiento vertical
       const opacity = Math.max(0.1, progress);
 
