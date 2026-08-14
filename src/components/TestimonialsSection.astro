@@ -1,0 +1,155 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Testimonial {
+  name: string;
+  title: string;
+  quote: string;
+  avatarSrc: string;
+  rating: number;
+}
+
+const stats: Stat[] = [
+  { value: "9,800+", label: "Pasajeros Felices" },
+  { value: "5.0 ★", label: "Calificación Google" },
+  { value: "100%", label: "Puntualidad VIP" }
+];
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Carlos & Elena Mendoza",
+    title: "Turistas de Madrid, España",
+    quote: "Excelente servicio de traslado desde el aeropuerto de Punta Cana hasta el hotel. El chofer nos estaba esperando puntualmente con el cartel con nuestro nombre, vehículo impecable y aire acondicionado genial.",
+    avatarSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    rating: 5
+  },
+  {
+    name: "Roberto Fernández",
+    title: "Viajero Frecuente de Miami, EE.UU.",
+    quote: "He contratado a TurisRam en 4 viajes distintos por República Dominicana. La atención 24/7 por WhatsApp y la transparencia con las tarifas fijas hacen que sea mi opción #1 siempre.",
+    avatarSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    rating: 5
+  },
+  {
+    name: "Sophie & Jean Dupont",
+    title: "Pareja de París, Francia",
+    quote: "El tour privado a Isla Saona fue la mejor experiencia de nuestras vacaciones. Catamarán privado, comida deliciosa y atención de primera por parte del equipo de TurisRam.",
+    avatarSrc: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    rating: 5
+  },
+  {
+    name: "Familia Rodríguez",
+    title: "Visitantes de Bogotá, Colombia",
+    quote: "Viajamos con niños y equipaje amplio. La Van Ejecutiva fue súper cómoda y el conductor condujo con máxima seguridad durante todo el trayecto hasta Samaná. ¡Recomendados 100%!",
+    avatarSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    rating: 5
+  }
+];
+---
+
+<!-- SECCIÓN DE TESTIMONIOS STICKY STACKING -->
+<section class="w-full bg-[#0A0A0A] text-[#F7F5F0] py-20 lg:py-28 border-b border-[#D4AF37]/20 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    
+    <!-- COLUMNA IZQUIERDA: CONTENIDO PEGAJOSO (STICKY) -->
+    <div class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
+      
+      <!-- Live Status Tag -->
+      <div class="inline-flex items-center gap-2.5 self-start rounded-full border border-[#D4AF37]/40 bg-[#0A0A0A]/90 px-4 py-1.5 text-xs font-bold text-[#F7F5F0] backdrop-blur-md font-['Barlow_Condensed'] uppercase tracking-wider shadow-lg">
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+        <span class="text-[#D4AF37]">Experiencias Reales de Clientes</span>
+      </div>
+
+      <!-- Título H2 -->
+      <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] tracking-tight text-white uppercase leading-none drop-shadow-lg">
+        Lo que Dicen Nuestros <br />
+        <span class="text-[#D4AF37]">Pasajeros VIP</span>
+      </h2>
+
+      <!-- Descripción -->
+      <p class="text-sm sm:text-base text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">
+        Miles de turistas y viajeros de negocios confían diariamente en TurisRam Dominicana para sus traslados ejecutivos y tours privados en todo el país.
+      </p>
+
+      <!-- Grid de 3 Estadísticas Clave -->
+      <div class="grid grid-cols-3 gap-3 sm:gap-4 mt-2">
+        {stats.map((stat) => (
+          <div class="bg-[#141414] border border-[#D4AF37]/30 text-center rounded-2xl p-4 shadow-xl hover:border-[#D4AF37] transition-all">
+            <p class="text-xl sm:text-2xl font-extrabold text-[#D4AF37] font-['Barlow_Condensed']">{stat.value}</p>
+            <p class="text-[11px] sm:text-xs text-gray-400 font-['Barlow_Semi_Condensed'] mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Acciones CTA -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        <a
+          href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20leer%20más%20reseñas%20y%20cotizar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto butn-arrow"
+        >
+          <span>Cotizar por WhatsApp</span>
+          <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
+        </a>
+        <a
+          href="https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-full hover:bg-white/20 transition-all font-['Barlow_Condensed'] text-center"
+        >
+          Ver Reseñas Google 5★
+        </a>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA: TARJETAS APILADAS CON EFECTO STICKY STACKING -->
+    <div class="lg:col-span-7 flex flex-col gap-6 relative">
+      {testimonials.map((t, index) => (
+        <div
+          class="sticky w-full transition-all duration-300"
+          style={`top: ${100 + index * 28}px; z-index: ${10 + index};`}
+        >
+          <div class="p-6 sm:p-8 rounded-3xl shadow-2xl flex flex-col h-auto w-full bg-[#141414] border border-[#D4AF37]/30 backdrop-blur-md hover:border-[#D4AF37] transition-all">
+            
+            <!-- Sección Superior: Avatar y Nombre -->
+            <div class="flex items-center gap-4">
+              <img
+                src={t.avatarSrc}
+                alt={`Foto de ${t.name}`}
+                class="w-14 h-14 rounded-2xl object-cover border-2 border-[#D4AF37]/50 shadow-md flex-shrink-0"
+              />
+              <div class="flex-grow">
+                <p class="font-bold text-lg text-white font-['Barlow_Condensed'] uppercase tracking-wide">{t.name}</p>
+                <p class="text-xs text-[#D4AF37] font-['Barlow_Semi_Condensed']">{t.title}</p>
+              </div>
+            </div>
+
+            <!-- Sección Media: Estrellas de Calificación -->
+            <div class="flex items-center gap-2 my-4">
+              <span class="font-extrabold text-base text-[#D4AF37] font-['Barlow_Condensed']">{t.rating.toFixed(1)}</span>
+              <div class="flex gap-1 text-[#D4AF37]">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                ))}
+              </div>
+            </div>
+
+            <!-- Sección Inferior: Cita/Testimonio -->
+            <p class="text-xs sm:text-sm text-gray-200 font-['Barlow_Semi_Condensed'] italic leading-relaxed">
+              &ldquo;{t.quote}&rdquo;
+            </p>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import QuoteModal from '../components/QuoteModal.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
 
 const pillars = [
   { 
@@ -423,6 +424,9 @@ const col3Images = [
 
   </section>
 
+  <!-- NUEVA SECCIÓN DE TESTIMONIOS STICKY STACKING DEBAJO DE GARANTÍA DE SERVICIO -->
+  <TestimonialsSection />
+
   <!-- ACORDEÓN DE PREGUNTAS FRECUENTES (FAQS TOURVEX STYLE) -->
   <section class="py-24 bg-[#050505] text-white border-t border-b border-[#D4AF37]/20 relative overflow-hidden">
     
@@ -484,7 +488,7 @@ const col3Images = [
   }
 </style>
 
-<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS (1 y 2 desde izquierda, 3 y 4 desde derecha) -->
+<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS -->
 <script is:inline>
   // 1. Botón Magnético que persigue el cursor suavemente
   const roadSection = document.getElementById('scrub-road-section');
@@ -524,8 +528,6 @@ const col3Images = [
     progress = Math.max(0, Math.min(1, progress));
 
     scrubCards.forEach((card, idx) => {
-      // Tarjeta 0 y 1 (Tarjetas 1 y 2): entran desde la izquierda en paralelo (dir = -1)
-      // Tarjeta 2 y 3 (Tarjetas 3 y 4): entran desde la derecha en paralelo (dir = 1)
       const dir = (idx < 2) ? -1 : 1;
       const moveX = (1 - progress) * 120 * dir; // Movimiento horizontal sin cruce
       const moveY = (1 - progress) * 160;        // Movimiento vertical
