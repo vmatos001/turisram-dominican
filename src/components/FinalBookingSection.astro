@@ -1,0 +1,229 @@
+---
+---
+
+<!-- BLOQUE FINAL: FORMULARIO DE COTIZACIÓN / RESERVA VIP -->
+<section class="py-20 lg:py-28 px-4 bg-[#0A0A0A] text-[#F7F5F0] border-t border-b border-[#D4AF37]/20 relative overflow-hidden" id="booking-final">
+  
+  <!-- Fondo con Resplandor de Gradiente sutil -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/10 via-[#3B6998]/5 to-transparent rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+    
+    <!-- Encabezado de Sección -->
+    <div class="text-center space-y-4 mb-12">
+      <!-- Cápsula Dorada Coherente -->
+      <div>
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block">
+          COTIZACIÓN RÁPIDA & RESERVA VIP
+        </span>
+      </div>
+
+      <!-- Título Persuasivo H2 -->
+      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Barlow_Condensed'] text-white uppercase tracking-tight leading-none drop-shadow-lg">
+        Reserva tu transporte seguro <br />
+        <span class="text-[#D4AF37]">en menos de 2 minutos</span>
+      </h2>
+
+      <!-- Párrafo Informativo -->
+      <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
+        Completa el formulario para enviar tu solicitud directa por WhatsApp y recibirás tu cotización a tarifa fija de inmediato.
+      </p>
+    </div>
+
+    <!-- Formulario Simplificado -->
+    <form id="final-booking-form" class="bg-[#141414] border border-[#D4AF37]/30 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6 backdrop-blur-md">
+      
+      <!-- Fila 1: Origen y Destino -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="fb-origin" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Lugar de Origen *
+          </label>
+          <input
+            type="text"
+            id="fb-origin"
+            name="origin"
+            required
+            placeholder="Ej: Aeropuerto PUJ / SDQ o Hotel..."
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+
+        <div>
+          <label for="fb-destination" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Lugar de Destino *
+          </label>
+          <input
+            type="text"
+            id="fb-destination"
+            name="destination"
+            required
+            placeholder="Ej: Resort Bávaro, Samaná, Santo Domingo..."
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+      </div>
+
+      <!-- Fila 2: Fecha y Hora de Recogida -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="fb-date" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Fecha de Recogida *
+          </label>
+          <input
+            type="date"
+            id="fb-date"
+            name="date"
+            required
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+
+        <div>
+          <label for="fb-time" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Hora de Recogida / Vuelo *
+          </label>
+          <input
+            type="time"
+            id="fb-time"
+            name="time"
+            required
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+      </div>
+
+      <!-- Fila 3: Pasajeros y Equipaje -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="fb-passengers" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Número de Pasajeros *
+          </label>
+          <select
+            id="fb-passengers"
+            name="passengers"
+            required
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          >
+            <option value="1 a 3 Pasajeros (Sedán / SUV VIP)">1 a 3 Pasajeros (Sedán / SUV VIP)</option>
+            <option value="4 a 6 Pasajeros (Van Ejecutiva)">4 a 6 Pasajeros (Van Ejecutiva)</option>
+            <option value="7 a 12 Pasajeros (Minibús VIP)">7 a 12 Pasajeros (Minibús VIP)</option>
+            <option value="Más de 12 (Grupo Corporativo)">Más de 12 (Grupo Corporativo)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="fb-luggage" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Maletas / Equipaje Estimado
+          </label>
+          <input
+            type="text"
+            id="fb-luggage"
+            name="luggage"
+            placeholder="Ej: 3 maletas grandes + 2 de mano"
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+      </div>
+
+      <!-- Fila 4: Contacto (Nombre & WhatsApp/Email) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="fb-name" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            Nombre Completo *
+          </label>
+          <input
+            type="text"
+            id="fb-name"
+            name="name"
+            required
+            placeholder="Tu nombre y apellido..."
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+
+        <div>
+          <label for="fb-contact" class="block text-xs font-bold uppercase tracking-wider text-[#D4AF37] font-['Barlow_Condensed'] mb-2">
+            WhatsApp o Email *
+          </label>
+          <input
+            type="text"
+            id="fb-contact"
+            name="contact"
+            required
+            placeholder="Número de WhatsApp o correo electrónico..."
+            class="w-full bg-[#0A0A0A] border border-gray-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-all font-['Barlow_Semi_Condensed']"
+          />
+        </div>
+      </div>
+
+      <!-- Botón de Envío Directo a WhatsApp -->
+      <div class="pt-4 text-center">
+        <button
+          type="submit"
+          class="w-full sm:w-auto butn-arrow py-4 px-10 hover:scale-105 inline-flex items-center justify-center gap-3"
+        >
+          <span class="text-sm font-extrabold uppercase font-['Barlow_Condensed'] tracking-wider">
+            Cotizar Instantáneamente por WhatsApp
+          </span>
+          <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
+        </button>
+
+        <p class="text-[11px] text-gray-400 font-['Barlow_Semi_Condensed'] mt-3">
+          ⚡ Respuesta promedio en menos de 3 minutos • Tarifa Fija Sin Cargos Ocultos
+        </p>
+      </div>
+
+    </form>
+
+    <!-- Aviso Legal y Privacidad -->
+    <div class="mt-8 text-center text-xs text-gray-500 font-['Barlow_Semi_Condensed'] space-y-2">
+      <p>
+        Al enviar tu solicitud, aceptas nuestra comunicación directa para la prestación del servicio de transporte.
+      </p>
+      <div class="flex items-center justify-center gap-4 text-gray-400 font-bold uppercase tracking-wider text-[11px] font-['Barlow_Condensed']">
+        <a href="/contacto" class="hover:text-[#D4AF37] transition-colors">Términos de Servicio</a>
+        <span>•</span>
+        <a href="/contacto" class="hover:text-[#D4AF37] transition-colors">Política de Privacidad</a>
+        <span>•</span>
+        <a href="/nosotros" class="hover:text-[#D4AF37] transition-colors">TurisRam Dominicana</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCRIPT DE ENVÍO DIRECTO POR WHATSAPP -->
+<script is:inline>
+  const bookingForm = document.getElementById('final-booking-form');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const origin = document.getElementById('fb-origin').value.trim();
+      const destination = document.getElementById('fb-destination').value.trim();
+      const date = document.getElementById('fb-date').value;
+      const time = document.getElementById('fb-time').value;
+      const passengers = document.getElementById('fb-passengers').value;
+      const luggage = document.getElementById('fb-luggage').value.trim() || 'No especificado';
+      const name = document.getElementById('fb-name').value.trim();
+      const contact = document.getElementById('fb-contact').value.trim();
+
+      const message = `¡Hola TurisRam Dominicana! Deseo cotizar la siguiente reserva:%0A%0A` +
+        `👤 *Cliente:* ${name}%0A` +
+        `📱 *Contacto:* ${contact}%0A` +
+        `📍 *Origen:* ${origin}%0A` +
+        `🏁 *Destino:* ${destination}%0A` +
+        `📅 *Fecha:* ${date}%0A` +
+        `⏰ *Hora:* ${time}%0A` +
+        `👥 *Pasajeros:* ${passengers}%0A` +
+        `🧳 *Equipaje:* ${luggage}`;
+
+      const whatsappUrl = `https://wa.me/18497527408?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  }
+</script>
