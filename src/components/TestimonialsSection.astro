@@ -13,38 +13,45 @@ interface Testimonial {
 }
 
 const stats: Stat[] = [
-  { value: "9,800+", label: "Pasajeros Felices" },
   { value: "5.0 ★", label: "Calificación Google" },
-  { value: "100%", label: "Puntualidad VIP" }
+  { value: "100%", label: "Puntualidad VIP" },
+  { value: "24/7", label: "Soporte WhatsApp" }
 ];
 
 const testimonials: Testimonial[] = [
   {
-    name: "Yudelka García",
+    name: "Kimberlin Montero",
     title: "Reseña Verificada en Google Maps 5★",
-    quote: "Excelente servicio de transporte, muy puntual, el vehículo súper limpio y cómodo. El chofer muy educado y servicial. Lo recomiendo al 100% para traslados y excursiones en República Dominicana.",
+    quote: "Excelente conductor. El servicio de este conductor fue excepcionalmente profesional y atento; llegó puntual con un vehículo impecable, demostrando gran habilidad al volante y un conocimiento eficiente de las rutas. Su amabilidad y cortesía, combinadas con una conducción segura y suave, crearon una experiencia de viaje cómoda y relajante.",
     avatarSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
     rating: 5
   },
   {
-    name: "Jean Carlos Pérez",
+    name: "Familia Isasi",
     title: "Reseña Verificada en Google Maps 5★",
-    quote: "Increíble experiencia en nuestro traslado a Punta Cana. Comunicación fluida por WhatsApp desde el primer contacto, el chofer nos esperó en el aeropuerto con nuestro nombre en cartel personalizado. Todo perfecto.",
+    quote: "Ransel muy profesional, nos trajo a Samaná desde Bayahibe. El viaje fue muy agradable y ameno. Buen coche y muy buena conducción. Es de total confianza.",
     avatarSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
     rating: 5
   },
   {
-    name: "María José Fernández",
+    name: "Rafalis Montero Medina",
     title: "Reseña Verificada en Google Maps 5★",
-    quote: "Servicio 5 estrellas de verdad. Viajamos en familia y nos sentimos seguros durante todo el viaje hacia Samaná. Vehículo impecable y chofer altamente profesional.",
+    quote: "Excelente servicio la verdad, buen confort en el vehículo, altamente responsable y todo servido exactamente a tiempo.",
+    avatarSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    rating: 5
+  },
+  {
+    name: "Mercedes Dolores Méndez Matos",
+    title: "Local Guide • Reseña Verificada en Google 5★",
+    quote: "Trato agradable y persona de absoluta confianza, lo recomiendo 100%. Vehículo cómodo, limpio y muy confortable.",
     avatarSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     rating: 5
   },
   {
-    name: "David Smith",
+    name: "Acelis Grisel Montero Medina",
     title: "Reseña Verificada en Google Maps 5★",
-    quote: "Top notch transport service in Dominican Republic! Punctual pickup at SDQ airport, executive clean van, and fair fixed price without any surprises. Will definitely book again.",
-    avatarSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    quote: "Excelente servicio, máximo respeto y muy amable el conductor. Servicio 100% recomendable para viajar en República Dominicana.",
+    avatarSrc: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
     rating: 5
   }
 ];
@@ -53,14 +60,14 @@ const googleMapsUrl = "https://www.google.com/maps/place/TurisRan+Dominicana+%7C
 const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 ---
 
-<!-- SECCIÓN DE TESTIMONIOS STICKY STACKING -->
+<!-- SECCIÓN DE TESTIMONIOS STICKY STACKING CON RESEÑAS REALES DE GOOGLE -->
 <section class="w-full bg-[#0A0A0A] text-[#F7F5F0] py-20 lg:py-28 border-b border-[#D4AF37]/20 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
     
     <!-- COLUMNA IZQUIERDA: CONTENIDO STICKY -->
     <div class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
       
-      <!-- A = CÁPSULA DORADA COHERENTE -->
+      <!-- Cápsula Dorada -->
       <div>
         <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block">
           EXPERIENCIAS REALES DE CLIENTES
@@ -75,7 +82,7 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 
       <!-- Descripción -->
       <p class="text-sm sm:text-base text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">
-        Miles de turistas y viajeros de negocios confían diariamente en TurisRam Dominicana para sus traslados ejecutivos y tours privados en todo el país.
+        Reseñas reales y verificadas de nuestros clientes en el perfil de negocio oficial de Google Maps de TurisRam Dominicana.
       </p>
 
       <!-- Grid de 3 Estadísticas Clave -->
@@ -88,7 +95,7 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
         ))}
       </div>
 
-      <!-- B = BOTONES CTA: ESCRIBE UNA RESEÑA & VER RESEÑAS GOOGLE -->
+      <!-- Botones CTA -->
       <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a
           href={writeReviewUrl}
@@ -111,7 +118,7 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 
     </div>
 
-    <!-- C = COLUMNA DERECHA: RESEÑAS REALES DE GOOGLE MAPS -->
+    <!-- COLUMNA DERECHA: RESEÑAS REALES DE GOOGLE MAPS -->
     <div class="lg:col-span-7 flex flex-col gap-6 relative">
       {testimonials.map((t, index) => (
         <div
