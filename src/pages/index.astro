@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import QuoteModal from '../components/QuoteModal.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import TestimonialsSection from '../components/TestimonialsSection.astro';
+import AboutPreviewSection from '../components/AboutPreviewSection.astro';
 
 const pillars = [
   { 
@@ -424,8 +425,11 @@ const col3Images = [
 
   </section>
 
-  <!-- NUEVA SECCIÓN DE TESTIMONIOS STICKY STACKING DEBAJO DE GARANTÍA DE SERVICIO -->
+  <!-- SECCIÓN DE TESTIMONIOS STICKY STACKING DEBAJO DE GARANTÍA DE SERVICIO -->
   <TestimonialsSection />
+
+  <!-- NUEVA SECCIÓN SOBRE NOSOTROS PREVIEW CON MARCO DE CORTE SVG INVERTIDO DEBAJO DE TESTIMONIOS -->
+  <AboutPreviewSection />
 
   <!-- ACORDEÓN DE PREGUNTAS FRECUENTES (FAQS TOURVEX STYLE) -->
   <section class="py-24 bg-[#050505] text-white border-t border-b border-[#D4AF37]/20 relative overflow-hidden">
