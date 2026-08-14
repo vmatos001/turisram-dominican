@@ -1,46 +1,43 @@
 ---
 ---
 
-<!-- SECCIÓN SOBRE NOSOTROS PREVIEW CON MARCO SVG CLIP-PATH INVERTIDO -->
+<!-- SECCIÓN SOBRE NOSOTROS PREVIEW CON REUBICACIÓN EXACTA DE ELEMENTOS SEGÚN REFERENCIA -->
 <section class="py-20 lg:py-28 px-4 bg-[#050505] text-[#F7F5F0] border-b border-[#D4AF37]/20 relative overflow-hidden">
   <div class="max-w-6xl mx-auto">
     <div class="relative">
       
-      <!-- Header Superior con Tagline y Redes Sociales -->
-      <div class="flex justify-between items-center mb-8 w-full relative z-10">
-        <!-- Tagline Insignia -->
-        <div class="flex items-center gap-2">
-          <span class="text-[#D4AF37] animate-spin text-xl">✱</span>
-          <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md">
-            SOBRE NOSOTROS
-          </span>
-        </div>
-
-        <!-- Enlaces a Redes Sociales -->
-        <div class="flex gap-3 sm:gap-4">
-          <a
-            href="https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.6566542,-72.7709679,7z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-8 h-8 sm:w-10 sm:h-10 border border-[#D4AF37]/30 bg-[#141414] rounded-xl flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-all shadow-md"
-            aria-label="Google Maps TurisRam"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          </a>
-          <a
-            href="https://wa.me/18497527408?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20TurisRam"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-8 h-8 sm:w-10 sm:h-10 border border-[#D4AF37]/30 bg-[#141414] rounded-xl flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-md"
-            aria-label="WhatsApp TurisRam"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.16-.48-.28z"/></svg>
-          </a>
-        </div>
+      <!-- 1. Tagline Insignia Reubicada Más Cerca / Dentro de la Muesca Izquierda -->
+      <div class="absolute top-2 sm:top-3 left-4 sm:left-8 z-20 flex items-center gap-2">
+        <span class="text-[#D4AF37] animate-spin text-lg sm:text-xl">✱</span>
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md">
+          SOBRE NOSOTROS
+        </span>
       </div>
 
-      <!-- Figura de Imagen Principal con Recorte SVG Invertido (Exacto de tu Código) -->
-      <figure class="relative group my-6 overflow-hidden rounded-3xl border border-[#D4AF37]/30 shadow-2xl">
+      <!-- 2. Iconos de Redes Sociales Reubicados en el Área Superior Derecha de la Muesca -->
+      <div class="absolute top-2 sm:top-3 right-24 sm:right-32 z-20 flex gap-2.5 sm:gap-3">
+        <a
+          href="https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.6566542,-72.7709679,7z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-7 h-7 sm:w-8 sm:h-8 border border-[#D4AF37]/30 bg-[#141414]/90 backdrop-blur-md rounded-lg flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-all shadow-md"
+          aria-label="Google Maps TurisRam"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </a>
+        <a
+          href="https://wa.me/18497527408?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20TurisRam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-7 h-7 sm:w-8 sm:h-8 border border-[#D4AF37]/30 bg-[#141414]/90 backdrop-blur-md rounded-lg flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-md"
+          aria-label="WhatsApp TurisRam"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.16-.48-.28z"/></svg>
+        </a>
+      </div>
+
+      <!-- 4. Figura de Imagen Principal SIN LÍNEA DORADA DE CONTORNO (Línea Eliminada) -->
+      <figure class="relative group my-2 overflow-hidden shadow-2xl">
         <svg
           class="w-full h-auto"
           width="100%"
@@ -63,30 +60,31 @@
             xlink:href="/images/generate-an-image-of-a-professional-transportation.webp"
           ></image>
         </svg>
+
+        <!-- 3. Texto "100% Cobertura Nacional" Reubicado Dentro de la Muesca Inferior Derecha -->
+        <div class="absolute bottom-2 sm:bottom-4 right-4 sm:right-8 z-20 text-right">
+          <div class="flex items-center gap-1.5 justify-end">
+            <span class="text-[#D4AF37] font-extrabold text-xl sm:text-3xl font-['Barlow_Condensed'] drop-shadow-md">100%</span>
+            <span class="text-white uppercase font-bold text-xs sm:text-sm font-['Barlow_Condensed'] tracking-wider drop-shadow">COBERTURA NACIONAL</span>
+          </div>
+          <div class="flex items-center gap-1.5 justify-end text-[10px] sm:text-xs text-gray-300 drop-shadow">
+            <span class="text-[#D4AF37] font-bold">5.0 ★</span>
+            <span>Garantía de Satisfacción</span>
+          </div>
+        </div>
       </figure>
 
-      <!-- Barra de Estadísticas de Experiencia -->
-      <div class="flex flex-wrap lg:justify-start justify-between items-center py-4 text-sm font-['Barlow_Semi_Condensed']">
+      <!-- Barra de Estadísticas de Experiencia (Solo Métricas Izquierdas) -->
+      <div class="flex flex-wrap items-center py-3 text-sm font-['Barlow_Semi_Condensed']">
         <div class="flex flex-wrap gap-4 sm:gap-6">
           <div class="flex items-center gap-2">
             <span class="text-[#D4AF37] font-extrabold text-base sm:text-lg font-['Barlow_Condensed']">10+ AÑOS</span>
             <span class="text-gray-300">de experiencia en traslados VIP</span>
-            <span class="text-[#D4AF37]/40 hidden sm:inline">|</span>
+            <span class="text-[#D4AF37]/40">|</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-[#D4AF37] font-extrabold text-base sm:text-lg font-['Barlow_Condensed']">9,800+</span>
             <span class="text-gray-300">pasajeros satisfechos</span>
-          </div>
-        </div>
-
-        <div class="lg:absolute right-0 bottom-14 flex lg:flex-col flex-row lg:gap-0 gap-4 mt-4 lg:mt-0 text-right">
-          <div class="flex items-center gap-2 mb-1 justify-end">
-            <span class="text-[#D4AF37] font-extrabold text-2xl sm:text-3xl font-['Barlow_Condensed']">100%</span>
-            <span class="text-gray-200 uppercase font-bold text-xs sm:text-sm font-['Barlow_Condensed']">COBERTURA NACIONAL</span>
-          </div>
-          <div class="flex items-center gap-2 justify-end text-xs text-gray-400">
-            <span class="text-[#D4AF37] font-bold">5.0 ★</span>
-            <span>Garantía de Satisfacción</span>
           </div>
         </div>
       </div>
@@ -94,10 +92,10 @@
     </div>
 
     <!-- Contenido Principal de Copy & Historia -->
-    <div class="grid md:grid-cols-3 gap-8 sm:gap-12 mt-12 items-start">
+    <div class="grid md:grid-cols-3 gap-8 sm:gap-12 mt-8 items-start">
       
       <!-- Columna Titular y Parrafos (2 Cols) -->
-      <div class="md:col-span-2 space-y-6">
+      <div class="md:col-span-2 space-y-5">
         <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] text-white uppercase leading-[1.1] tracking-tight drop-shadow-lg">
           Creamos Experiencias de Viaje <br />
           <span class="text-[#D4AF37]">Inolvidables en República Dominicana.</span>
@@ -113,17 +111,17 @@
         </div>
       </div>
 
-      <!-- Columna Derecha con Firma y CTA hacia /nosotros -->
-      <div class="md:col-span-1 text-right flex flex-col items-end justify-between h-full space-y-6">
+      <!-- 5 y 6. Columna Derecha: Firma Corporativa Elevada y CTA Reubicado sin Vacíos -->
+      <div class="md:col-span-1 text-right flex flex-col items-end justify-start space-y-5 pt-0">
         <div>
-          <div class="text-[#D4AF37] text-2xl font-extrabold font-['Barlow_Condensed'] tracking-wider uppercase mb-1">
+          <div class="text-[#D4AF37] text-2xl font-extrabold font-['Barlow_Condensed'] tracking-wider uppercase mb-1 drop-shadow-md">
             TURISRAM DOMINICANA
           </div>
-          <div class="text-gray-400 text-xs font-['Barlow_Semi_Condensed'] mb-6 uppercase tracking-widest">
+          <div class="text-gray-400 text-xs font-['Barlow_Semi_Condensed'] mb-4 uppercase tracking-widest">
             Transfers Executivos & Experiencias VIP
           </div>
 
-          <p class="text-white font-bold text-sm mb-6 font-['Barlow_Semi_Condensed']">
+          <p class="text-white font-bold text-sm mb-5 font-['Barlow_Semi_Condensed']">
             ¿Listo para vivir la mejor experiencia de traslado en Dominicana?
           </p>
         </div>
