@@ -172,7 +172,7 @@ const col3Images = [
             <!-- Columna 2 (Centro - 50% MAS LENTA) -->
             <div class="animate-scroll-col2 flex flex-col gap-3 sm:gap-4 flex-shrink-0 -mt-10 hover:[animation-play-state:paused]">
               {[...col2Images, ...col2Images, ...col2Images].map((imgUrl, i) => (
-                <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
+                <div class="w-[#28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
                   <img src={imgUrl} alt={`TurisRam Tour ${i}`} class="w-full h-full object-cover" />
                 </div>
               ))}
@@ -229,9 +229,12 @@ const col3Images = [
         Descubre nuestra oferta de traslados ejecutivos y tours privados en la República Dominicana.
       </p>
 
-      <!-- Botón Giratorio SVG Nítido y Legible Estilo Tourvex -->
+      <!-- BOTÓN GIRATORIO 1: DIRIGE SUAVEMENTE HASTA EL FORMULARIO FINAL (#booking-final) -->
       <div class="mt-8 flex justify-center">
-        <a href="#quote-form-v2" class="relative inline-flex items-center justify-center w-36 h-36 sm:w-40 sm:h-40 group">
+        <a 
+          href="#booking-final" 
+          class="scroll-smooth-trigger relative inline-flex items-center justify-center w-36 h-36 sm:w-40 sm:h-40 group cursor-pointer"
+        >
           <svg class="w-full h-full rotate-circle-svg text-[#D4AF37] fill-current drop-shadow-md" viewBox="0 0 500 500">
             <defs>
               <path id="textcircle-tourvex-v2" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
@@ -372,11 +375,12 @@ const col3Images = [
           ¿POR QUÉ ELEGIR TURISRAM DOMINICANA?
         </h2>
 
-        <!-- Botón Giratorio SVG Translúcido con EFECTO MAGNÉTICO al Cursor -->
+        <!-- BOTÓN GIRATORIO 2: DIRIGE SUAVEMENTE HASTA EL FORMULARIO FINAL (#booking-final) -->
         <div class="flex justify-center pt-4">
-          <div 
+          <a 
+            href="#booking-final"
             id="magnet-btn"
-            class="relative inline-flex items-center justify-center w-40 h-40 sm:w-48 sm:h-48 group cursor-pointer transition-transform duration-300 ease-out"
+            class="scroll-smooth-trigger relative inline-flex items-center justify-center w-40 h-40 sm:w-48 sm:h-48 group cursor-pointer transition-transform duration-300 ease-out"
           >
             <svg class="w-full h-full rotate-circle-svg text-white/95 fill-current drop-shadow-2xl" viewBox="0 0 500 500">
               <defs>
@@ -391,7 +395,7 @@ const col3Images = [
             <div class="absolute w-14 h-14 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-md border-2 border-white/60 rounded-full flex items-center justify-center text-white font-extrabold text-2xl shadow-2xl group-hover:bg-[#D4AF37] group-hover:text-[#0A0A0A] transition-all group-hover:scale-110">
               &darr;
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -487,6 +491,10 @@ const col3Images = [
 </Layout>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   @keyframes marquee-ultra-slow {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
@@ -497,7 +505,7 @@ const col3Images = [
   }
 </style>
 
-<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS -->
+<!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS  3) SMOOTH SCROLL A FORMULARIO -->
 <script is:inline>
   // 1. Botón Magnético que persigue el cursor suavemente
   const roadSection = document.getElementById('scrub-road-section');
@@ -520,7 +528,7 @@ const col3Images = [
     });
   }
 
-  // 2. SCROLL PARALELO SIN CRUCES: Tarjetas 1 y 2 suben desde la izquierda (dir = -1), Tarjetas 3 y 4 suben desde la derecha (dir = 1)
+  // 2. SCROLL PARALELO SIN CRUCES
   const scrubCards = document.querySelectorAll('.scrub-card');
   const gridContainer = document.getElementById('scrub-cards-grid');
 
@@ -530,7 +538,6 @@ const col3Images = [
     const rect = gridContainer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Calcular progreso del scroll de 0 a 1 conforme el contenedor entra en la pantalla
     const startY = windowHeight * 0.9;
     const endY = windowHeight * 0.2;
     let progress = (startY - rect.top) / (startY - endY);
@@ -538,8 +545,8 @@ const col3Images = [
 
     scrubCards.forEach((card, idx) => {
       const dir = (idx < 2) ? -1 : 1;
-      const moveX = (1 - progress) * 120 * dir; // Movimiento horizontal sin cruce
-      const moveY = (1 - progress) * 160;        // Movimiento vertical
+      const moveX = (1 - progress) * 120 * dir;
+      const moveY = (1 - progress) * 160;
       const opacity = Math.max(0.1, progress);
 
       card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
@@ -550,4 +557,15 @@ const col3Images = [
   window.addEventListener('scroll', updateScrubCards, { passive: true });
   window.addEventListener('resize', updateScrubCards, { passive: true });
   updateScrubCards();
+
+  // 3. Smooth Scroll al Formulario Final (#booking-final) para todos los triggers
+  document.querySelectorAll('.scroll-smooth-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('booking-final');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 </script>
