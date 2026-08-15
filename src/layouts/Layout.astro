@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Preloader from '../components/Preloader.astro';
+import CustomCursor from '../components/CustomCursor.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -95,6 +96,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
     </script>
   </head>
   <body class="bg-[#0A0A0A] text-[#F7F5F0] antialiased selection:bg-[#D4AF37] selection:text-[#0A0A0A] min-h-screen flex flex-col justify-between">
+    <CustomCursor />
     <Preloader />
     <Navbar />
     <main class="flex-grow">
