@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import GoogleReviews from '../components/GoogleReviews.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
 
 const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r";
 ---
@@ -167,8 +167,8 @@ const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7
     </div>
   </section>
 
-  <!-- RESEÑAS VERIFICADAS -->
-  <GoogleReviews />
+  <!-- RESEÑAS VERIFICADAS STICKY STACKING -->
+  <TestimonialsSection />
 
   <script is:inline>
     document.getElementById('contact-form')?.addEventListener('submit', function(e) {
