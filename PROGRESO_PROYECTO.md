@@ -43,8 +43,9 @@
 
 ## 🧱 3. Estructura y Módulos Desarrollados en la Landing Page (`index.astro`)
 
-### 📍 Módulo 1: Header / Navbar (`src/components/Header.astro`)
+### 📍 Módulo 1: Header / Navbar (`src/components/Navbar.astro`)
 - Barra de navegación flotante semi-transparente con logo HD de TurisRam Dominicana.
+- Barra superior de anuncios (*Top Announcement Bar*) con soporte 24/7 y la fila de 4 enlaces sociales dorados (*Google Maps, WhatsApp, Instagram, Facebook*).
 - Menú responsive mobile/desktop.
 - Botón principal de cotización inmediata por WhatsApp.
 
@@ -77,7 +78,7 @@
 
 ### 📍 Módulo 7: Sección Sobre Nosotros Preview (`src/components/AboutPreviewSection.astro`)
 - Marco de corte SVG invertido personalizado (`clip-inverted-turisram`).
-- Tagline Insignia `✱ SOBRE NOSOTROS` e iconos de redes sociales dorados reubicados.
+- Tagline Insignia `✱ SOBRE NOSOTROS` y los 4 iconos de redes sociales dorados (*Google Maps, WhatsApp, Instagram, Facebook*) ubicados en la muesca superior.
 - Métrica `100% COBERTURA NACIONAL | 5.0 ★` ajustada dentro de la muesca inferior.
 - Firma corporativa `TURISRAM DOMINICANA` y botón **`CONOCE MÁS SOBRE NOSOTROS →`** hacia `/nosotros`.
 
