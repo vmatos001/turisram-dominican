@@ -78,7 +78,7 @@
 
 ### 📍 Módulo 7: Sección Sobre Nosotros Preview (`src/components/AboutPreviewSection.astro`)
 - Marco de corte SVG invertido personalizado (`clip-inverted-turisram`).
-- Tagline Insignia `✱ SOBRE NOSOTROS` y los 4 iconos de redes sociales dorados (*Google Maps, WhatsApp, Instagram, Facebook*) ubicados en la muesca superior.
+- Tagline Insignia `✱ SOBRE NOSOTROS` y los 4 iconos de redes sociales dorados (*Google Maps, WhatsApp, Instagram, Facebook*) ajustados hacia la izquierda en la muesca superior negra para evitar sobreposición con la foto.
 - Métrica `100% COBERTURA NACIONAL | 5.0 ★` ajustada dentro de la muesca inferior.
 - Firma corporativa `TURISRAM DOMINICANA` y botón **`CONOCE MÁS SOBRE NOSOTROS →`** hacia `/nosotros`.
 
