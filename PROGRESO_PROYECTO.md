@@ -103,6 +103,12 @@
 - Marca de agua gigante `TURISRAM` en el fondo (`z-0`) alineada a la base inferior en versión PC (`hidden md:block absolute bottom-0`) sin espacio vacio por debajo.
 - **Disposición Móvil**: Marca & Redes centrados (Recuadro A), Navegación & Cobertura en 2 columnas paralelas (Recuadro B) y Contacto Directo centrado (Recuadro C).
 
+### 📍 Páginas Interiores Unificadas:
+- **`/nosotros` (`src/pages/nosotros.astro`)**: Rediseño 100% en estética VIP Dark Gold (`#030303`, `#0A0A0A`, `#D4AF37`), Bento cards para Historia, Misión, Visión y Pilares de servicio.
+- **`/servicios` (`src/pages/servicios.astro`)**: Rejilla bento oscura con resplandor dorado para el catálogo de 12 tours y sección FAQ en acordeón oscuro.
+- **`/contacto` (`src/pages/contacto.astro`)**: Tarjetas de información de atención 24/7 y formulario de consulta en modo oscuro con acentos dorados.
+- **`GoogleReviews.astro`**: Componente global rediseñado en modo carbón con estrellas y badges doradas.
+
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
 - **Preloader VIP de Carga** (`src/components/Preloader.astro`): Pantalla de carga con fondo negro (`#000000`), logo oficial con movimiento de flotación suave y texto `"CARGANDO..."` con animación de recorrido de brillo horizontal en gradiente. Desaparición fluida tras la carga del DOM.
