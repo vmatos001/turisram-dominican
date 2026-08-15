@@ -3,12 +3,19 @@ const currentYear = new Date().getFullYear();
 const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7C+Transporte+%26+Tours/@18.5959418,-75.4170951,6z/data=!3m1!4b1!4m9!1m2!2m1!1sServicio+de+transporte!3m5!1s0x20c2c276dca7ff65:0xa77911ab58330602!8m2!3d18.6698995!4d-70.130055!16s%2Fg%2F11yf57_w_r";
 ---
 
-<footer class="bg-[#030303] text-[#F7F5F0] pt-16 pb-6 border-t border-[#D4AF37]/30 relative overflow-hidden">
+<footer class="bg-[#030303] text-[#F7F5F0] pt-16 pb-12 border-t border-[#D4AF37]/30 relative overflow-hidden">
   
+  <!-- Texto Gigante Watermark "TURISRAM" de Fondo (Exclusivo PC, ubicado en la zona media detrás del contenido) -->
+  <div class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center overflow-hidden pointer-events-none select-none z-0 hidden md:block">
+    <span class="text-[17vw] lg:text-[18vw] font-extrabold text-white/[0.045] uppercase tracking-widest font-['Barlow_Condensed'] leading-none block">
+      TURISRAM
+    </span>
+  </div>
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 items-start">
       
-      <!-- 1. Marca & Logo Ampliado (Rellena Recuadro Completo) -->
+      <!-- 1. Marca & Logo Ampliado -->
       <div class="space-y-4">
         <a href="/" class="inline-block">
           <img
@@ -24,7 +31,7 @@ const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7
           "Viaja cómodo. Llega seguro."
         </p>
 
-        <!-- 2. Reemplazo: Fila de Iconos de Redes Sociales -->
+        <!-- Fila de Iconos de Redes Sociales -->
         <div class="pt-2">
           <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest font-['Barlow_Condensed'] mb-2.5">
             Síguenos & Contáctanos:
@@ -144,7 +151,7 @@ const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7
     <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-3 font-['Barlow_Condensed'] relative z-10">
       <p>© {currentYear} TurisRam Dominicana. Todos los derechos reservados.</p>
       
-      <!-- 3. Crédito de Creador "Creada por Goglite" enlazado a goglite.com -->
+      <!-- Crédito de Creador "Creada por Goglite" -->
       <a
         href="https://goglite.com/"
         target="_blank"
@@ -156,13 +163,6 @@ const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7
       </a>
     </div>
 
-  </div>
-
-  <!-- 4. Texto Gigante Watermark "TURISRAM" en el Fondo Centrado en la Parte Inferior (Estilo Bento) -->
-  <div class="w-full text-center overflow-hidden pointer-events-none select-none -mb-8 sm:-mb-12 lg:-mb-16 pt-4 relative z-0">
-    <span class="text-[17vw] sm:text-[19vw] font-extrabold text-white/[0.035] uppercase tracking-widest font-['Barlow_Condensed'] leading-none block">
-      TURISRAM
-    </span>
   </div>
 
 </footer>
