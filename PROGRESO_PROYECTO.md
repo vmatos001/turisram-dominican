@@ -98,6 +98,7 @@
 - Enlaces de navegación rápida y cobertura de los 5 aeropuertos principales del país.
 - Crédito de autor oficial: **`Creada por Goglite`** enlazado a [goglite.com](https://goglite.com/).
 - Marca de agua gigante `TURISRAM` en el fondo (`z-0`) alineada a la base inferior en versión PC (`hidden md:block absolute bottom-0`) sin espacio vacio por debajo.
+- **Disposición Móvil**: Marca & Redes centrados (Recuadro A), Navegación & Cobertura en 2 columnas paralelas (Recuadro B) y Contacto Directo centrado (Recuadro C).
 
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
