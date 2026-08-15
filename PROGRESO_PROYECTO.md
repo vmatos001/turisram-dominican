@@ -97,7 +97,7 @@
 - Fila de iconos de redes sociales dorados (*Google Maps, WhatsApp, Instagram, Facebook*).
 - Enlaces de navegación rápida y cobertura de los 5 aeropuertos principales del país.
 - Crédito de autor oficial: **`Creada por Goglite`** enlazado a [goglite.com](https://goglite.com/).
-- Marca de agua gigante `TURISRAM` en el fondo de la parte inferior.
+- Marca de agua gigante `TURISRAM` en el fondo (`z-0`) ubicada en la zona media detrás del contenido principal en versión PC (`hidden md:block absolute top-[42%]`).
 
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
