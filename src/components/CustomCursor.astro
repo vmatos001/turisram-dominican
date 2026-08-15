@@ -1,19 +1,19 @@
 ---
-/* CustomCursor.astro — Puntero Custom VIP en Negativo con Deslizamiento Elegante */
+/* CustomCursor.astro — Puntero Custom VIP en Negativo ultra-responsivo */
 ---
 
 <!-- Elementos del Puntero Custom (Oculto por defecto en pantallas táctiles) -->
 <div id="custom-cursor-container" class="hidden md:block pointer-events-none">
-  <!-- Anillo exterior seguidor con movimiento LERP fluido -->
+  <!-- Anillo exterior seguidor (Sin lag CSS, controlado por LERP 0.35) -->
   <div 
     id="cursor-follower" 
-    class="fixed top-0 left-0 w-10 h-10 rounded-full border border-white/80 z-[99998] pointer-events-none transition-transform duration-300 ease-out -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+    class="fixed top-0 left-0 w-9 h-9 rounded-full border border-white/80 z-[99998] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
   ></div>
 
-  <!-- Punto central exacto del puntero -->
+  <!-- Punto central (Sin lag CSS, pegado 1:1 al puntero del mouse) -->
   <div 
     id="cursor-dot" 
-    class="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-white z-[99999] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference transition-transform duration-100 ease-out"
+    class="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-white z-[99999] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
   ></div>
 </div>
 
@@ -33,38 +33,39 @@
     let followerX = -100;
     let followerY = -100;
     let isHovering = false;
-    let animationFrameId = null;
+    let isVisible = false;
 
-    // Escuchar movimiento del ratón
+    // Escuchar movimiento del ratón para actualizar punto central inmediatamente (0ms delay)
     function onMouseMove(e) {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Mover el punto central instantáneamente con alta precisión
+      // Pegado instantáneo 1:1 al puntero
       dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(${isHovering ? 0.5 : 1})`;
 
-      // Si el cursor estaba oculto al entrar a la ventana
-      if (container.style.opacity === '0') {
+      if (!isVisible) {
+        isVisible = true;
         container.style.opacity = '1';
+        followerX = mouseX;
+        followerY = mouseY;
       }
     }
 
-    // Animación suave LERP para el anillo exterior seguidor
+    // Animación de seguimiento del anillo exterior (LERP 0.35 para máxima cercanía y velocidad)
     function render() {
-      // Interpolación lineal (0.15 = velocidad de deslizamiento elegante)
-      followerX += (mouseX - followerX) * 0.15;
-      followerY += (mouseY - followerY) * 0.15;
+      // Interpolación más rápida (0.35) para estar más cerca del mouse
+      followerX += (mouseX - followerX) * 0.35;
+      followerY += (mouseY - followerY) * 0.35;
 
-      const scale = isHovering ? 2.2 : 1;
+      const scale = isHovering ? 2.0 : 1;
       follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(${scale})`;
 
-      animationFrameId = requestAnimationFrame(render);
+      requestAnimationFrame(render);
     }
 
-    // Detectar hover sobre elementos interactivos (enlaces, botones, inputs)
+    // Detectar hover sobre elementos interactivos
     function addHoverListeners() {
-      const interactiveSelector = 'a, button, input, select, textarea, [role="button"], .interactive-hover';
-      const interactiveElements = document.querySelectorAll(interactiveSelector);
+      const interactiveElements = document.querySelectorAll('a, button, input, select, textarea, [role="button"], .interactive-hover');
 
       interactiveElements.forEach((el) => {
         el.addEventListener('mouseenter', () => {
@@ -78,26 +79,25 @@
       });
     }
 
-    // Ocultar al salir de la ventana del navegador
+    // Ocultar/Mostrar al salir/entrar a la ventana
     document.addEventListener('mouseleave', () => {
       container.style.opacity = '0';
+      isVisible = false;
     });
 
     document.addEventListener('mouseenter', () => {
       container.style.opacity = '1';
+      isVisible = true;
     });
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
     
-    // Iniciar loop de animación
     render();
     addHoverListeners();
 
-    // Re-aplicar listeners tras navegación SPA en Astro
     document.addEventListener('astro:page-load', addHoverListeners);
   }
 
-  // Ejecutar al cargar la página
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCustomCursor);
   } else {
@@ -108,9 +108,8 @@
 </script>
 
 <style>
-  /* Suavizado global opcional */
   #custom-cursor-container {
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 </style>
