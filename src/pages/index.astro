@@ -157,8 +157,8 @@ const col3Images = [
 
         </div>
 
-        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS -->
-        <div class="lg:col-span-6 relative h-[650px] sm:h-[750px] flex items-center justify-center select-none">
+        <!-- COLUMNA DERECHA: CARRUSEL INCLINADO A 6 GRADOS (Solo visible en pantallas grandes desktop) -->
+        <div class="lg:col-span-6 relative hidden lg:flex h-[750px] items-center justify-center select-none">
           
           <!-- Contenedor Continuo Inclinado a 6 Grados Exactos -->
           <div class="transform rotate-[6deg] scale-105 flex gap-3 sm:gap-5 justify-center items-start w-full">
@@ -175,7 +175,7 @@ const col3Images = [
             <!-- Columna 2 (Centro - 50% MAS LENTA) -->
             <div class="animate-scroll-col2 flex flex-col gap-3 sm:gap-4 flex-shrink-0 -mt-10 hover:[animation-play-state:paused]">
               {[...col2Images, ...col2Images, ...col2Images].map((imgUrl, i) => (
-                <div class="w-[#28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
+                <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
                   <img src={imgUrl} alt={`TurisRam Tour ${i}`} class="w-full h-full object-cover" />
                 </div>
               ))}
