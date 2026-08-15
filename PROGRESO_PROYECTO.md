@@ -101,6 +101,7 @@
 
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
+- **Preloader VIP de Carga** (`src/components/Preloader.astro`): Pantalla de carga con fondo negro (`#050505`), glow dorado radial, logo oficial con movimiento de flotación suave y texto `"CARGANDO..."` con animación de recorrido de brillo horizontal en gradiente. Desaparición fluida tras la carga del DOM.
 
 ---
 
