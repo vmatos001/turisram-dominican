@@ -57,6 +57,8 @@
 
 ### 📍 Módulo 3: Live Quote Engine Widget (`src/components/QuoteModal.astro`)
 - Formulario modal de cotización rápida en tiempo real.
+- **Tarjeta 3D Izquierda**: Imagen A sustituida por vehículo VIP `design-a-sleek-and-elegant-scene-of-a-private-ride.webp` y eliminada de la biblioteca.
+- **Prueba Social (Sección B)**: Avatares actualizados con rostros de reseñas reales sin borde dorado (`rounded-full object-cover shadow-md`).
 
 ### 📍 Módulo 4: Catálogo Executive VIP
 - Bento Grid con tarjetas de servicios destacados (*Isla Saona VIP, Traslado Aeropuerto PUJ/SDQ, Van Ejecutiva VIP, Samaná & Salto del Limón*).
