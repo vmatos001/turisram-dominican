@@ -107,7 +107,7 @@
 - **`/nosotros` (`src/pages/nosotros.astro`)**: Rediseño 100% en estética VIP Dark Gold (`#030303`, `#0A0A0A`, `#D4AF37`), Bento cards para Historia, Misión, Visión y Pilares de servicio.
 - **`/servicios` (`src/pages/servicios.astro`)**: Rejilla bento oscura con resplandor dorado para el catálogo de 12 tours y sección FAQ en acordeón oscuro.
 - **`/contacto` (`src/pages/contacto.astro`)**: Tarjetas de información de atención 24/7 y formulario de consulta en modo oscuro con acentos dorados.
-- **`GoogleReviews.astro`**: Componente global rediseñado en modo carbón con estrellas y badges doradas.
+- **`TestimonialsSection.astro`**: Componente global de reseñas sustituido en todo el sitio (`/nosotros`, `/servicios`, `/contacto` e `index.astro`) con el sistema interactivo de apilamiento *Sticky Card Stacking*, reseñas 5.0★ reales de Google Maps y métricas VIP.
 
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
