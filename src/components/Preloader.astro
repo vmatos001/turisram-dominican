@@ -4,18 +4,15 @@
 
 <div 
   id="preloader" 
-  class="fixed inset-0 z-[99999] bg-[#050505] flex flex-col items-center justify-center select-none pointer-events-auto transition-opacity duration-700 ease-out"
+  class="fixed inset-0 z-[99999] bg-[#000000] flex flex-col items-center justify-center select-none pointer-events-auto transition-opacity duration-700 ease-out"
 >
-  <!-- Glow radial dorado sutil en el fondo -->
-  <div class="absolute w-80 h-80 sm:w-96 sm:h-96 bg-[#D4AF37]/10 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-
   <div class="relative z-10 flex flex-col items-center gap-6 px-4">
-    <!-- LOGO DE TURISRAM CON MOVIMIENTO LIGERO (FLOAT/RESPIRACIÓN) -->
+    <!-- LOGO DE TURISRAM CON MOVIMIENTO LIGERO (FLOAT / ESCALA SUAVE SIN RESPLANDOR TRASERO) -->
     <div class="animate-subtle-float">
       <img 
         src="/images/logo-turisram.webp" 
         alt="TurisRam Dominicana — Cargando" 
-        class="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-[0_10px_25px_rgba(212,175,55,0.25)]"
+        class="h-16 sm:h-20 md:h-24 w-auto object-contain"
       />
     </div>
 
@@ -34,15 +31,13 @@
 </div>
 
 <style>
-  /* Movimiento ligero de flotado/respiración del logo */
+  /* Movimiento ligero de flotado/respiración del logo (sin resplandor/sombra) */
   @keyframes subtleFloat {
     0%, 100% {
       transform: translateY(0) scale(1);
-      filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.2));
     }
     50% {
       transform: translateY(-7px) scale(1.03);
-      filter: drop-shadow(0 14px 32px rgba(212, 175, 55, 0.4));
     }
   }
 
