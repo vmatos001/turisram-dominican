@@ -126,31 +126,38 @@ const faqs = [
   description="Catálogo de traslados privados desde aeropuertos (PUJ, SDQ, STI, LRM) y tours exclusivos en Punta Cana, Saona, Samaná, Santo Domingo y más."
 >
 
-  <!-- HERO SECTION SERVICIOS CON ESTILO VIP DORADO -->
-  <section class="relative min-h-[75vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-[#D4AF37]/20">
-    <div class="absolute inset-0 z-0">
-      <img
-        src="/images/create-a-breathtaking-landscape-image-that-showcas.webp"
-        alt="Paisajes de República Dominicana TurisRam"
-        class="w-full h-full object-cover animate-subtle-zoom opacity-30"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#0A0A0A]/85 to-[#030303]/90"></div>
-    </div>
-
+  <!-- HERO SECTION SERVICIOS - ESTILO TOURVEX: COPY EN PARTE SUPERIOR + MARCO DE IMAGEN ESTILO GARANTÍA DE SERVICIO -->
+  <section class="bg-[#030303] text-white pt-16 pb-20 border-b border-[#D4AF37]/20 relative overflow-hidden">
+    
     <!-- Glowing Orbs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
+    <!-- 1. COPY CENTRAL EN LA PARTE SUPERIOR (FUERA DE LA IMAGEN) -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center mb-10">
       <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-4">
         Traslados & Excursiones VIP
       </span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-none mb-6 uppercase">
+      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-none mb-4 uppercase">
         Nuestros Servicios & <span class="text-[#D4AF37]">Tours Destacados</span>
       </h1>
-      <p class="text-sm sm:text-lg text-gray-300 max-w-3xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
+      <p class="text-sm sm:text-lg text-gray-300 max-w-2xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
         Viaja por toda la República Dominicana con total libertad, confort y la garantía de un servicio profesional a tarifa fija previamente acordada.
       </p>
     </div>
+
+    <!-- 2. CONTENEDOR MARCO DE IMAGEN TIPO GARANTÍA DE SERVICIO DEBAJO -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="relative rounded-[2.5rem] sm:rounded-[3.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl bg-[#0A0A0A] h-[340px] sm:h-[480px] lg:h-[540px] group">
+        <img
+          src="/images/create-a-breathtaking-landscape-image-that-showcas.webp"
+          alt="Paisajes y Tours de República Dominicana TurisRam"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
+        />
+        <!-- Overlay degradado suave para contraste inferior -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/80 via-transparent to-transparent opacity-60"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- CATÁLOGO DE TOURS BENTO GRID CON TARJETAS OSCURAS Y BORDES DORADOS -->
