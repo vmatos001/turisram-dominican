@@ -106,12 +106,18 @@ const values = [
     </div>
   </section>
 
-  <!-- MISIÓN Y VISIÓN CON BENTO CARDS DORADAS -->
-  <section class="py-20 bg-[#0A0A0A] text-white border-b border-[#D4AF37]/20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- MISIÓN Y VISIÓN - PROPÓSITO CORPORATIVO -->
+  <section class="relative bg-[#0A0A0A] text-white py-32">
+    
+    <!-- Degradado superior: negro #030303 → #0A0A0A -->
+    <div class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none"></div>
+    <!-- Degradado inferior: #0A0A0A → negro #030303 -->
+    <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-14">
-        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
+      <div class="text-center mb-16">
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-4">
           PROPÓSITO CORPORATIVO
         </span>
         <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">
@@ -119,26 +125,33 @@ const values = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- Misión -->
-        <div class="bg-[#141414] border border-[#D4AF37]/30 p-8 sm:p-10 rounded-3xl hover:border-[#D4AF37] transition-all shadow-xl group">
-          <div class="w-14 h-14 bg-[#D4AF37] text-[#0A0A0A] rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <div class="bg-[#141409] border border-[#D4AF37]/15 p-8 sm:p-10 rounded-2xl hover:border-[#D4AF37]/40 transition-all duration-300 shadow-xl group hover:shadow-[0_8px_40px_rgba(212,175,55,0.08)]">
+          <!-- Icono en caja dorada redondeada -->
+          <div class="w-12 h-12 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] rounded-xl flex items-center justify-center mb-7 group-hover:bg-[#D4AF37]/25 transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
           </div>
-          <h3 class="text-2xl font-bold text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider mb-3">Nuestra Misión</h3>
-          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">
+          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Misión</h3>
+          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">
             Proporcionar un servicio de transporte turístico puntual, seguro y altamente confortable en República Dominicana, garantizando tarifas transparentes sin cobros ocultos y una atención VIP personalizada que supere las expectativas de cada viajero.
           </p>
         </div>
 
         <!-- Visión -->
-        <div class="bg-[#141414] border border-[#D4AF37]/30 p-8 sm:p-10 rounded-3xl hover:border-[#D4AF37] transition-all shadow-xl group">
-          <div class="w-14 h-14 bg-[#D4AF37] text-[#0A0A0A] rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        <div class="bg-[#141409] border border-[#D4AF37]/15 p-8 sm:p-10 rounded-2xl hover:border-[#D4AF37]/40 transition-all duration-300 shadow-xl group hover:shadow-[0_8px_40px_rgba(212,175,55,0.08)]">
+          <!-- Icono en caja dorada redondeada -->
+          <div class="w-12 h-12 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] rounded-xl flex items-center justify-center mb-7 group-hover:bg-[#D4AF37]/25 transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
           </div>
-          <h3 class="text-2xl font-bold text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider mb-3">Nuestra Visión</h3>
-          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">
+          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Visión</h3>
+          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">
             Ser la empresa de traslados privados y tours ejecutivos más confiable, recomendada y prestigiada en la República Dominicana, distinguida por nuestra puntualidad impecable, flota moderna y compromiso absoluto con la satisfacción de nuestros pasajeros.
           </p>
         </div>
