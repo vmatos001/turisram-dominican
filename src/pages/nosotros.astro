@@ -31,31 +31,37 @@ const values = [
   description="Conoce la trayectoria, misión y estándares de excelencia de TurisRam Dominicana. Servicio líder en traslados privados y tours en República Dominicana."
 >
 
-  <!-- HERO SECTION SOBRE NOSOTROS CON ESTILO VIP DORADO -->
-  <section class="relative min-h-[75vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-[#D4AF37]/20">
-    <div class="absolute inset-0 z-0">
-      <img
-        src="/images/create-a-warm-and-professional-header-image-for-th.webp"
-        alt="Chofer profesional TurisRam Dominicana"
-        class="w-full h-full object-cover animate-subtle-zoom opacity-35"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#0A0A0A]/85 to-[#030303]/90"></div>
-    </div>
+  <!-- HERO SECTION SOBRE NOSOTROS - COPY SUPERIOR + IMAGEN PANORÁMICA FULL-WIDTH -->
+  <section class="bg-[#030303] text-white pt-14 pb-0 relative overflow-hidden">
+    
+    <!-- Glowing Orb -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- Glowing Orbs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
-      <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-4">
+    <!-- 1. COPY SUPERIOR ELEGANTE Y COMPACTO -->
+    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center mb-8">
+      <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
         Nuestra Identidad & Estándares VIP
       </span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-none mb-6 uppercase">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-tight mb-3 uppercase">
         Bienvenidos a <span class="text-[#D4AF37]">TurisRam Dominicana</span>
       </h1>
-      <p class="text-sm sm:text-lg text-gray-300 max-w-3xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
-        Somos una empresa líder dedicada a brindar experiencias de transporte privado de máxima excelencia, conectando a viajeros con los destinos más fascinantes de la República Dominicana con puntualidad, lujo y seguridad.
+      <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
+        Somos una empresa líder dedicada a brindar experiencias de transporte privado de máxima excelencia, conectando a viajeros con los destinos más fascinantes de la República Dominicana.
       </p>
     </div>
+
+    <!-- 2. IMAGEN PANORÁMICA FULL-WIDTH -->
+    <div class="relative z-10 w-full px-3 sm:px-5">
+      <div class="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-[#D4AF37]/35 shadow-2xl h-[280px] sm:h-[420px] lg:h-[500px] group">
+        <img
+          src="/images/create-a-warm-and-professional-header-image-for-th.webp"
+          alt="Chofer profesional TurisRam Dominicana"
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-100"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-transparent"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- NUESTRA HISTORIA CON ESTILO OSCURO VIP -->

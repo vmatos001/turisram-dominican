@@ -10,31 +10,37 @@ const googleMapsLink = "https://www.google.com/maps/place/TurisRan+Dominicana+%7
   description="Ponte en contacto con TurisRam Dominicana. Escríbenos directamente por WhatsApp al +1 (849) 752-7408 o completa el formulario para cotizar tu traslado."
 >
 
-  <!-- HERO SECTION CONTACTO CON ESTILO VIP DORADO -->
-  <section class="relative min-h-[50vh] flex items-center justify-center bg-[#030303] text-white overflow-hidden border-b border-[#D4AF37]/20">
-    <div class="absolute inset-0 z-0">
-      <img
-        src="/images/create-a-clean-and-inviting-image-for-a--contact-u.webp"
-        alt="Contacto TurisRam Dominicana"
-        class="w-full h-full object-cover opacity-30 animate-subtle-zoom"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#0A0A0A]/85 to-[#030303]/90"></div>
-    </div>
+  <!-- HERO SECTION CONTACTO - COPY SUPERIOR + IMAGEN PANORÁMICA FULL-WIDTH -->
+  <section class="bg-[#030303] text-white pt-14 pb-0 relative overflow-hidden">
+    
+    <!-- Glowing Orb -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- Glowing Orbs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-16">
-      <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
-        ESTAMOS A TU SERVICIO 24/7
+    <!-- 1. COPY SUPERIOR ELEGANTE Y COMPACTO -->
+    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center mb-8">
+      <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
+        Estamos a tu Servicio 24/7
       </span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-tight mb-3 uppercase">
         Contáctanos <span class="text-[#D4AF37]">Hoy Mismo</span>
       </h1>
-      <p class="text-xs sm:text-base text-gray-300 mt-3 max-w-xl mx-auto font-['Barlow_Semi_Condensed']">
+      <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
         Respuesta rápida e inmediata las 24 horas del día, los 7 días de la semana por WhatsApp y teléfono.
       </p>
     </div>
+
+    <!-- 2. IMAGEN PANORÁMICA FULL-WIDTH -->
+    <div class="relative z-10 w-full px-3 sm:px-5">
+      <div class="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-[#D4AF37]/35 shadow-2xl h-[280px] sm:h-[420px] lg:h-[500px] group">
+        <img
+          src="/images/create-a-clean-and-inviting-image-for-a--contact-u.webp"
+          alt="Contacto TurisRam Dominicana"
+          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-100"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-transparent"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- SECCIÓN DE CONTACTO INFO + FORMULARIO CON DISEÑO VIP -->
