@@ -104,10 +104,15 @@
 - **Disposición Móvil**: Marca & Redes centrados (Recuadro A), Navegación & Cobertura en 2 columnas paralelas (Recuadro B) y Contacto Directo centrado (Recuadro C).
 
 ### 📍 Páginas Interiores Unificadas:
-- **`/nosotros` (`src/pages/nosotros.astro`)**: Rediseño 100% en estética VIP Dark Gold (`#030303`, `#0A0A0A`, `#D4AF37`), Bento cards para Historia, Misión, Visión y Pilares de servicio.
-- **`/servicios` (`src/pages/servicios.astro`)**: Rejilla bento oscura con resplandor dorado para el catálogo de 12 tours y sección FAQ en acordeón oscuro.
-- **`/contacto` (`src/pages/contacto.astro`)**: Tarjetas de información de atención 24/7 y formulario de consulta en modo oscuro con acentos dorados.
-- **`TestimonialsSection.astro`**: Componente global de reseñas sustituido en todo el sitio (`/nosotros`, `/servicios`, `/contacto` e `index.astro`) con el sistema interactivo de apilamiento *Sticky Card Stacking*, reseñas 5.0★ reales de Google Maps y métricas VIP.
+- **`/nosotros` (`src/pages/nosotros.astro`)**: Estructura completa reorganizada en 7 secciones: ① Hero Panorámico → ② Nuestra Historia → ③ Propósito Corporativo (Misión & Visión con tarjetas premium) → ④ Filosofía & Excelencia (4 pilares) → ⑤ Experiencias Reales (TestimonialsSection sticky) → ⑥ Preguntas Frecuentes (FAQ con imágenes laterales, copiado del Home) → ⑦ CTA Final con marco dorado, botón WhatsApp y enlace a Servicios.
+- **`/servicios` (`src/pages/servicios.astro`)**: Hero panorámico con copy compacto arriba (fuera de la imagen) + imagen full-width enmarcada con borde dorado (sin bordes negros anchos ni línea divisora). Catálogo de 12 tours en bento cards oscuras.
+- **`/contacto` (`src/pages/contacto.astro`)**: Hero panorámico con mismo estilo unificado. Tarjetas de atención 24/7 y formulario de consulta en modo oscuro.
+- **`TestimonialsSection.astro`**: Componente global de reseñas integrado en todo el sitio (`/nosotros`, `/servicios`, `/contacto` e `index.astro`) con el sistema interactivo de apilamiento *Sticky Card Stacking*, reseñas 5.0★ reales de Google Maps y métricas VIP.
+
+### 📍 Elementos de Diseño Global:
+- **Hero Panorámico Unificado**: Las 3 páginas interiores comparten el mismo patrón de Hero: badge dorada → H1 compacto → párrafo descriptivo (fuera de la imagen), seguido de foto panorámica full-width enmarcada con `rounded-[2rem] border border-[#D4AF37]/35` sin bordes negros anchos ni líneas divisoras.
+- **Tarjetas Premium Estilo Dark Olive**: Todas las tarjetas de secciones (Propósito Corporativo, Filosofía & Excelencia) usan `bg-[#141409]` (fondo cálido oscuro) con icono dorado en caja translúcida `bg-[#D4AF37]/15 border border-[#D4AF37]/30 rounded-xl`, sin amarillo sólido.
+- **Sección Propósito Corporativo**: Eliminada la línea divisora dorada. Degradados suaves superior (`#050505 → transparent`) e inferior (`transparent → #030303`) para transición fluida entre secciones. Padding aumentado a `py-32` para mayor aire visual.
 
 ### 📍 Elementos Globales:
 - **Botón Flotante de WhatsApp** (`src/components/WhatsAppButton.astro`): Botón permanente en la esquina inferior derecha con icono oficial SVG y z-index máximo.
@@ -130,19 +135,38 @@ git commit -m "Descripción del cambio"
 git push origin master
 
 # 3. Despliegue a Producción Firebase
-npx -y firebase-tools@latest deploy --only hosting
+npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 ```
 
 ---
 
-## 📌 5. Pasos Sugeridos para la Próxima Sesión
+## 📅 6. Registro de Sesiones
 
-1. **Páginas Secundarias**:
-   - Refinar y adaptar los diseños completos de `/nosotros`, `/servicios` y `/contacto` manteniendo la línea estética de la página de inicio.
-2. **Enlaces Definitivos de Redes Sociales**:
-   - Actualizar los enlaces finales de Instagram, Facebook y TikTok cuando el cliente los suministre.
-3. **Imágenes Definitivas de Flota**:
-   - Sustituir las imágenes temporales por la galería fotográfica oficial de los vehículos definitivos.
+### Sesión 2026-08-15
+**Cambios realizados:**
+- ✅ Sección de reseñas `<GoogleReviews />` reemplazada por `<TestimonialsSection />` (sticky stacking) en `/nosotros`, `/servicios` y `/contacto`.
+- ✅ Hero de todas las páginas interiores rediseñado con patrón panorámico unificado: copy arriba (fuera de la imagen) + foto full-width con borde dorado y sin bordes negros anchos.
+- ✅ Líneas divisoras doradas eliminadas en secciones de Hero y Propósito Corporativo.
+- ✅ Tarjetas de Propósito Corporativo y Filosofía & Excelencia actualizadas a estética premium (fondo `#141409`, icono dorado en caja translúcida, `rounded-2xl`).
+- ✅ Sección Propósito Corporativo con degradados de transición top/bottom y mayor padding.
+- ✅ `/nosotros` reorganizada completamente con estructura de 7 secciones incluyendo FAQ y CTA final.
+- ✅ Todos los cambios compilados, commiteados y desplegados a Firebase Hosting.
+
+**Commits destacados:**
+- `feat: sustituir seccion vieja de resenas por TestimonialsSection en todo el sitio`
+- `style: Hero panoramico unificado en nosotros, servicios y contacto`
+- `style: Proposito Corporativo - tarjetas premium, degradados y mas aire`
+- `feat: nosotros.astro - estructura completa reorganizada con FAQ y CTA final`
 
 ---
-*Archivo generado automáticamente por Antigravity AI — 2026.*
+
+## 📌 7. Próximos Pasos Sugeridos
+
+1. **Imágenes Definitivas de Flota**: Sustituir las imágenes AI temporales por fotografías oficiales de los vehículos reales de TurisRam.
+2. **Enlaces Definitivos de Redes Sociales**: Actualizar los URLs finales de Instagram, Facebook y TikTok cuando el cliente los suministre.
+3. **SEO & Meta Tags**: Revisar y optimizar las meta descriptions y Open Graph tags de todas las páginas.
+4. **Dominio Personalizado**: Conectar el dominio oficial de TurisRam a Firebase Hosting.
+5. **Formulario de Contacto**: Evaluar integración de backend (Firebase Functions o Formspree) para procesar los formularios.
+
+---
+*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-15.*
