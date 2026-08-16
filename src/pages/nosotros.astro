@@ -3,209 +3,168 @@ import Layout from '../layouts/Layout.astro';
 import TestimonialsSection from '../components/TestimonialsSection.astro';
 
 const values = [
-  { 
-    title: "Puntualidad Monitoreada 24/7", 
-    desc: "Rastreamos tu vuelo en tiempo real y coordinamos la llegada del chofer para evitar cualquier tiempo de espera en el aeropuerto.", 
-    svg: `<svg class="w-6 h-6 text-[#0A0A0A] fill-current" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>`
-  },
-  { 
-    title: "Seguridad & Flota VIP", 
-    desc: "Vehículos ejecutivos sometidos a rigurosas inspecciones mecánicas periódicas, totalmente asegurados, limpios y climatizados.", 
-    svg: `<svg class="w-6 h-6 text-[#0A0A0A] fill-current" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`
-  },
-  { 
-    title: "Atención VIP Personalizada", 
-    desc: "Trato esmerado, conductores bilingües certificados uniformados y comunicación constante por WhatsApp antes, durante y después.", 
-    svg: `<svg class="w-6 h-6 text-[#0A0A0A] fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`
-  },
-  { 
-    title: "Tarifas Transparentes Garantizadas", 
-    desc: "Precios fijos previamente acordados sin cargos ocultos en aeropuertos, peajes ni suplementos sorpresa al abordar.", 
-    svg: `<svg class="w-6 h-6 text-[#0A0A0A] fill-current" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>`
-  }
+  { title: "Puntualidad Monitoreada 24/7", desc: "Rastreamos tu vuelo en tiempo real y coordinamos la llegada del chofer para evitar cualquier tiempo de espera en el aeropuerto." },
+  { title: "Seguridad & Flota VIP", desc: "Vehiculos ejecutivos sometidos a rigurosas inspecciones mecanicas periodicas, totalmente asegurados, limpios y climatizados." },
+  { title: "Atencion VIP Personalizada", desc: "Trato esmerado, conductores bilingues certificados uniformados y comunicacion constante por WhatsApp antes, durante y despues." },
+  { title: "Tarifas Transparentes Garantizadas", desc: "Precios fijos previamente acordados sin cargos ocultos en aeropuertos, peajes ni suplementos sorpresa al abordar." }
+];
+
+const faqs = [
+  { q: "Como funciona la recepcion en el aeropuerto con el cartel personalizado?", a: "Monitoreamos tu vuelo en tiempo real. Al salir de la terminal (PUJ, SDQ, LRM), tu chofer certificado estara esperandote en la puerta de llegadas sosteniendo un cartel claro con tu nombre completo." },
+  { q: "La tarifa cotizada por WhatsApp incluye todos los peajes e impuestos?", a: "Si, 100% garantizado. El precio acordado previamente por WhatsApp es el precio final que pagas. Sin cargos sorpresas por retraso de vuelo, equipaje o peajes." },
+  { q: "Que tipo de vehiculos utilizan para los traslados ejecutivos y VIP?", a: "Disponemos de vans ejecutivas y SUVs de lujo sanitizadas, equipadas con aire acondicionado de alta potencia, wifi y asientos reclinables de maximo confort." },
+  { q: "Con que anticipacion debo reservar mi traslado o excursion?", a: "Recomendamos reservar con al menos 24 horas de anticipacion. Sin embargo, procesamos cotizaciones expres por WhatsApp en tiempo real para traslados inmediatos." }
 ];
 ---
 
 <Layout
   title="Sobre Nosotros | TurisRam Dominicana Transporte VIP"
-  description="Conoce la trayectoria, misión y estándares de excelencia de TurisRam Dominicana. Servicio líder en traslados privados y tours en República Dominicana."
+  description="Conoce la trayectoria, mision y estandares de excelencia de TurisRam Dominicana. Servicio lider en traslados privados y tours en Republica Dominicana."
 >
 
-  <!-- HERO SECTION SOBRE NOSOTROS - COPY SUPERIOR + IMAGEN PANORÁMICA FULL-WIDTH -->
+  <!-- HERO -->
   <section class="bg-[#030303] text-white pt-14 pb-0 relative overflow-hidden">
-    
-    <!-- Glowing Orb -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none"></div>
-
-    <!-- 1. COPY SUPERIOR ELEGANTE Y COMPACTO -->
     <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center mb-8">
-      <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
-        Nuestra Identidad & Estándares VIP
-      </span>
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-tight mb-3 uppercase">
-        Bienvenidos a <span class="text-[#D4AF37]">TurisRam Dominicana</span>
-      </h1>
-      <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">
-        Somos una empresa líder dedicada a brindar experiencias de transporte privado de máxima excelencia, conectando a viajeros con los destinos más fascinantes de la República Dominicana.
-      </p>
+      <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">Nuestra Identidad &amp; Estandares VIP</span>
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-['Barlow_Condensed'] tracking-tight leading-tight mb-3 uppercase">Bienvenidos a <span class="text-[#D4AF37]">TurisRam Dominicana</span></h1>
+      <p class="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-['Barlow_Semi_Condensed'] leading-relaxed">Somos una empresa lider dedicada a brindar experiencias de transporte privado de maxima excelencia, conectando a viajeros con los destinos mas fascinantes de la Republica Dominicana.</p>
     </div>
-
-    <!-- 2. IMAGEN PANORÁMICA FULL-WIDTH -->
     <div class="relative z-10 w-full px-3 sm:px-5">
       <div class="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-[#D4AF37]/35 shadow-2xl h-[280px] sm:h-[420px] lg:h-[500px] group">
-        <img
-          src="/images/create-a-warm-and-professional-header-image-for-th.webp"
-          alt="Chofer profesional TurisRam Dominicana"
-          class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-100"
-        />
+        <img src="/images/create-a-warm-and-professional-header-image-for-th.webp" alt="Chofer profesional TurisRam Dominicana" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-100" />
         <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/60 via-transparent to-transparent"></div>
       </div>
     </div>
-
   </section>
 
-  <!-- NUESTRA HISTORIA CON ESTILO OSCURO VIP -->
-  <section class="py-20 bg-[#050505] text-[#F7F5F0] border-b border-[#D4AF37]/20">
+  <!-- NUESTRA HISTORIA -->
+  <section class="py-24 bg-[#050505] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        
         <div class="space-y-6">
           <div class="inline-flex items-center gap-2">
-            <span class="text-[#D4AF37] animate-spin text-lg">✱</span>
-            <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md">
-              NUESTRA HISTORIA
-            </span>
+            <span class="text-[#D4AF37] text-lg">&#10033;</span>
+            <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md">NUESTRA HISTORIA</span>
           </div>
-
-          <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] tracking-tight text-white uppercase leading-none">
-            Pasión por Servir al Turista en <span class="text-[#D4AF37]">República Dominicana</span>
-          </h2>
-          
-          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed text-justify">
-            TurisRam Dominicana nació con el propósito firme de elevar los estándares del transporte turístico en todo el país. Comprendemos perfectamente la importancia del tiempo del viajero tras un vuelo largo y la necesidad de contar con un transporte seguro, cómodo y sin sorpresas.
-          </p>
-          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed text-justify">
-            Desde nuestros inicios en Punta Cana, hemos expandido nuestra cobertura a los 5 aeropuertos principales (Punta Cana PUJ, Santo Domingo SDQ, La Romana LRM, Santiago STI y Puerto Plata POP), convirtiéndonos en la opción ejecutiva preferida por familias, parejas y delegaciones de negocios.
-          </p>
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] tracking-tight text-white uppercase leading-none">Pasion por Servir al Turista en <span class="text-[#D4AF37]">Republica Dominicana</span></h2>
+          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">TurisRam Dominicana nacio con el proposito firme de elevar los estandares del transporte turistico en todo el pais. Comprendemos perfectamente la importancia del tiempo del viajero tras un vuelo largo y la necesidad de contar con un transporte seguro, comodo y sin sorpresas.</p>
+          <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">Desde nuestros inicios en Punta Cana, hemos expandido nuestra cobertura a los 5 aeropuertos principales (Punta Cana PUJ, Santo Domingo SDQ, La Romana LRM, Santiago STI y Puerto Plata POP), convirtiendos en la opcion ejecutiva preferida por familias, parejas y delegaciones de negocios.</p>
         </div>
-
         <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-[#D4AF37]/40 bg-[#141414] group">
-          <img
-            src="/images/generate-an-image-of-a-professional-transportation.webp"
-            alt="Flota de vehículos ejecutivos TurisRam Dominicana"
-            class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+          <img src="/images/generate-an-image-of-a-professional-transportation.webp" alt="Flota de vehiculos ejecutivos TurisRam Dominicana" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80"></div>
           <div class="absolute bottom-6 left-6 right-6 p-4 bg-[#141414]/90 backdrop-blur-md rounded-2xl border border-[#D4AF37]/30">
-            <p class="text-xs font-bold text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider">Flota Moderna & Conductores Certificados</p>
-            <p class="text-[11px] text-gray-300 font-['Barlow_Semi_Condensed']">Atención 24/7 en todos los polos turísticos dominicanos.</p>
+            <p class="text-xs font-bold text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider">Flota Moderna &amp; Conductores Certificados</p>
+            <p class="text-[11px] text-gray-300 font-['Barlow_Semi_Condensed']">Atencion 24/7 en todos los polos turisticos dominicanos.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- MISIÓN Y VISIÓN - PROPÓSITO CORPORATIVO -->
+  <!-- PROPOSITO CORPORATIVO -->
   <section class="relative bg-[#0A0A0A] text-white py-32">
-    
-    <!-- Degradado superior: negro #030303 → #0A0A0A -->
-    <div class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none"></div>
-    <!-- Degradado inferior: #0A0A0A → negro #030303 -->
+    <div class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#050505] to-transparent pointer-events-none"></div>
     <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none"></div>
-
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center mb-16">
-        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-4">
-          PROPÓSITO CORPORATIVO
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">
-          Comprometidos con Tu <span class="text-[#D4AF37]">Tranquilidad & Confort</span>
-        </h2>
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-4">PROPOSITO CORPORATIVO</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">Comprometidos con Tu <span class="text-[#D4AF37]">Tranquilidad &amp; Confort</span></h2>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Misión -->
         <div class="bg-[#141409] border border-[#D4AF37]/15 p-8 sm:p-10 rounded-2xl hover:border-[#D4AF37]/40 transition-all duration-300 shadow-xl group hover:shadow-[0_8px_40px_rgba(212,175,55,0.08)]">
-          <!-- Icono en caja dorada redondeada -->
           <div class="w-12 h-12 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] rounded-xl flex items-center justify-center mb-7 group-hover:bg-[#D4AF37]/25 transition-colors duration-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-            </svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Misión</h3>
-          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">
-            Proporcionar un servicio de transporte turístico puntual, seguro y altamente confortable en República Dominicana, garantizando tarifas transparentes sin cobros ocultos y una atención VIP personalizada que supere las expectativas de cada viajero.
-          </p>
+          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Mision</h3>
+          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">Proporcionar un servicio de transporte turistico puntual, seguro y altamente confortable en Republica Dominicana, garantizando tarifas transparentes sin cobros ocultos y una atencion VIP personalizada que supere las expectativas de cada viajero.</p>
         </div>
-
-        <!-- Visión -->
         <div class="bg-[#141409] border border-[#D4AF37]/15 p-8 sm:p-10 rounded-2xl hover:border-[#D4AF37]/40 transition-all duration-300 shadow-xl group hover:shadow-[0_8px_40px_rgba(212,175,55,0.08)]">
-          <!-- Icono en caja dorada redondeada -->
           <div class="w-12 h-12 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] rounded-xl flex items-center justify-center mb-7 group-hover:bg-[#D4AF37]/25 transition-colors duration-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-            </svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Visión</h3>
-          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">
-            Ser la empresa de traslados privados y tours ejecutivos más confiable, recomendada y prestigiada en la República Dominicana, distinguida por nuestra puntualidad impecable, flota moderna y compromiso absoluto con la satisfacción de nuestros pasajeros.
-          </p>
+          <h3 class="text-lg font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-4">Nuestra Vision</h3>
+          <p class="text-sm text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">Ser la empresa de traslados privados y tours ejecutivos mas confiable, recomendada y prestigiada en la Republica Dominicana, distinguida por nuestra puntualidad impecable, flota moderna y compromiso absoluto con la satisfaccion de nuestros pasajeros.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- VALORES Y PILARES -->
-  <section class="py-20 bg-[#030303] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+  <!-- FILOSOFIA & EXCELENCIA -->
+  <section class="py-24 bg-[#030303] text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
-        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
-          FILOSOFÍA & EXCELENCIA
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">
-          Los Pilares de <span class="text-[#D4AF37]">Nuestro Servicio VIP</span>
-        </h2>
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">FILOSOFIA &amp; EXCELENCIA</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase tracking-tight text-white leading-none">Los Pilares de <span class="text-[#D4AF37]">Nuestro Servicio VIP</span></h2>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {values.map(v => (
-          <div class="bg-[#141414] border border-[#D4AF37]/30 p-8 rounded-3xl shadow-xl hover:border-[#D4AF37] transition-all group">
-            <div class="w-12 h-12 bg-[#D4AF37] rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform">
-              <div set:html={v.svg} />
+          <div class="bg-[#141409] border border-[#D4AF37]/15 p-7 rounded-2xl hover:border-[#D4AF37]/40 transition-all duration-300 shadow-xl group hover:shadow-[0_8px_40px_rgba(212,175,55,0.08)]">
+            <div class="w-12 h-12 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/25 transition-colors duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </div>
-            <h3 class="text-base font-bold text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider mb-2">{v.title}</h3>
-            <p class="text-xs text-gray-300 font-['Barlow_Semi_Condensed'] leading-relaxed">{v.desc}</p>
+            <h3 class="text-sm font-bold text-white font-['Barlow_Condensed'] uppercase tracking-wider mb-2">{v.title}</h3>
+            <p class="text-xs text-gray-400 font-['Barlow_Semi_Condensed'] leading-relaxed">{v.desc}</p>
           </div>
         ))}
       </div>
-
     </div>
   </section>
 
-  <!-- BANNER CTA RESERVA -->
-  <section class="py-16 bg-gradient-to-r from-[#0A0A0A] via-[#141414] to-[#0A0A0A] text-white text-center border-t border-b border-[#D4AF37]/20 relative">
-    <div class="max-w-4xl mx-auto px-4 relative z-10">
-      <h2 class="text-3xl sm:text-4xl font-extrabold font-['Barlow_Condensed'] uppercase mb-3">¿Listo para Planificar Tu Traslado a Punta Cana?</h2>
-      <p class="text-xs sm:text-sm text-gray-300 font-['Barlow_Semi_Condensed'] mb-8">Cotiza tu transporte privado en segundos. Chofer bilingüe esperándote a tu llegada.</p>
-      <a
-        href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20hacer%20una%20reserva%20de%20transporte%20con%20TurisRam"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="butn-arrow hover:scale-105 inline-flex"
-      >
-        <span>Cotizar por WhatsApp</span>
-        <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
-      </a>
-    </div>
-  </section>
-
-  <!-- RESEÑAS VERIFICADAS STICKY STACKING -->
+  <!-- EXPERIENCIAS REALES -->
   <TestimonialsSection />
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="py-24 bg-[#050505] text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 hidden lg:flex gap-6 items-center justify-center">
+          <div class="w-48 h-80 rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl">
+            <img src="/images/create-a-high-quality-image-showing-a-airport--gre.webp" alt="FAQ TurisRam" class="w-full h-full object-cover" />
+          </div>
+          <div class="w-48 h-80 rounded-[2.5rem] overflow-hidden border border-[#D4AF37]/40 shadow-2xl mt-16">
+            <img src="/images/generate-an-image-of-a-professional-transportation.webp" alt="FAQ TurisRam Van" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-6">
+          <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs sm:text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block">PREGUNTAS FRECUENTES</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-['Barlow_Condensed'] mt-2 text-white uppercase">Resolvemos Tus Dudas Al Instante</h2>
+          <div class="space-y-4">
+            {faqs.map((faq) => (
+              <details class="bg-[#141409] border border-[#D4AF37]/15 rounded-2xl p-6 group cursor-pointer transition-all hover:border-[#D4AF37]/35">
+                <summary class="font-bold text-base text-[#D4AF37] font-['Barlow_Condensed'] uppercase flex items-center justify-between list-none">
+                  <span>{faq.q}</span>
+                  <span class="text-[#D4AF37] text-xl ml-4 flex-shrink-0">+</span>
+                </summary>
+                <p class="text-xs text-gray-300 leading-relaxed font-['Barlow_Semi_Condensed'] mt-3 pt-3 border-t border-white/10">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="relative py-28 bg-[#030303] text-white text-center overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-[600px] h-[300px] bg-[#D4AF37]/8 rounded-full blur-[80px]"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6">
+      <div class="border border-[#D4AF37]/25 rounded-3xl p-12 sm:p-16 bg-[#0A0A0A]/60 backdrop-blur-sm shadow-2xl">
+        <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-5">RESERVA TU TRASLADO VIP</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Barlow_Condensed'] uppercase leading-tight mb-4">Listo para Planificar<br/><span class="text-[#D4AF37]">Tu Proximo Traslado?</span></h2>
+        <p class="text-xs sm:text-sm text-gray-400 font-['Barlow_Semi_Condensed'] mb-10 max-w-lg mx-auto leading-relaxed">Cotiza tu transporte privado en segundos. Chofer bilingue certificado esperandote a tu llegada con cartel personalizado.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/18497527408?text=Hola!%20Deseo%20hacer%20una%20reserva%20de%20transporte%20con%20TurisRam" target="_blank" rel="noopener noreferrer" class="butn-arrow hover:scale-105 inline-flex">
+            <span>Cotizar por WhatsApp</span>
+            <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
+          </a>
+          <a href="/servicios" class="text-xs font-bold text-[#D4AF37] hover:text-white font-['Barlow_Condensed'] uppercase tracking-widest border border-[#D4AF37]/30 hover:border-[#D4AF37] px-6 py-3 rounded-full transition-all duration-300">Ver Todos los Servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </Layout>
