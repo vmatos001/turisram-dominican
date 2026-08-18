@@ -1,0 +1,145 @@
+---
+// ScrollAnimations.astro - Componente global para control de animaciones con GSAP ScrollTrigger
+---
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initAnimations() {
+    // Si el usuario prefiere movimiento reducido por accesibilidad, omitimos animaciones complejas
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        (el as HTMLElement).style.opacity = '1';
+        (el as HTMLElement).style.transform = 'none';
+      });
+      return;
+    }
+
+    // 1. Elementos individuales con data-reveal
+    const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-reveal="stagger"])');
+
+    revealElements.forEach((el) => {
+      const type = el.dataset.reveal || 'fade-up';
+      const delay = parseFloat(el.dataset.delay || '0');
+      const duration = parseFloat(el.dataset.duration || '1.0');
+      const start = el.dataset.start || 'top 90%';
+      const customDistance = parseFloat(el.dataset.distance || '0');
+
+      let fromVars: gsap.TweenVars = {
+        opacity: 0,
+        duration: duration,
+        delay: delay,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: start,
+          toggleActions: 'play none none none',
+        },
+      };
+
+      const dist = customDistance || 60;
+
+      if (type === 'fade-up') {
+        fromVars.y = customDistance || 45;
+      } else if (type === 'fade-down') {
+        fromVars.y = -(customDistance || 45);
+      } else if (type === 'fade-left') {
+        fromVars.x = -dist;
+      } else if (type === 'fade-right') {
+        fromVars.x = dist;
+      } else if (type === 'scale-up') {
+        fromVars.scale = 0.9;
+        fromVars.y = 25;
+      } else if (type === 'flip-up') {
+        fromVars.rotationX = 25;
+        fromVars.y = 35;
+        fromVars.transformOrigin = 'center top';
+      }
+
+      gsap.from(el, fromVars);
+    });
+
+    // 2. Elementos Stagger (cascada en listas o rejillas de tarjetas)
+    const staggerContainers = document.querySelectorAll<HTMLElement>('[data-reveal="stagger"]');
+
+    staggerContainers.forEach((container) => {
+      const items = container.querySelectorAll<HTMLElement>('[data-reveal-item]');
+      if (items.length === 0) return;
+
+      const staggerTime = parseFloat(container.dataset.stagger || '0.12');
+      const start = container.dataset.start || 'top 85%';
+
+      gsap.from(items, {
+        opacity: 0,
+        y: 40,
+        scale: 0.95,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: staggerTime,
+        scrollTrigger: {
+          trigger: container,
+          start: start,
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    // 3. Animación de métricas / contadores numéricos (data-reveal-count="100")
+    const countElements = document.querySelectorAll<HTMLElement>('[data-reveal-count]');
+    countElements.forEach((el) => {
+      const targetVal = parseFloat(el.dataset.revealCount || '0');
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+
+      const obj = { val: 0 };
+
+      gsap.to(obj, {
+        val: targetVal,
+        duration: 1.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+        },
+        onUpdate: () => {
+          el.innerText = `${prefix}${obj.val.toFixed(decimals)}${suffix}`;
+        },
+      });
+    });
+
+    // 4. Parallax sutil en elementos con data-parallax
+    const parallaxElements = document.querySelectorAll<HTMLElement>('[data-parallax]');
+    parallaxElements.forEach((el) => {
+      const speed = parseFloat(el.dataset.parallaxSpeed || '0.15');
+      gsap.to(el, {
+        yPercent: speed * 100,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    });
+
+    // 5. Refrescar ScrollTrigger tras carga completa de imágenes
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+  }
+
+  // Inicializar al cargar el DOM o al navegar entre páginas
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  } else {
+    initAnimations();
+  }
+
+  document.addEventListener('astro:page-load', initAnimations);
+</script>

@@ -158,6 +158,18 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `style: Proposito Corporativo - tarjetas premium, degradados y mas aire`
 - `feat: nosotros.astro - estructura completa reorganizada con FAQ y CTA final`
 
+### Sesión 2026-08-18
+**Cambios realizados:**
+- ✅ Integración completa de la librería **GSAP (GreenSock Animation Platform)** y **ScrollTrigger** para animaciones y transiciones activadas con el scroll en todo el sitio web.
+- ✅ Creado el componente global `src/components/ScrollAnimations.astro` con sistema declarativo de atributos HTML (`data-reveal`, `data-reveal-item`, `data-reveal-count`, `data-parallax`).
+- ✅ Animaciones en cascada (*stagger*) aplicadas en el Catálogo Bento Grid del Home y `/servicios`, tarjetas de Misión/Visión/Filosofía en `/nosotros`, y acordeones FAQ.
+- ✅ Conteo numérico animado en vivo para métricas de experiencia (`100% Cobertura Nacional`, `10+ Años`, `9,800+ Pasajeros`).
+- ✅ Entradas de revelado suave `scale-up`, `fade-up`, `fade-left` y `fade-right` en todas las páginas y secciones.
+- ✅ Código commiteado y desplegado a producción en Firebase Hosting.
+
+**Commits destacados:**
+- `feat: agregar animaciones y transiciones de entrada con GSAP ScrollTrigger en todo el sitio`
+
 ---
 
 ## 📌 7. Próximos Pasos Sugeridos
@@ -169,4 +181,4 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 5. **Formulario de Contacto**: Evaluar integración de backend (Firebase Functions o Formspree) para procesar los formularios.
 
 ---
-*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-15.*
+*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-18.*

@@ -133,7 +133,7 @@ const faqs = [
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none"></div>
 
     <!-- 1. COPY SUPERIOR ELEGANTE Y COMPACTO -->
-    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center mb-8">
+    <div data-reveal="fade-up" class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center mb-8">
       <span class="bg-[#D4AF37] text-[#0A0A0A] text-[10px] sm:text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
         Traslados & Excursiones VIP
       </span>
@@ -146,7 +146,7 @@ const faqs = [
     </div>
 
     <!-- 2. IMAGEN PANORÁMICA FULL-WIDTH SIN BORDES NEGROS ANCHOS -->
-    <div class="relative z-10 w-full px-3 sm:px-5">
+    <div data-reveal="scale-up" data-delay="0.2" class="relative z-10 w-full px-3 sm:px-5">
       <div class="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-[#D4AF37]/35 shadow-2xl h-[280px] sm:h-[420px] lg:h-[500px] group">
         <img
           src="/images/create-a-breathtaking-landscape-image-that-showcas.webp"
@@ -164,7 +164,7 @@ const faqs = [
   <section class="py-20 bg-[#050505] text-[#F7F5F0] border-b border-[#D4AF37]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-14">
+      <div data-reveal="fade-up" class="text-center mb-14">
         <div class="inline-flex items-center gap-2 mb-2">
           <span class="text-[#D4AF37] animate-spin text-lg">✱</span>
           <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md">
@@ -180,12 +180,12 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div data-reveal="stagger" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {tours.map(t => {
           const msg = encodeURIComponent(`¡Hola TurisRam Dominicana! Me gustaría solicitar información y cotización del tour a: ${t.name}`);
           const waLink = `https://wa.me/18497527408?text=${msg}`;
           return (
-            <div class="bg-[#141414] border border-[#D4AF37]/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300 group">
+            <div data-reveal-item class="bg-[#141414] border border-[#D4AF37]/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300 group">
               <div>
                 <div class="relative h-52 overflow-hidden">
                   <img
@@ -232,7 +232,7 @@ const faqs = [
   <section class="py-20 bg-[#0A0A0A] text-white border-b border-[#D4AF37]/20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       
-      <div class="text-center mb-12">
+      <div data-reveal="fade-up" class="text-center mb-12">
         <span class="bg-[#D4AF37] text-[#0A0A0A] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest font-['Barlow_Condensed'] shadow-md inline-block mb-3">
           RESUELVE TUS DUDAS
         </span>
@@ -241,9 +241,9 @@ const faqs = [
         </h2>
       </div>
 
-      <div class="space-y-4">
+      <div data-reveal="stagger" class="space-y-4">
         {faqs.map((f, i) => (
-          <details class="bg-[#141414] border border-[#D4AF37]/30 rounded-2xl p-6 group transition-all hover:border-[#D4AF37] shadow-xl">
+          <details data-reveal-item class="bg-[#141414] border border-[#D4AF37]/30 rounded-2xl p-6 group transition-all hover:border-[#D4AF37] shadow-xl">
             <summary class="font-bold text-sm sm:text-base text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider cursor-pointer flex items-center justify-between list-none">
               <span>{f.q}</span>
               <span class="text-xl transition-transform group-open:rotate-180 text-[#D4AF37]">+</span>

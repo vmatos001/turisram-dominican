@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Preloader from '../components/Preloader.astro';
 import CustomCursor from '../components/CustomCursor.astro';
+import ScrollAnimations from '../components/ScrollAnimations.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -104,5 +105,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
     </main>
     <Footer />
     <WhatsAppButton />
+    <ScrollAnimations />
   </body>
 </html>
