@@ -61,11 +61,11 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 ---
 
 <!-- SECCIÓN DE TESTIMONIOS STICKY STACKING CON RESEÑAS REALES DE GOOGLE -->
-<section class="w-full bg-[#0A0A0A] text-[#F7F5F0] py-20 lg:py-28 border-b border-[#D4AF37]/20 relative">
+<section id="testimonials-section" class="w-full bg-[#0A0A0A] text-[#F7F5F0] py-20 lg:py-28 border-b border-[#D4AF37]/20 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
     
     <!-- COLUMNA IZQUIERDA: CONTENIDO STICKY (Parte A: De izquierda a derecha) -->
-    <div data-reveal="fade-left" data-duration="1.3" data-distance="80" data-delay="0.1" data-ease="power3.out" class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
+    <div class="testimonials-left-col lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
       
       <!-- Cápsula Dorada -->
       <div>
@@ -119,14 +119,13 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
     </div>
 
     <!-- COLUMNA DERECHA: RESEÑAS REALES DE GOOGLE MAPS (Parte B: Escalonada de izquierda a derecha siguiendo a la primera) -->
-    <div data-reveal="stagger" data-stagger-type="fade-left" data-distance="80" data-delay="0.35" data-stagger="0.18" data-duration="1.2" data-ease="power3.out" class="lg:col-span-7 flex flex-col gap-6 relative">
+    <div class="testimonials-right-col lg:col-span-7 flex flex-col gap-6 relative">
       {testimonials.map((t, index) => (
         <div
-          data-reveal-item
-          class="sticky w-full transition-all duration-300"
+          class="sticky w-full"
           style={`top: ${100 + index * 28}px; z-index: ${10 + index};`}
         >
-          <div class="p-6 sm:p-8 rounded-3xl shadow-2xl flex flex-col h-auto w-full bg-[#141414] border border-[#D4AF37]/30 backdrop-blur-md hover:border-[#D4AF37] transition-all">
+          <div class="testimonial-inner-card p-6 sm:p-8 rounded-3xl shadow-2xl flex flex-col h-auto w-full bg-[#141414] border border-[#D4AF37]/30 backdrop-blur-md hover:border-[#D4AF37] transition-colors duration-300">
             
             <!-- Sección Superior: Avatar y Nombre -->
             <div class="flex items-center gap-4">
@@ -168,3 +167,60 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 
   </div>
 </section>
+
+<script is:inline>
+  function initTestimonialsAnimation() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+      setTimeout(initTestimonialsAnimation, 60);
+      return;
+    }
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const section = document.getElementById('testimonials-section');
+    if (!section) return;
+
+    const leftCol = section.querySelector('.testimonials-left-col');
+    const cards = section.querySelectorAll('.testimonial-inner-card');
+
+    if (!leftCol || cards.length === 0) return;
+
+    // Timeline sincronizada cuando la sección entra en el 82% superior de la pantalla
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 82%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    // 1. Parte A: Columna izquierda entra fluidamente de izquierda a derecha
+    tl.from(leftCol, {
+      opacity: 0,
+      x: -75,
+      duration: 1.2,
+      ease: 'power3.out',
+    });
+
+    // 2. Parte B: Tarjetas entran en cascada de izquierda a derecha siguiendo a la primera
+    tl.from(cards, {
+      opacity: 0,
+      x: -80,
+      duration: 1.1,
+      ease: 'power3.out',
+      stagger: 0.16,
+      clearProps: 'transform', // Importante: limpiar transforms para que sticky stacking funcione impecable
+    }, '-=0.75');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTestimonialsAnimation);
+  } else {
+    initTestimonialsAnimation();
+  }
+  document.addEventListener('astro:page-load', initTestimonialsAnimation);
+</script>
