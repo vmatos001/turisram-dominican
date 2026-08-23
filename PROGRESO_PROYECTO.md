@@ -199,6 +199,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `4004b4e: fix: recalculacion dinamica de ScrollTrigger con carga de imagenes y triggers tempranos`
 - `5267f7f: feat: actualizar fotografia de flota ejecutiva en seccion Nuestra Historia de Nosotros`
 - `f874860: feat: actualizar imagen en seccion Sobre Nosotros de la pagina principal`
+- `5bd4e04: feat: reorganizar seccion Filosofia & Excelencia con imagen Parte A y rejilla 2x2 Parte B`
 
 ---
 
