@@ -198,6 +198,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `45600b7: fix: visibilidad y animacion fluida de Mision/Vision, Valores y Tours`
 - `4004b4e: fix: recalculacion dinamica de ScrollTrigger con carga de imagenes y triggers tempranos`
 - `5267f7f: feat: actualizar fotografia de flota ejecutiva en seccion Nuestra Historia de Nosotros`
+- `f874860: feat: actualizar imagen en seccion Sobre Nosotros de la pagina principal`
 
 ---
 
