@@ -205,6 +205,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `56dcd01: fix: correccion global del nombre oficial a TurisRan Dominicana`
 - `4856adf: feat: actualizar imagen oficial de logotipo de TurisRam a TurisRan`
 - `09b01e2: feat: configurar nuevo sitio de Hosting oficial https://turisran-dominicana.web.app`
+- `d1360ae: feat: actualizar perfil oficial de Facebook e integrar icono de TikTok en todo el sitio`
 
 ---
 
