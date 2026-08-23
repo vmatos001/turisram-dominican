@@ -193,6 +193,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 **Commits destacados:**
 - `0241485: feat: optimizar transiciones y animaciones direccionales de entrada en todas las secciones`
 - `26cc6d0: fix: animacion sincronizada y fluida en TestimonialsSection sin conflictos sticky`
+- `4b107aa: fix: visualizacion y animacion de acordeones FAQ sin bloqueo de opacidad`
 
 ---
 
