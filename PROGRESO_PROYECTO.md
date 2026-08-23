@@ -195,6 +195,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `26cc6d0: fix: animacion sincronizada y fluida en TestimonialsSection sin conflictos sticky`
 - `4b107aa: fix: visualizacion y animacion de acordeones FAQ sin bloqueo de opacidad`
 - `9819f1a: fix: propagar correcciones de animaciones FAQ y testimonios en todas las paginas`
+- `45600b7: fix: visibilidad y animacion fluida de Mision/Vision, Valores y Tours`
 
 ---
 
