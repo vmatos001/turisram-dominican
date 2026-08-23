@@ -204,6 +204,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `d505608: feat: mover tarjeta flotante a la parte superior para mostrar el vehiculo completo`
 - `56dcd01: fix: correccion global del nombre oficial a TurisRan Dominicana`
 - `4856adf: feat: actualizar imagen oficial de logotipo de TurisRam a TurisRan`
+- `09b01e2: feat: configurar nuevo sitio de Hosting oficial https://turisran-dominicana.web.app`
 
 ---
 
