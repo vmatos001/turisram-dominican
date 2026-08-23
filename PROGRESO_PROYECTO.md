@@ -170,6 +170,26 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 **Commits destacados:**
 - `feat: agregar animaciones y transiciones de entrada con GSAP ScrollTrigger en todo el sitio`
 
+### Sesión 2026-08-23
+**Cambios realizados:**
+- ✅ Animación de entrada de textos del Hero principal actualizada a desplazamiento fluido de **izquierda a derecha** con desaceleración suave (`power3.out`).
+- ✅ Temporización lenta y elegante con duración extendida (1.3s - 1.5s) y cascada escalonada (*staggered delays* de 0.2s a 1.2s).
+- ✅ Distancia de recorrido optimizada (70px - 80px) para el badge de choferes, tagline, titular H1, eslogan en Lora, párrafo y botones CTA.
+- ✅ Animación de entrada de **abajo hacia arriba** (`fade-up`, `y: 85px`, duración `1.4s`, `power3.out`) aplicada directamente sobre la tarjeta interactiva del Cotizador en Tiempo Real (`QuoteModal.astro`).
+- ✅ **Catálogo Executive VIP**: Animaciones sincronizadas y direccionales aplicadas:
+  - **Parte A**: Encabezado y botón giratorio aparecen expandiéndose con zoom suave desde el centro (`zoom-center`, duración `1.3s`).
+  - **Parte B**: Tarjeta principal destacada (*Isla Saona VIP*) entra deslizándose de **izquierda a derecha** (`fade-left`, `x: -80px`, duración `1.4s`).
+  - **Parte C**: Tarjetas secundarias (*Traslados, Van Ejecutiva, Samaná*) entran deslizándose de **derecha a izquierda** en cascada (`fade-right`, `x: +80px`, duración `1.3s - 1.4s`).
+- ✅ **Banner Panorámico & Garantía de Servicio**: Animación de entrada de **arriba hacia abajo** (`fade-down`, `y: -60px / -70px`, `power3.out`) aplicada a la cápsula dorada `GARANTÍA DE SERVICIO` y al titular `¿POR QUÉ ELEGIR TURISRAM DOMINICANA?`.
+- ✅ **Testimonios / Reseñas VIP (`TestimonialsSection.astro`)**:
+  - **Parte A (Columna Izquierda)**: Entrada fluida de **izquierda a derecha** (`fade-left`, `x: -80px`, `1.3s`).
+  - **Parte B (Tarjetas de Reseñas)**: Cascada escalonada (*stagger*) que arranca con `0.35s` de retardo (después de A), donde las tarjetas entran sucesivamente de **izquierda a derecha** (`fade-left`, `x: -80px`, intervalo `0.18s`, `1.2s`), logrando el efecto visual de que siguen a la primera tarjeta como un tren sincronizado.
+- ✅ **Sección Sobre Nosotros Preview (`AboutPreviewSection.astro`)**:
+  - **Parte A (Titular, Párrafos de Historia & Métricas)**: Entrada deslizándose de **derecha a izquierda** (`fade-right`, `x: +80px`, duración `1.4s`, `power3.out`).
+  - **Parte B (Firma Corporativa & Botón Conoce Más)**: Entrada de **abajo hacia arriba** (`fade-up`, `y: 80px`, duración `1.4s`, `power3.out`).
+- ✅ **Sección Preguntas Frecuentes (FAQ)**: Animación de entrada de **abajo hacia arriba** (`fade-up`, `y: 50px - 70px`, `power3.out`) en imágenes laterales, cápsula `PREGUNTAS FRECUENTES`, titular y acordeones en cascada escalonada (*stagger* de abajo hacia arriba).
+- ✅ Actualizado `ScrollAnimations.astro` para soporte de `zoom-center`, `data-ease`, cascadas direccionales (`data-stagger-type`) y alias direccionales (`fade-from-top`, `slide-down`, `fade-from-bottom`, `slide-up`).
+
 ---
 
 ## 📌 7. Próximos Pasos Sugeridos
@@ -181,4 +201,4 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 5. **Formulario de Contacto**: Evaluar integración de backend (Firebase Functions o Formspree) para procesar los formularios.
 
 ---
-*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-18.*
+*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-23.*

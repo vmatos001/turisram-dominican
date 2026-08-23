@@ -64,8 +64,8 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 <section class="w-full bg-[#0A0A0A] text-[#F7F5F0] py-20 lg:py-28 border-b border-[#D4AF37]/20 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
     
-    <!-- COLUMNA IZQUIERDA: CONTENIDO STICKY -->
-    <div data-reveal="fade-right" class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
+    <!-- COLUMNA IZQUIERDA: CONTENIDO STICKY (Parte A: De izquierda a derecha) -->
+    <div data-reveal="fade-left" data-duration="1.3" data-distance="80" data-delay="0.1" data-ease="power3.out" class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
       
       <!-- Cápsula Dorada -->
       <div>
@@ -118,8 +118,8 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 
     </div>
 
-    <!-- COLUMNA DERECHA: RESEÑAS REALES DE GOOGLE MAPS -->
-    <div data-reveal="stagger" class="lg:col-span-7 flex flex-col gap-6 relative">
+    <!-- COLUMNA DERECHA: RESEÑAS REALES DE GOOGLE MAPS (Parte B: Escalonada de izquierda a derecha siguiendo a la primera) -->
+    <div data-reveal="stagger" data-stagger-type="fade-left" data-distance="80" data-delay="0.35" data-stagger="0.18" data-duration="1.2" data-ease="power3.out" class="lg:col-span-7 flex flex-col gap-6 relative">
       {testimonials.map((t, index) => (
         <div
           data-reveal-item
