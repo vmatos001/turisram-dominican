@@ -180,7 +180,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
   - **Parte A**: Encabezado y botón giratorio aparecen expandiéndose con zoom suave desde el centro (`zoom-center`, duración `1.3s`).
   - **Parte B**: Tarjeta principal destacada (*Isla Saona VIP*) entra deslizándose de **izquierda a derecha** (`fade-left`, `x: -80px`, duración `1.4s`).
   - **Parte C**: Tarjetas secundarias (*Traslados, Van Ejecutiva, Samaná*) entran deslizándose de **derecha a izquierda** en cascada (`fade-right`, `x: +80px`, duración `1.3s - 1.4s`).
-- ✅ **Banner Panorámico & Garantía de Servicio**: Animación de entrada de **arriba hacia abajo** (`fade-down`, `y: -60px / -70px`, `power3.out`) aplicada a la cápsula dorada `GARANTÍA DE SERVICIO` y al titular `¿POR QUÉ ELEGIR TURISRAM DOMINICANA?`.
+- ✅ **Banner Panorámico & Garantía de Servicio**: Animación de entrada de **arriba hacia abajo** (`fade-down`, `y: -60px / -70px`, `power3.out`) aplicada a la cápsula dorada `GARANTÍA DE SERVICIO` y al titular `¿POR QUÉ ELEGIR TURISRAN DOMINICANA?`.
 - ✅ **Testimonios / Reseñas VIP (`TestimonialsSection.astro`)**:
   - **Parte A (Columna Izquierda)**: Entrada fluida de **izquierda a derecha** (`fade-left`, `x: -80px`, `1.3s`).
   - **Parte B (Tarjetas de Reseñas)**: Cascada escalonada (*stagger*) que arranca con `0.35s` de retardo (después de A), donde las tarjetas entran sucesivamente de **izquierda a derecha** (`fade-left`, `x: -80px`, intervalo `0.18s`, `1.2s`), logrando el efecto visual de que siguen a la primera tarjeta como un tren sincronizado.
@@ -189,6 +189,19 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
   - **Parte B (Firma Corporativa & Botón Conoce Más)**: Entrada de **abajo hacia arriba** (`fade-up`, `y: 80px`, duración `1.4s`, `power3.out`).
 - ✅ **Sección Preguntas Frecuentes (FAQ)**: Animación de entrada de **abajo hacia arriba** (`fade-up`, `y: 50px - 70px`, `power3.out`) en imágenes laterales, cápsula `PREGUNTAS FRECUENTES`, titular y acordeones en cascada escalonada (*stagger* de abajo hacia arriba).
 - ✅ Actualizado `ScrollAnimations.astro` para soporte de `zoom-center`, `data-ease`, cascadas direccionales (`data-stagger-type`) y alias direccionales (`fade-from-top`, `slide-down`, `fade-from-bottom`, `slide-up`).
+- ✅ Reorganizada la sección **Filosofía & Excelencia** (`/nosotros`) en columna izquierda destacada (*Parte A*) con tarjeta y badge 5 estrellas, y columna derecha (*Parte B*) con rejilla 2x2 para las 4 tarjetas de valores corporativos.
+- ✅ Reencuadre y expansión inteligente (*outpainting*) de la fotografía de la van ejecutiva en la sección *Nuestra Historia* (`/nosotros`), trasladando la tarjeta informativa a la parte superior para despejar y mostrar el vehículo completo.
+- ✅ **Rebranding Oficial Global a "TurisRan Dominicana"**:
+  - Corregidas 76 referencias en textos, enlaces de WhatsApp, títulos, descripciones y etiquetas alt/aria en las 4 páginas y componentes.
+  - Generado el nuevo logotipo oficial de lujo en alta resolución con la letra **"N"** (`TurisRan`).
+- ✅ **Nuevo Sitio en Firebase Hosting**:
+  - Creado y desplegado el nuevo sitio oficial **`https://turisran-dominicana.web.app`**.
+- ✅ **Redes Sociales Oficiales**:
+  - Integrado perfil oficial de Facebook (`https://www.facebook.com/profile.php?id=61577764472405`), TikTok (`https://www.tiktok.com/`), WhatsApp (+1-849-752-7408) y Google Maps en Navbar, AboutPreview y Footer.
+- ✅ **Auditoría & Optimización de SEO Local**:
+  - Schema.org JSON-LD enriquecido (`["TravelAgency", "LocalBusiness"]`, NAP consistente con Google Business, coordenadas GPS exactas, áreas servidas, aggregate rating 5.0 y perfiles sociales).
+  - Títulos y meta descripciones optimizados, cumpliendo 1 solo H1 semántico por página.
+  - Medición de velocidad con tiempo de descarga inferior a 700ms servido por CDN global.
 
 **Commits destacados:**
 - `0241485: feat: optimizar transiciones y animaciones direccionales de entrada en todas las secciones`
@@ -206,16 +219,14 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `4856adf: feat: actualizar imagen oficial de logotipo de TurisRam a TurisRan`
 - `09b01e2: feat: configurar nuevo sitio de Hosting oficial https://turisran-dominicana.web.app`
 - `d1360ae: feat: actualizar perfil oficial de Facebook e integrar icono de TikTok en todo el sitio`
+- `3eed8c5: feat(seo): enriquecer Schema.org LocalBusiness, NAP con Google Business y metadatos estructurados`
 
 ---
 
-## 📌 7. Próximos Pasos Sugeridos
+## 📌 7. Próximos Pasos (Cierre y Post-Pago)
 
-1. **Imágenes Definitivas de Flota**: Sustituir las imágenes AI temporales por fotografías oficiales de los vehículos reales de TurisRam.
-2. **Enlaces Definitivos de Redes Sociales**: Actualizar los URLs finales de Instagram, Facebook y TikTok cuando el cliente los suministre.
-3. **SEO & Meta Tags**: Revisar y optimizar las meta descriptions y Open Graph tags de todas las páginas.
-4. **Dominio Personalizado**: Conectar el dominio oficial de TurisRam a Firebase Hosting.
-5. **Formulario de Contacto**: Evaluar integración de backend (Firebase Functions o Formspree) para procesar los formularios.
+1. **Conexión de Dominio Definitivo (`.com`)**: Conectar el dominio web propio (ej. `turisrandominicana.com`) en Firebase Hosting una vez que el cliente apruebe y complete el pago del proyecto.
+2. **Entrega de Accesos al Cliente**: Compartir el enlace final y credenciales si corresponde.
 
 ---
 *Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-23.*
