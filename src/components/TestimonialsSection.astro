@@ -189,12 +189,13 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
 
     if (!leftCol || cards.length === 0) return;
 
-    // Timeline sincronizada cuando la sección entra en el 82% superior de la pantalla
+    // Timeline sincronizada cuando la sección entra en el 92% superior de la pantalla
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 82%',
+        start: 'top 92%',
         toggleActions: 'play none none none',
+        fastScrollEnd: true,
       },
     });
 
@@ -215,6 +216,15 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
       stagger: 0.16,
       clearProps: 'transform', // Importante: limpiar transforms para que sticky stacking funcione impecable
     }, '-=0.75');
+
+    // Refrescar ScrollTrigger al cargar avatares o imágenes de la sección
+    section.querySelectorAll('img').forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener('load', () => {
+          if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        }, { once: true });
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
@@ -222,5 +232,9 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
   } else {
     initTestimonialsAnimation();
   }
+
+  window.addEventListener('load', () => {
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  });
   document.addEventListener('astro:page-load', initTestimonialsAnimation);
 </script>

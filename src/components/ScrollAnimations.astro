@@ -27,7 +27,7 @@
       const type = el.getAttribute('data-reveal') || 'fade-up';
       const delay = parseFloat(el.getAttribute('data-delay') || '0');
       const duration = parseFloat(el.getAttribute('data-duration') || '1.0');
-      const start = el.getAttribute('data-start') || 'top 92%';
+      const start = el.getAttribute('data-start') || 'top 95%';
       const customDistance = parseFloat(el.getAttribute('data-distance') || '0');
       const ease = el.getAttribute('data-ease') || 'power3.out';
       const dist = customDistance || 60;
@@ -42,6 +42,7 @@
           trigger: el,
           start: start,
           toggleActions: 'play none none none',
+          fastScrollEnd: true,
         },
       };
 
@@ -76,7 +77,7 @@
       if (items.length === 0) return;
 
       const staggerTime = parseFloat(container.getAttribute('data-stagger') || '0.15');
-      const start = container.getAttribute('data-start') || 'top 85%';
+      const start = container.getAttribute('data-start') || 'top 92%';
       const delay = parseFloat(container.getAttribute('data-delay') || '0');
       const duration = parseFloat(container.getAttribute('data-duration') || '1.0');
       const dir = container.getAttribute('data-stagger-type') || container.getAttribute('data-direction') || 'fade-up';
@@ -95,6 +96,7 @@
           trigger: container,
           start: start,
           toggleActions: 'play none none none',
+          fastScrollEnd: true,
         },
       };
 
@@ -128,7 +130,7 @@
         ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 90%',
+          start: 'top 92%',
           toggleActions: 'play none none none',
         },
         onUpdate: () => {
@@ -153,10 +155,21 @@
       });
     });
 
-    // 5. Refrescar ScrollTrigger
-    setTimeout(() => {
-      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
-    }, 250);
+    // 5. Monitoreo y refresco de ScrollTrigger al cargar imágenes
+    document.querySelectorAll('img').forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener('load', () => {
+          if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        }, { once: true });
+      }
+    });
+
+    // 6. Refrescar en múltiples intervalos para compensar layouts dinámicos
+    [100, 300, 600, 1200, 2500].forEach((ms) => {
+      setTimeout(() => {
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      }, ms);
+    });
   }
 
   // Inicializar al cargar el DOM o al navegar entre páginas
