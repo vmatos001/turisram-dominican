@@ -241,9 +241,16 @@ const faqs = [
         </h2>
       </div>
 
-      <div data-reveal="stagger" class="space-y-4">
+      <div class="space-y-4">
         {faqs.map((f, i) => (
-          <details data-reveal-item class="bg-[#141414] border border-[#D4AF37]/30 rounded-2xl p-6 group transition-all hover:border-[#D4AF37] shadow-xl">
+          <details 
+            data-reveal="fade-up" 
+            data-duration="1.1" 
+            data-distance="40" 
+            data-delay={0.15 + i * 0.12} 
+            data-ease="power3.out"
+            class="bg-[#141414] border border-[#D4AF37]/30 rounded-2xl p-6 group transition-colors duration-300 hover:border-[#D4AF37] shadow-xl"
+          >
             <summary class="font-bold text-sm sm:text-base text-[#D4AF37] font-['Barlow_Condensed'] uppercase tracking-wider cursor-pointer flex items-center justify-between list-none">
               <span>{f.q}</span>
               <span class="text-xl transition-transform group-open:rotate-180 text-[#D4AF37]">+</span>
