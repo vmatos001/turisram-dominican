@@ -201,6 +201,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `f874860: feat: actualizar imagen en seccion Sobre Nosotros de la pagina principal`
 - `5bd4e04: feat: reorganizar seccion Filosofia & Excelencia con imagen Parte A y rejilla 2x2 Parte B`
 - `4bf2856: feat: encuadre y expansion de imagen de van ejecutiva con nano banana en seccion Nuestra Historia`
+- `d505608: feat: mover tarjeta flotante a la parte superior para mostrar el vehiculo completo`
 
 ---
 
