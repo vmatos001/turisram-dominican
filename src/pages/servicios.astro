@@ -180,12 +180,19 @@ const faqs = [
         </p>
       </div>
 
-      <div data-reveal="stagger" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {tours.map(t => {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {tours.map((t, idx) => {
           const msg = encodeURIComponent(`¡Hola TurisRam Dominicana! Me gustaría solicitar información y cotización del tour a: ${t.name}`);
           const waLink = `https://wa.me/18497527408?text=${msg}`;
           return (
-            <div data-reveal-item class="bg-[#141414] border border-[#D4AF37]/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300 group">
+            <div 
+              data-reveal="fade-up" 
+              data-duration="1.1" 
+              data-distance="40" 
+              data-delay={0.1 + (idx % 4) * 0.12} 
+              data-ease="power3.out"
+              class="bg-[#141414] border border-[#D4AF37]/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-colors duration-300 group"
+            >
               <div>
                 <div class="relative h-52 overflow-hidden">
                   <img
