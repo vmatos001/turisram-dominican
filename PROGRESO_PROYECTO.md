@@ -203,6 +203,7 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - `4bf2856: feat: encuadre y expansion de imagen de van ejecutiva con nano banana en seccion Nuestra Historia`
 - `d505608: feat: mover tarjeta flotante a la parte superior para mostrar el vehiculo completo`
 - `56dcd01: fix: correccion global del nombre oficial a TurisRan Dominicana`
+- `4856adf: feat: actualizar imagen oficial de logotipo de TurisRam a TurisRan`
 
 ---
 
