@@ -190,6 +190,9 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 - ✅ **Sección Preguntas Frecuentes (FAQ)**: Animación de entrada de **abajo hacia arriba** (`fade-up`, `y: 50px - 70px`, `power3.out`) en imágenes laterales, cápsula `PREGUNTAS FRECUENTES`, titular y acordeones en cascada escalonada (*stagger* de abajo hacia arriba).
 - ✅ Actualizado `ScrollAnimations.astro` para soporte de `zoom-center`, `data-ease`, cascadas direccionales (`data-stagger-type`) y alias direccionales (`fade-from-top`, `slide-down`, `fade-from-bottom`, `slide-up`).
 
+**Commits destacados:**
+- `0241485: feat: optimizar transiciones y animaciones direccionales de entrada en todas las secciones`
+
 ---
 
 ## 📌 7. Próximos Pasos Sugeridos
