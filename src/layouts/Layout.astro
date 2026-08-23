@@ -16,10 +16,10 @@ interface Props {
 const {
   title = "TurisRan Dominicana | Transfers & Experiencias — Viaja cómodo. Llega seguro.",
   description = "Servicio de transporte privado VIP en la República Dominicana. Traslados desde aeropuertos de Punta Cana (PUJ), Santo Domingo (SDQ), Santiago (STI) y tours exclusivos.",
-  image = "/images/logo-turisram.webp"
+  image = "/images/logo-turisran.webp"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram-dominican.web.app");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisran-dominicana.web.app");
 ---
 
 <!doctype html>
@@ -41,6 +41,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, canonicalURL)} />
+    <meta property="og:site_name" content="TurisRan Dominicana" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -49,10 +50,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 
-    <!-- Google Fonts: Barlow Condensed, Barlow Semi Condensed, Lora, Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Barlow Condensed & Barlow Semi Condensed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- GSAP & ScrollTrigger Core Scripts -->
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -64,9 +68,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisram
         "@context": "https://schema.org",
         "@type": "TravelAgency",
         "name": "TurisRan Dominicana",
-        "image": "https://turisram-dominican.web.app/images/TurisRan%20logo.png",
-        "@id": "https://turisram-dominican.web.app",
-        "url": "https://turisram-dominican.web.app",
+        "image": "https://turisran-dominicana.web.app/images/TurisRan%20logo.png",
+        "@id": "https://turisran-dominicana.web.app",
+        "url": "https://turisran-dominicana.web.app",
         "telephone": "+18497527408",
         "priceRange": "$$",
         "address": {

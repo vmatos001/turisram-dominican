@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "turisran-dominicana",
     "public": "dist",
     "ignore": [
       "firebase.json",
