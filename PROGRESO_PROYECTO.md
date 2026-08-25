@@ -244,11 +244,10 @@ Basado en el análisis del proyecto previo de **A&R Transfers** y los requerimie
 ### 🔴 Fase 3: Cierre Comercial & Dominio Definitivo
 - [x] **Preparación de Código y Canónicos para Dominio Definitivo (`turisran-dominicana.com`)**:
   - URLs canónicas, Schema.org LocalBusiness y sitemaps apuntando al dominio oficial `https://turisran-dominicana.com`.
-- [ ] **Conexión de DNS en Firebase Hosting (`turisran-dominicana.com`)**:
-  - En la consola de Firebase Hosting (`turisram-dominican` > `turisran-dominicana`), agregar el dominio personalizado `turisran-dominicana.com` y `www.turisran-dominicana.com`.
-  - Configurar los registros **A** y **TXT** (o CNAME) en el proveedor del dominio (GoDaddy, Namecheap, Cloudflare, etc.).
+- [x] **Conexión de DNS en Firebase Hosting (`turisran-dominicana.com`)**:
+  - Registros DNS (A: `199.36.158.100` y TXT: `hosting-site=turisran-dominicana`) configurados y validados con éxito en Namecheap. Firebase Hosting ya enrutó el tráfico hacia sus servidores y se encuentra aprovisionando el certificado SSL automático.
 - [ ] **Entrega Oficial al Cliente**:
-  - Entrega del sitio web 100% operativo con SSL automático.
+  - Entrega del sitio web 100% operativo con SSL activo y enlace final al cliente.
 
 ---
 
