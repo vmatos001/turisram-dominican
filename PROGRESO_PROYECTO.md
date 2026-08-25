@@ -237,22 +237,27 @@ Basado en el análisis del proyecto previo de **A&R Transfers** y los requerimie
 
 ### 🟡 Fase 2: SEO Técnico & Assets
 - [x] **Generación de `robots.txt` y `sitemap.xml`**:
-  - Configurado `@astrojs/sitemap` en `astro.config.mjs` con URL canónica `https://turisran-dominicana.web.app` y creado `public/robots.txt` con enlaces a `sitemap-index.xml` y `sitemap-0.xml`.
+  - Configurado `@astrojs/sitemap` en `astro.config.mjs` con URL canónica `https://turisran-dominicana.com` y creado `public/robots.txt` con enlaces a `sitemap-index.xml` y `sitemap-0.xml`.
 - [x] **Paquete Completo de Favicons & Manifest**:
   - Incorporados `favicon.ico`, `favicon.png`, `apple-touch-icon.png` y `site.webmanifest` con el logotipo oficial y color de tema `#D4AF37`. Enlazados en el `<head>` global de `Layout.astro`.
 
-### 🔴 Fase 3: Cierre Comercial & Despliegue Definitivo (Post-Aprobación)
-- [ ] **Conexión de Dominio Definitivo (`.com` / `.com.do`)**:
-  - Configurar registros DNS y certificado SSL en Firebase Hosting para el dominio final del cliente.
-- [ ] **Entrega Oficial**:
-  - Entrega de accesos, documentación y puesta en producción final.
+### 🔴 Fase 3: Cierre Comercial & Dominio Definitivo
+- [x] **Preparación de Código y Canónicos para Dominio Definitivo (`turisran-dominicana.com`)**:
+  - URLs canónicas, Schema.org LocalBusiness y sitemaps apuntando al dominio oficial `https://turisran-dominicana.com`.
+- [ ] **Conexión de DNS en Firebase Hosting (`turisran-dominicana.com`)**:
+  - En la consola de Firebase Hosting (`turisram-dominican` > `turisran-dominicana`), agregar el dominio personalizado `turisran-dominicana.com` y `www.turisran-dominicana.com`.
+  - Configurar los registros **A** y **TXT** (o CNAME) en el proveedor del dominio (GoDaddy, Namecheap, Cloudflare, etc.).
+- [ ] **Entrega Oficial al Cliente**:
+  - Entrega del sitio web 100% operativo con SSL automático.
 
 ---
 
 ## 📌 8. Estado General de Despliegue en Vivo
 
-- **URL en Producción**: **[https://turisran-dominicana.web.app](https://turisran-dominicana.web.app)**
+- **Dominio Definitivo Oficial**: **[https://turisran-dominicana.com](https://turisran-dominicana.com)**
+- **URL Temporal en Firebase Hosting**: **[https://turisran-dominicana.web.app](https://turisran-dominicana.web.app)**
 - **GitHub Repo**: `vmatos001/turisram-dominican` (rama `master`)
 
 ---
 *Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-25.*
+

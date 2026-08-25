@@ -1,9 +1,10 @@
 # Robots.txt para TurisRan Dominicana
-# https://turisran-dominicana.web.app
+# https://turisran-dominicana.com
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://turisran-dominicana.web.app/sitemap-index.xml
-Sitemap: https://turisran-dominicana.web.app/sitemap-0.xml
+Sitemap: https://turisran-dominicana.com/sitemap-index.xml
+Sitemap: https://turisran-dominicana.com/sitemap-0.xml
+

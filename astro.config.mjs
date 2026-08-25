@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://turisran-dominicana.web.app',
+  site: 'https://turisran-dominicana.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
