@@ -223,10 +223,36 @@ npx -y firebase-tools@latest deploy --only hosting --project turisram-dominican
 
 ---
 
-## 📌 7. Próximos Pasos (Cierre y Post-Pago)
+## 📋 7. Tareas Pendientes para Completar el Proyecto (vs. A&R Transfers)
 
-1. **Conexión de Dominio Definitivo (`.com`)**: Conectar el dominio web propio (ej. `turisrandominicana.com`) en Firebase Hosting una vez que el cliente apruebe y complete el pago del proyecto.
-2. **Entrega de Accesos al Cliente**: Compartir el enlace final y credenciales si corresponde.
+Basado en el análisis del proyecto previo de **A&R Transfers** y los requerimientos estándar de la industria de transporte turístico de lujo:
+
+### 🟢 Fase 1: Arquitectura & Páginas
+- [x] **Página de Error 404 Personalizada (`src/pages/404.astro`)**:
+  - Diseñada e implementada con la estética *Dark Mode Luxury Gold*, tipografías oficiales, animaciones de entrada GSAP y accesos rápidos a Inicio, Servicios y WhatsApp.
+- [x] **Estructura de Servicios & Tours Unificada (`src/pages/servicios.astro`)**:
+  - *Decisión de Proyecto*: Se mantiene el catálogo unificado de traslados y tours en `/servicios.astro` para una navegación directa y simplificada (no se requiere separar en `/tours.astro`).
+- [x] **Página de Términos / Políticas de Servicio (`src/pages/terminos.astro`)**:
+  - Creada con 6 módulos detallados: Reservas y confirmación, tiempos de espera (60 min gratis en aeropuertos, 15 min en hoteles), cancelaciones gratuitas con 24h, reprogramación por vuelos, tarifas sin cargos ocultos, equipaje/sillas para niños, normas a bordo (no fumar) y banner de contacto directo a WhatsApp. Enlazada en Footer y formulario de reserva.
+
+### 🟡 Fase 2: SEO Técnico & Assets
+- [x] **Generación de `robots.txt` y `sitemap.xml`**:
+  - Configurado `@astrojs/sitemap` en `astro.config.mjs` con URL canónica `https://turisran-dominicana.web.app` y creado `public/robots.txt` con enlaces a `sitemap-index.xml` y `sitemap-0.xml`.
+- [x] **Paquete Completo de Favicons & Manifest**:
+  - Incorporados `favicon.ico`, `favicon.png`, `apple-touch-icon.png` y `site.webmanifest` con el logotipo oficial y color de tema `#D4AF37`. Enlazados en el `<head>` global de `Layout.astro`.
+
+### 🔴 Fase 3: Cierre Comercial & Despliegue Definitivo (Post-Aprobación)
+- [ ] **Conexión de Dominio Definitivo (`.com` / `.com.do`)**:
+  - Configurar registros DNS y certificado SSL en Firebase Hosting para el dominio final del cliente.
+- [ ] **Entrega Oficial**:
+  - Entrega de accesos, documentación y puesta en producción final.
 
 ---
-*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-23.*
+
+## 📌 8. Estado General de Despliegue en Vivo
+
+- **URL en Producción**: **[https://turisran-dominicana.web.app](https://turisran-dominicana.web.app)**
+- **GitHub Repo**: `vmatos001/turisram-dominican` (rama `master`)
+
+---
+*Archivo actualizado automáticamente por Antigravity AI — Sesión 2026-08-25.*

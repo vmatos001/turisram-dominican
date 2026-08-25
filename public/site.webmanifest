@@ -1,0 +1,16 @@
+{
+  "name": "TurisRan Dominicana | Transporte VIP & Tours",
+  "short_name": "TurisRan",
+  "description": "Servicio de transporte privado VIP en la República Dominicana. Traslados desde aeropuertos (PUJ, SDQ, STI, LRM, POP) y tours exclusivos.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "/images/TurisRan logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
