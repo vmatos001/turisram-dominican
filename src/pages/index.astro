@@ -521,30 +521,40 @@ const col3Images = [
 
 <!-- SCRIPTS INTERACTIVOS: 1) BOTÓN MAGNÉTICO AL CURSOR  2) SCROLL PARALELO SIN CRUCES ENTRE TARJETAS  3) SMOOTH SCROLL A FORMULARIO -->
 <script is:inline>
-  // 1. Botón Magnético que persigue el cursor suavemente
+  // 1. Botón Magnético que persigue el cursor suavemente (Solo en desktop)
   const roadSection = document.getElementById('scrub-road-section');
   const magnetBtn = document.getElementById('magnet-btn');
 
-  if (roadSection && magnetBtn) {
+  if (roadSection && magnetBtn && window.innerWidth >= 1024) {
+    let btnRect = null;
+    
+    function cacheRect() {
+      btnRect = magnetBtn.getBoundingClientRect();
+    }
+    
+    roadSection.addEventListener('mouseenter', cacheRect, { passive: true });
+
     roadSection.addEventListener('mousemove', (e) => {
-      const rect = magnetBtn.getBoundingClientRect();
-      const btnCenterX = rect.left + rect.width / 2;
-      const btnCenterY = rect.top + rect.height / 2;
+      if (!btnRect) cacheRect();
+      const btnCenterX = btnRect.left + btnRect.width / 2;
+      const btnCenterY = btnRect.top + btnRect.height / 2;
 
       const distX = (e.clientX - btnCenterX) * 0.22;
       const distY = (e.clientY - btnCenterY) * 0.22;
 
       magnetBtn.style.transform = `translate3d(${distX}px, ${distY}px, 0)`;
-    });
+    }, { passive: true });
 
     roadSection.addEventListener('mouseleave', () => {
+      btnRect = null;
       magnetBtn.style.transform = 'translate3d(0, 0, 0)';
-    });
+    }, { passive: true });
   }
 
-  // 2. SCROLL PARALELO SIN CRUCES
+  // 2. SCROLL PARALELO SIN CRUCES (Throttled con rAF)
   const scrubCards = document.querySelectorAll('.scrub-card');
   const gridContainer = document.getElementById('scrub-cards-grid');
+  let ticking = false;
 
   function updateScrubCards() {
     if (!gridContainer) return;
