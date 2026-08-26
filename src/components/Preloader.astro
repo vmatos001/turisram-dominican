@@ -98,17 +98,16 @@
 
       setTimeout(() => {
         preloader.style.display = 'none';
-      }, 750);
+      }, 350);
     }
 
-    if (document.readyState === 'complete') {
-      setTimeout(hidePreloader, 400);
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      requestAnimationFrame(hidePreloader);
     } else {
-      window.addEventListener('load', () => {
-        setTimeout(hidePreloader, 400);
-      });
-      // Tiempo máximo de seguridad (2.5 segundos)
-      setTimeout(hidePreloader, 2500);
+      document.addEventListener('DOMContentLoaded', hidePreloader, { once: true });
+      window.addEventListener('load', hidePreloader, { once: true });
+      // Tiempo máximo de seguridad (800ms)
+      setTimeout(hidePreloader, 800);
     }
   }
 

@@ -19,8 +19,10 @@
 
 <script>
   function initCustomCursor() {
-    // Solo activar en dispositivos con puntero de precisión (mouse)
-    if (window.matchMedia('(pointer: coarse)').matches) return;
+    // Desactivar completamente en dispositivos táctiles o pantallas móviles/tablets
+    if (window.innerWidth < 1024 || window.matchMedia('(pointer: coarse)').matches || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0)) {
+      return;
+    }
 
     const follower = document.getElementById('cursor-follower');
     const dot = document.getElementById('cursor-dot');
@@ -34,13 +36,29 @@
     let followerY = -100;
     let isHovering = false;
     let isVisible = false;
+    let isTicking = false;
 
-    // Escuchar movimiento del ratón para actualizar punto central inmediatamente (0ms delay)
+    function render() {
+      const dx = mouseX - followerX;
+      const dy = mouseY - followerY;
+      
+      followerX += dx * 0.35;
+      followerY += dy * 0.35;
+
+      const scale = isHovering ? 2.0 : 1;
+      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(${scale})`;
+
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        requestAnimationFrame(render);
+      } else {
+        isTicking = false;
+      }
+    }
+
     function onMouseMove(e) {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Pegado instantáneo 1:1 al puntero
       dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(${isHovering ? 0.5 : 1})`;
 
       if (!isVisible) {
@@ -49,18 +67,11 @@
         followerX = mouseX;
         followerY = mouseY;
       }
-    }
 
-    // Animación de seguimiento del anillo exterior (LERP 0.35 para máxima cercanía y velocidad)
-    function render() {
-      // Interpolación más rápida (0.35) para estar más cerca del mouse
-      followerX += (mouseX - followerX) * 0.35;
-      followerY += (mouseY - followerY) * 0.35;
-
-      const scale = isHovering ? 2.0 : 1;
-      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(${scale})`;
-
-      requestAnimationFrame(render);
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(render);
+      }
     }
 
     // Detectar hover sobre elementos interactivos
