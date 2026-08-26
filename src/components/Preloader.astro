@@ -1,117 +1,34 @@
 ---
-/* Preloader.astro — Componente de animación de carga corporativa VIP */
+/* Preloader.astro — Ultra-lightweight preloader for fast FCP */
 ---
 
 <div 
   id="preloader" 
-  class="fixed inset-0 z-[99999] bg-[#000000] flex flex-col items-center justify-center select-none pointer-events-auto transition-opacity duration-700 ease-out"
+  class="fixed inset-0 z-[99999] bg-[#000000] flex items-center justify-center select-none pointer-events-auto"
+  style="transition: opacity 0.3s ease-out;"
 >
-  <div class="relative z-10 flex flex-col items-center gap-6 px-4">
-    <!-- LOGO DE TURISRAN CON MOVIMIENTO LIGERO (FLOAT / ESCALA SUAVE SIN RESPLANDOR TRASERO) -->
-    <div class="animate-subtle-float">
-      <img 
-        src="/images/logo-turisram.webp" 
-        alt="TurisRan Dominicana — Cargando" 
-        class="h-16 sm:h-20 md:h-24 w-auto object-contain"
-      />
-    </div>
-
-    <!-- TEXTO "CARGANDO..." CON RECORRIDO DE BRILLO HORIZONTAL CONTINUO -->
-    <div class="relative overflow-hidden mt-2">
-      <span class="shimmer-text font-['Barlow_Condensed'] text-sm sm:text-base tracking-[0.4em] uppercase font-extrabold text-center block">
-        Cargando...
-      </span>
-    </div>
-
-    <!-- LÍNEA DE PROGRESO DORADA CON MOVIMIENTO HORIZONAL -->
-    <div class="w-28 sm:w-36 h-0.5 bg-[#D4AF37]/20 rounded-full overflow-hidden relative mt-1">
-      <div class="h-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent w-full animate-progress-slide"></div>
-    </div>
-  </div>
+  <img 
+    src="/images/logo-turisram.webp" 
+    alt="TurisRan Dominicana" 
+    width="96"
+    height="40"
+    class="h-10 sm:h-14 w-auto object-contain"
+  />
 </div>
 
-<style>
-  /* Movimiento ligero de flotado/respiración del logo (sin resplandor/sombra) */
-  @keyframes subtleFloat {
-    0%, 100% {
-      transform: translateY(0) scale(1);
+<script is:inline>
+  (function() {
+    var p = document.getElementById('preloader');
+    if (!p) return;
+    function hide() {
+      if (p.dataset.h) return;
+      p.dataset.h = '1';
+      p.style.opacity = '0';
+      p.style.pointerEvents = 'none';
+      setTimeout(function() { p.style.display = 'none'; }, 300);
     }
-    50% {
-      transform: translateY(-7px) scale(1.03);
-    }
-  }
-
-  .animate-subtle-float {
-    animation: subtleFloat 3.2s ease-in-out infinite;
-  }
-
-  /* Recorrido de brillo horizontal sobre el texto "CARGANDO..." */
-  .shimmer-text {
-    background: linear-gradient(
-      90deg,
-      rgba(247, 245, 240, 0.25) 0%,
-      rgba(212, 175, 55, 0.85) 35%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(212, 175, 55, 0.85) 65%,
-      rgba(247, 245, 240, 0.25) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textShimmer 2.2s linear infinite;
-  }
-
-  @keyframes textShimmer {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-
-  /* Desplazamiento horizontal fluido de la barra dorada */
-  @keyframes progressSlide {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  .animate-progress-slide {
-    animation: progressSlide 1.8s ease-in-out infinite;
-  }
-</style>
-
-<script>
-  function initPreloader() {
-    const preloader = document.getElementById('preloader');
-    if (!preloader) return;
-
-    function hidePreloader() {
-      if (preloader.dataset.hidden === 'true') return;
-      preloader.dataset.hidden = 'true';
-      preloader.style.opacity = '0';
-      preloader.style.pointerEvents = 'none';
-
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 350);
-    }
-
-    if (document.readyState === 'interactive' || document.readyState === 'complete') {
-      requestAnimationFrame(hidePreloader);
-    } else {
-      document.addEventListener('DOMContentLoaded', hidePreloader, { once: true });
-      window.addEventListener('load', hidePreloader, { once: true });
-      // Tiempo máximo de seguridad (800ms)
-      setTimeout(hidePreloader, 800);
-    }
-  }
-
-  // Inicializar en primera carga o transiciones de Astro
-  initPreloader();
-  document.addEventListener('astro:after-swap', initPreloader);
+    if (document.readyState !== 'loading') { hide(); }
+    else { document.addEventListener('DOMContentLoaded', hide, { once: true }); }
+    setTimeout(hide, 600);
+  })();
 </script>

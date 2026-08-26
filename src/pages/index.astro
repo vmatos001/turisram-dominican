@@ -576,10 +576,18 @@ const col3Images = [
       card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
       card.style.opacity = `${opacity}`;
     });
+    ticking = false;
   }
 
-  window.addEventListener('scroll', updateScrubCards, { passive: true });
-  window.addEventListener('resize', updateScrubCards, { passive: true });
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateScrubCards);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   updateScrubCards();
 
   // 3. Smooth Scroll al Formulario Final (#booking-final) para todos los triggers
