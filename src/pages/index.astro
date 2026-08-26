@@ -93,6 +93,11 @@ const col3Images = [
       <img
         src="/images/santo-domingo-noche.webp"
         alt="Santo Domingo Noche — TurisRan Dominicana"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        width="1920"
+        height="1080"
         class="w-full h-full object-cover object-center animate-subtle-zoom scale-105 opacity-40 sm:opacity-25 mix-blend-luminosity"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-[#0A0A0A]/85"></div>
@@ -139,14 +144,13 @@ const col3Images = [
           <!-- Acciones CTA -->
           <div data-reveal="fade-left" data-delay="1.2" data-duration="1.3" data-distance="70" data-ease="power3.out" class="flex flex-col sm:flex-row items-center gap-4 pt-2">
             <a
-              href="https://wa.me/18497527408?text=¡Hola!%20Deseo%20cotizar%20un%20traslado%20privado"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full sm:w-auto butn-arrow hover:scale-105"
+              href="#quote-engine"
+              class="w-full sm:w-auto butn-arrow text-center justify-center font-['Barlow_Condensed'] uppercase tracking-wider py-4 px-8"
             >
-              <span>Cotizar por WhatsApp</span>
+              <span class="font-extrabold text-sm">Cotización Inmediata</span>
               <span class="arrow-wrap"><i class="text-[#0A0A0A] font-bold">&rarr;</i></span>
             </a>
+
             <a
               href="/servicios"
               class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/20 transition-all font-['Barlow_Condensed'] text-center"
@@ -167,7 +171,7 @@ const col3Images = [
             <div class="animate-scroll-col1 flex flex-col gap-3 sm:gap-4 flex-shrink-0 hover:[animation-play-state:paused]">
               {[...col1Images, ...col1Images, ...col1Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37]/80 cursor-pointer">
-                  <img src={imgUrl} alt={`TurisRan Destination ${i}`} class="w-full h-full object-cover" />
+                  <img src={imgUrl} alt={`TurisRan Destination ${i}`} width="144" height="208" loading="lazy" decoding="async" class="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -176,7 +180,7 @@ const col3Images = [
             <div class="animate-scroll-col2 flex flex-col gap-3 sm:gap-4 flex-shrink-0 -mt-10 hover:[animation-play-state:paused]">
               {[...col2Images, ...col2Images, ...col2Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37] cursor-pointer">
-                  <img src={imgUrl} alt={`TurisRan Tour ${i}`} class="w-full h-full object-cover" />
+                  <img src={imgUrl} alt={`TurisRan Tour ${i}`} width="144" height="208" loading="lazy" decoding="async" class="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -185,7 +189,7 @@ const col3Images = [
             <div class="animate-scroll-col3 flex flex-col gap-3 sm:gap-4 flex-shrink-0 hover:[animation-play-state:paused]">
               {[...col3Images, ...col3Images, ...col3Images].map((imgUrl, i) => (
                 <div class="w-28 sm:w-36 h-44 sm:h-52 rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-[#0A0A0A] flex-shrink-0 hover:scale-105 transition-transform duration-300 hover:border-[#D4AF37]/80 cursor-pointer">
-                  <img src={imgUrl} alt={`TurisRan VIP Transfer ${i}`} class="w-full h-full object-cover" />
+                  <img src={imgUrl} alt={`TurisRan VIP Transfer ${i}`} width="144" height="208" loading="lazy" decoding="async" class="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
