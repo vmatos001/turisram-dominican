@@ -155,32 +155,30 @@
       });
     });
 
-    // 5. Monitoreo y refresco de ScrollTrigger al cargar imágenes
-    document.querySelectorAll('img').forEach((img) => {
-      if (!img.complete) {
-        img.addEventListener('load', () => {
-          if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
-        }, { once: true });
-      }
-    });
+    // 5. Refresco debounced de ScrollTrigger una sola vez al estabilizar la página
+    let refreshTimeout;
+    function debouncedRefresh() {
+      clearTimeout(refreshTimeout);
+      refreshTimeout = setTimeout(() => {
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      }, 200);
+    }
 
-    // 6. Refrescar en múltiples intervalos para compensar layouts dinámicos
-    [100, 300, 600, 1200, 2500].forEach((ms) => {
-      setTimeout(() => {
-        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
-      }, ms);
-    });
+    window.addEventListener('load', debouncedRefresh, { once: true });
   }
 
-  // Inicializar al cargar el DOM o al navegar entre páginas
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGSAPAnimations);
+  // Inicializar de forma no-bloqueante
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => initGSAPAnimations(), { timeout: 1500 });
+  } else if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(initGSAPAnimations, 50), { once: true });
   } else {
-    initGSAPAnimations();
+    setTimeout(initGSAPAnimations, 50);
   }
 
-  window.addEventListener('load', () => {
+  document.addEventListener('astro:page-load', () => {
     if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
   });
-  document.addEventListener('astro:page-load', initGSAPAnimations);
 </script>
