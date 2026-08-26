@@ -56,25 +56,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisran
     <!-- Preload LCP Hero Image -->
     <link rel="preload" as="image" type="image/webp" href="/images/santo-domingo-noche.webp" fetchpriority="high" />
 
-    <!-- Google Fonts: Barlow Condensed, Barlow Semi Condensed & Lora (Optimized Non-Blocking) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@1,500;1,600&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@1,500;1,600&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
+    <!-- Self-hosted Fonts (eliminates fonts.googleapis.com + fonts.gstatic.com DNS/TLS) -->
+    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'" />
     <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Lora:ital,wght@1,500;1,600&display=swap"
-      />
+      <link rel="stylesheet" href="/fonts/fonts.css" />
     </noscript>
 
 
@@ -157,9 +142,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://turisran
     </main>
     <Footer />
     <WhatsAppButton />
-    <!-- GSAP & ScrollTrigger (loaded at body end to unblock FCP/LCP) -->
-    <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP & ScrollTrigger (self-hosted, eliminates cdnjs.cloudflare.com DNS/TLS) -->
+    <script is:inline defer src="/js/gsap.min.js"></script>
+    <script is:inline defer src="/js/ScrollTrigger.min.js"></script>
     <ScrollAnimations />
   </body>
 </html>
