@@ -23,35 +23,35 @@ const testimonials: Testimonial[] = [
     name: "Kimberlin Montero",
     title: "Reseña Verificada en Google Maps 5★",
     quote: "Excelente conductor. El servicio de este conductor fue excepcionalmente profesional y atento; llegó puntual con un vehículo impecable, demostrando gran habilidad al volante y un conocimiento eficiente de las rutas. Su amabilidad y cortesía, combinadas con una conducción segura y suave, crearon una experiencia de viaje cómoda y relajante.",
-    avatarSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+    avatarSrc: "/images/avatars/avatar-1.webp",
     rating: 5
   },
   {
     name: "Familia Isasi",
     title: "Reseña Verificada en Google Maps 5★",
     quote: "Ransel muy profesional, nos trajo a Samaná desde Bayahibe. El viaje fue muy agradable y ameno. Buen coche y muy buena conducción. Es de total confianza.",
-    avatarSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    avatarSrc: "/images/avatars/avatar-2.webp",
     rating: 5
   },
   {
     name: "Rafalis Montero Medina",
     title: "Reseña Verificada en Google Maps 5★",
     quote: "Excelente servicio la verdad, buen confort en el vehículo, altamente responsable y todo servido exactamente a tiempo.",
-    avatarSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    avatarSrc: "/images/avatars/avatar-3.webp",
     rating: 5
   },
   {
     name: "Mercedes Dolores Méndez Matos",
     title: "Local Guide • Reseña Verificada en Google 5★",
     quote: "Trato agradable y persona de absoluta confianza, lo recomiendo 100%. Vehículo cómodo, limpio y muy confortable.",
-    avatarSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    avatarSrc: "/images/avatars/avatar-4.webp",
     rating: 5
   },
   {
     name: "Acelis Grisel Montero Medina",
     title: "Reseña Verificada en Google Maps 5★",
     quote: "Excelente servicio, máximo respeto y muy amable el conductor. Servicio 100% recomendable para viajar en República Dominicana.",
-    avatarSrc: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    avatarSrc: "/images/avatars/avatar-5.webp",
     rating: 5
   }
 ];
@@ -132,6 +132,10 @@ const writeReviewUrl = "https://g.page/r/CQIGM1irEXmnEBM/review";
               <img
                 src={t.avatarSrc}
                 alt={`Foto de ${t.name}`}
+                width="56"
+                height="56"
+                loading="lazy"
+                decoding="async"
                 class="w-14 h-14 rounded-2xl object-cover border-2 border-[#D4AF37]/50 shadow-md flex-shrink-0"
               />
               <div class="flex-grow">
